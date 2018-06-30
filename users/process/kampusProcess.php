@@ -6,7 +6,6 @@
       $nama_kampus = $_POST['nama_kampus'];
       $alamat = $_POST['alamat'];
       $slogan = $_POST['slogan'];
-      $akreditasi = $_POST['akreditasi'];
 
           if(isset($_POST['simpan'])){
               $foto = $_FILES['foto']['name'];
@@ -18,7 +17,7 @@
         			if($tipe_file == "image/jpg" || $tipe_file == "image/png"){
         				if($ukuran_file < 1044070){
         					move_uploaded_file($tmp_file, $path);
-        					$test = $kampus->addKampus($nama_kampus, $akreditasi, $alamat, $foto, $slogan);
+        					$test = $kampus->addKampus($nama_kampus, $alamat, $foto, $slogan);
         					if($test){
                       echo "data berhasil disimpan";
         					}else{

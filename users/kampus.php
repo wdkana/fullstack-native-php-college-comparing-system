@@ -7,7 +7,6 @@
   <body>
       <form action="process/kampusProcess.php" method="post" enctype="multipart/form-data">
           <input type="text" name="nama_kampus" required placeholder="nama_kampus"><br>
-          <input type="text" name="akreditasi" placeholder="akreditasi"><br>
           <input type="text" name="alamat" required placeholder="alamat"><br>
           foto <br><input type="file" name="foto"><br>
           slogan <br>

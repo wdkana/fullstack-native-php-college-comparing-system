@@ -25,9 +25,9 @@
       }
 
       //function untuk input nilai survei
-      public function inputNilai($kampus, $username, $akreditasi, $dosen, $jurusan, $lingkungan, $prestasi, $mata_kuliah, $biaya){
+      public function inputNilai($kampus, $username, $dosen, $jurusan, $lingkungan, $prestasi, $mata_kuliah, $biaya){
 
-          $sql = "INSERT INTO `tbl_nilai` VALUES (null,'$kampus','$username', '$akreditasi', '$dosen', '$jurusan', '$lingkungan', '$prestasi', '$mata_kuliah', '$biaya');";
+          $sql = "INSERT INTO `tbl_nilai` VALUES (null,'$kampus','$username', $dosen', '$jurusan', '$lingkungan', '$prestasi', '$mata_kuliah', '$biaya');";
           $query = mysql_query($sql);
           return $query;
       }

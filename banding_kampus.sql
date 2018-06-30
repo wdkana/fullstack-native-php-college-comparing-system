@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 30, 2018 at 08:49 AM
+-- Generation Time: Jun 30, 2018 at 03:32 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.35
 
@@ -21,6 +21,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `banding_kampus`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_akreditasi`
+--
+
+CREATE TABLE `tbl_akreditasi` (
+  `id` int(11) NOT NULL,
+  `nama_kampus` varchar(255) NOT NULL,
+  `fakultas` varchar(255) NOT NULL,
+  `akreditasi` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_akreditasi`
+--
+
+INSERT INTO `tbl_akreditasi` (`id`, `nama_kampus`, `fakultas`, `akreditasi`) VALUES
+(20, 'LPKIA', 'manajeman informatika', 'A'),
+(22, 'LPKIA', 'adbis', 'B'),
+(23, 'LPKIA', 'akuntansI', 'b'),
+(24, 'fiksi', 'manajeman informatika', 'b'),
+(25, 'fiksi', 'adbis', 'C'),
+(26, 'fiksi', 'akuntansi', 'C');
 
 -- --------------------------------------------------------
 
@@ -48,7 +73,9 @@ INSERT INTO `tbl_detail_profil` (`id`, `username`, `nim`, `asal_kampus`, `nama_l
 (9, 'juheri', '150613035', 'lpkia', 'juheri', 'manajeman informastika', '3IF1', '756890', 'Haworthia-attenuata-_2_.jpg'),
 (10, 'jek', '768970889867', 'lpkia', 'jek weh lah', 'manajeman informastika', '3IF1', '567890', 'database.png'),
 (11, 'alsa', '678890', 'fiksi', 'alsa gunadi', 'naon weh', 'kbih', '7689', 'Haworthia-attenuata-_2_.jpg'),
-(12, 'dea', '657789', 'lpkia', 'dea', 'manajeman informatika', '3IF1', '657899', 'Haworthia-attenuata-_2_.jpg');
+(12, 'dea', '657789', 'lpkia', 'dea', 'manajeman informatika', '3IF1', '657899', 'Haworthia-attenuata-_2_.jpg'),
+(13, 'saha', '6578', 'lpkia', 'saha weh', 'manajeman informatika', '3if', '6578', 'Haworthia-attenuata-_2_.jpg'),
+(14, 'abc', '789009', 'naon', ';bhlj', 'abc', 'kh', '7890', 'Haworthia-attenuata-_2_.jpg');
 
 -- --------------------------------------------------------
 
@@ -71,7 +98,6 @@ CREATE TABLE `tbl_detail_survei` (
 CREATE TABLE `tbl_kampus` (
   `id` int(11) NOT NULL,
   `nama_kampus` varchar(255) NOT NULL,
-  `akreditasi` varchar(255) NOT NULL,
   `alamat` varchar(255) NOT NULL,
   `foto` varchar(255) NOT NULL,
   `slogan` varchar(255) NOT NULL
@@ -81,13 +107,13 @@ CREATE TABLE `tbl_kampus` (
 -- Dumping data for table `tbl_kampus`
 --
 
-INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `akreditasi`, `alamat`, `foto`, `slogan`) VALUES
-(1, 'LPKIA', '', 'jl. Soekarno Hatta', 'k', 'Lulusannya mudah bekerja'),
-(2, 'kampus lain', '', 'Jl. kampus lain', 'k', 'Kampusnya mahal sekali'),
-(3, 'INABA', '', 'jl. raya', '1', 'Sehat Selalu'),
-(4, 'Merdeka', '', 'JL. 123', 'k', 'Bersama'),
-(5, 'ITB', '', 'jl raya', 'database.png', 'test'),
-(6, 'fiksi', '', 'binong', 'fghvjkl', 'teuing');
+INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `alamat`, `foto`, `slogan`) VALUES
+(1, 'LPKIA', 'jl. Soekarno Hatta', 'k', 'Lulusannya mudah bekerja'),
+(2, 'kampus lain', 'Jl. kampus lain', 'k', 'Kampusnya mahal sekali'),
+(3, 'INABA', 'jl. raya', '1', 'Sehat Selalu'),
+(4, 'Merdeka', 'JL. 123', 'k', 'Bersama'),
+(5, 'ITB', 'jl raya', 'database.png', 'test'),
+(6, 'fiksi', 'binong', 'fghvjkl', 'teuing');
 
 -- --------------------------------------------------------
 
@@ -99,7 +125,6 @@ CREATE TABLE `tbl_nilai` (
   `id` int(11) NOT NULL,
   `id_kampus` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `akreditasi` varchar(255) NOT NULL,
   `dosen` varchar(255) NOT NULL,
   `jurusan` varchar(255) NOT NULL,
   `lingkungan` varchar(255) NOT NULL,
@@ -112,10 +137,10 @@ CREATE TABLE `tbl_nilai` (
 -- Dumping data for table `tbl_nilai`
 --
 
-INSERT INTO `tbl_nilai` (`id`, `id_kampus`, `username`, `akreditasi`, `dosen`, `jurusan`, `lingkungan`, `prestasi`, `mata_kuliah`, `biaya`) VALUES
-(11, 1, 'jek', '60', '40', '40', '40', '40', '20', '20'),
-(12, 6, 'alsa', '100', '100', '100', '60', '60', '20', '20'),
-(13, 1, 'dea', '100', '100', '100', '100', '100', '100', '100');
+INSERT INTO `tbl_nilai` (`id`, `id_kampus`, `username`, `dosen`, `jurusan`, `lingkungan`, `prestasi`, `mata_kuliah`, `biaya`) VALUES
+(11, 1, 'jek', '40', '40', '40', '40', '20', '20'),
+(12, 6, 'alsa', '100', '100', '60', '60', '20', '20'),
+(13, 1, 'dea', '100', '100', '100', '100', '100', '100');
 
 -- --------------------------------------------------------
 
@@ -138,7 +163,6 @@ CREATE TABLE `tbl_pertanyaan` (
 --
 
 INSERT INTO `tbl_pertanyaan` (`id`, `pertanyaan`, `pil1`, `pil2`, `pil3`, `pil4`, `pil5`) VALUES
-(1, 'Berapa Akreditasi di Kampus ini?', 'A', 'B', 'C', 'D', 'E'),
 (2, 'Dosen di kampus ini sangatlah baik', 'Sangat Setuju', 'Setuju', 'Agak setuju', 'Tidak setuju', 'Sangat tidak setuju'),
 (3, 'Jurusan di kampus ini sangatlah baik', 'Sangat Setuju', 'Setuju', 'Agak Setuju', 'Tidak setuju', 'Sangat tidak setuju'),
 (4, 'Lingkungan di kampus ini sangatlah baik', 'Sangat Setuju', 'Setuju', 'Agak setuju', 'Tidak setuju', 'Sangat tidak setuju'),
@@ -163,10 +187,12 @@ CREATE TABLE `tbl_register` (
 --
 
 INSERT INTO `tbl_register` (`username`, `email`, `password`) VALUES
+('abc', 'abc@mail.com', '123'),
 ('alsa', 'alsa@mail.com', '123'),
 ('dea', 'dea@mail.com', '123'),
 ('jek', 'jek@mail.com', '123'),
-('juheri', 'juheri842@gmail.com', '123');
+('juheri', 'juheri842@gmail.com', '123'),
+('saha', 'saha@mail.com', '123');
 
 -- --------------------------------------------------------
 
@@ -183,9 +209,52 @@ CREATE TABLE `tbl_survei` (
   `komentar` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_ulasan`
+--
+
+CREATE TABLE `tbl_ulasan` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `nama_kampus` varchar(255) NOT NULL,
+  `tanggal` date NOT NULL,
+  `judul` varchar(255) NOT NULL,
+  `ulasan` text NOT NULL,
+  `tag` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_ulasan`
+--
+
+INSERT INTO `tbl_ulasan` (`id`, `username`, `nama_kampus`, `tanggal`, `judul`, `ulasan`, `tag`) VALUES
+(3, 'test', 'lpkia', '2018-06-26', 'hgj', 'hggj', 'hgj'),
+(4, 'saha', 'LPKIA', '2018-06-30', 'abc', '<p>kjbldf;</p>\r\n', 'kjln'),
+(5, 'saha', 'LPKIA', '2018-06-30', 'ULASAN', '<p>ULASAN</p>\r\n', 'ULASAN'),
+(6, 'saha', 'LPKIA', '2018-06-30', 'ULASAN', '<p>ULASAN</p>\r\n', 'ULASAN'),
+(7, 'saha', 'LPKIA', '2018-06-30', 'ULASAN', '<p>ULASAN</p>\r\n', 'ULASAN');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `test`
+--
+
+CREATE TABLE `test` (
+  `nama` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tbl_akreditasi`
+--
+ALTER TABLE `tbl_akreditasi`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_detail_profil`
@@ -231,14 +300,26 @@ ALTER TABLE `tbl_survei`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_ulasan`
+--
+ALTER TABLE `tbl_ulasan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `tbl_akreditasi`
+--
+ALTER TABLE `tbl_akreditasi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `tbl_detail_profil`
 --
 ALTER TABLE `tbl_detail_profil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tbl_detail_survei`
@@ -256,7 +337,7 @@ ALTER TABLE `tbl_kampus`
 -- AUTO_INCREMENT for table `tbl_nilai`
 --
 ALTER TABLE `tbl_nilai`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tbl_pertanyaan`
@@ -269,6 +350,12 @@ ALTER TABLE `tbl_pertanyaan`
 --
 ALTER TABLE `tbl_survei`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_ulasan`
+--
+ALTER TABLE `tbl_ulasan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
