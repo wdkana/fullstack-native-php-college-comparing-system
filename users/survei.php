@@ -1,10 +1,23 @@
 <?php
     include "../model/Survei_model.php";
+    include "../model/User_model.php";
+    include "../model/Kampus_model.php";
+
+    session_start();
+    $username = $_SESSION['username'];
 
     $survei = new Survei_model();
-	$result = $survei->pertanyaan();
+    $user = new User_model();
+    $kmp = new Kampus_model();
 
-	$result2 = $survei->ambilkampus();
+    $row = mysql_fetch_array($user->kampus($username));
+    $kampus = $row['asal_kampus'];
+
+    $row = mysql_fetch_array($kmp->viewKampus($kampus));
+    $id = $row['id'];
+    $nama_kampus = $row['nama_kampus'];
+
+    $result = $survei->pertanyaan();
 
 ?>
 <html>
@@ -15,20 +28,15 @@
 </head>
 
 <body>
-
+  <?php
+      if($nama_kampus == ''){
+          echo "maaf nama kampus anda tidak tersedia di aplikasi ini";
+      } else if($survei->viewUser($username) > 0){
+          echo "anda sudah mengisi survei";
+      } else {
+  ?>
 	<form action="process/surveiProcess.php" method="post">
-		<label>
-		Pilih Kampus
-		</label>
-		<select  name="id">
-		  <option></option>
-		<?php
-			while($row2 = mysql_fetch_array($result2)){
-		?>
-		  <option value="<?php echo $row2["id"]?>"><?php echo $row2["nama_kampus"]?></option>
-
-			<?php } ?>
-		</select>
+    <input type="text" name="id" value="<?php echo $id;?>" hidden>
 		<table border=1>
 			  <tr>
 				<th>NO</th>
@@ -55,6 +63,9 @@
 			</table>
 		<input type="submit" value="survei"><br>
 		</form>
+    <?php
+        }
+    ?>
     <a href="process/logoutProcess.php">Logout</a>
 </body>
 

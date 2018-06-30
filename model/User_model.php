@@ -1,6 +1,6 @@
 <?php
 
-    include "Database_Connection.php";
+    include_once "Database_Connection.php";
 
     /**
      *
@@ -48,13 +48,21 @@
       }
 
       //function untuk insert detail profil
-      public function setProfil($username, $nim, $nama_lengkap, $fakultas, $kelas, $no_hp, $foto_ktm){
+      public function setProfil($username, $nim, $asal_kampus, $nama_lengkap, $fakultas, $kelas, $no_hp, $foto_ktm){
 
-          $sql = "INSERT INTO `tbl_detail_profil` (`id`, `username`, `nim`, `nama_lengkap`, `fakultas`, `kelas`, `no_hp`, `foto_ktm`) VALUES
-          (NULL, '$username', '$nim', '$nama_lengkap', '$fakultas', '$kelas', '$no_hp', '$foto_ktm');";
+          $sql = "INSERT INTO `tbl_detail_profil` (`id`, `username`, `nim`, `asal_kampus`,`nama_lengkap`, `fakultas`, `kelas`, `no_hp`, `foto_ktm`) VALUES
+          (NULL, '$username', '$nim', '$asal_kampus','$nama_lengkap', '$fakultas', '$kelas', '$no_hp', '$foto_ktm');";
           $query = mysql_query($sql);
           return $query;
 
+      }
+
+      //function untuk menampilkan nama Kampus
+      public function kampus($username){
+
+        $sql = "SELECT * FROM tbl_detail_profil WHERE username = '$username'";
+        $query = mysql_query($sql);
+        return $query;
       }
 
 

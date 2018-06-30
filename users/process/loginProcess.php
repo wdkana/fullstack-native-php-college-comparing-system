@@ -13,7 +13,7 @@
         header('location: ../dashboard.php');
     } else {
         header("location:../login.php?msg=error");
-    } 
+    }
 
 
 ?>

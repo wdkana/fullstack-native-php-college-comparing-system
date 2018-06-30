@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 28, 2018 at 08:53 PM
+-- Generation Time: Jun 30, 2018 at 08:49 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.35
 
@@ -32,6 +32,7 @@ CREATE TABLE `tbl_detail_profil` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `nim` varchar(255) NOT NULL,
+  `asal_kampus` varchar(255) NOT NULL,
   `nama_lengkap` varchar(255) NOT NULL,
   `fakultas` varchar(255) NOT NULL,
   `kelas` varchar(255) NOT NULL,
@@ -43,15 +44,11 @@ CREATE TABLE `tbl_detail_profil` (
 -- Dumping data for table `tbl_detail_profil`
 --
 
-INSERT INTO `tbl_detail_profil` (`id`, `username`, `nim`, `nama_lengkap`, `fakultas`, `kelas`, `no_hp`, `foto_ktm`) VALUES
-(1, 'jek', '7687', 'test', 'mi', '3IF', '78', 'database.png'),
-(2, 'a', '150613035', 'juheri', 'manajeman informastika', '3IF', '98789', 'database.png'),
-(3, 'a', '150613035', 'juheri', 'manajeman informastika', '3IF', '98789', 'database.png'),
-(4, 'a', '150613035', 'juheri', 'manajeman informastika', '3IF', '98789', 'database.png'),
-(5, 'a', '150613035', 'juheri', 'manajeman informastika', '3IF', '98789', 'database.png'),
-(6, 'juheri', '657890', 'JUHERI', 'manajeman informastika', '3IF1', '56789', 'database.png'),
-(7, 'test', '5467890', 'yugh;j', 'tfghjkl', 'ghjvbkn', '65789', 'Haworthia-attenuata-_2_.jpg'),
-(8, 'abc', '15013036', 'juheri', 'manajeman informastika', '3IF1', '76890', 'Haworthia-attenuata-_2_.jpg');
+INSERT INTO `tbl_detail_profil` (`id`, `username`, `nim`, `asal_kampus`, `nama_lengkap`, `fakultas`, `kelas`, `no_hp`, `foto_ktm`) VALUES
+(9, 'juheri', '150613035', 'lpkia', 'juheri', 'manajeman informastika', '3IF1', '756890', 'Haworthia-attenuata-_2_.jpg'),
+(10, 'jek', '768970889867', 'lpkia', 'jek weh lah', 'manajeman informastika', '3IF1', '567890', 'database.png'),
+(11, 'alsa', '678890', 'fiksi', 'alsa gunadi', 'naon weh', 'kbih', '7689', 'Haworthia-attenuata-_2_.jpg'),
+(12, 'dea', '657789', 'lpkia', 'dea', 'manajeman informatika', '3IF1', '657899', 'Haworthia-attenuata-_2_.jpg');
 
 -- --------------------------------------------------------
 
@@ -74,6 +71,7 @@ CREATE TABLE `tbl_detail_survei` (
 CREATE TABLE `tbl_kampus` (
   `id` int(11) NOT NULL,
   `nama_kampus` varchar(255) NOT NULL,
+  `akreditasi` varchar(255) NOT NULL,
   `alamat` varchar(255) NOT NULL,
   `foto` varchar(255) NOT NULL,
   `slogan` varchar(255) NOT NULL
@@ -83,12 +81,13 @@ CREATE TABLE `tbl_kampus` (
 -- Dumping data for table `tbl_kampus`
 --
 
-INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `alamat`, `foto`, `slogan`) VALUES
-(1, 'LPKIA', 'jl. Soekarno Hatta', 'k', 'Lulusannya mudah bekerja'),
-(2, 'kampus lain', 'Jl. kampus lain', 'k', 'Kampusnya mahal sekali'),
-(3, 'INABA', 'jl. raya', '1', 'Sehat Selalu'),
-(4, 'Merdeka', 'JL. 123', 'k', 'Bersama'),
-(5, 'ITB', 'jl raya', 'database.png', 'test');
+INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `akreditasi`, `alamat`, `foto`, `slogan`) VALUES
+(1, 'LPKIA', '', 'jl. Soekarno Hatta', 'k', 'Lulusannya mudah bekerja'),
+(2, 'kampus lain', '', 'Jl. kampus lain', 'k', 'Kampusnya mahal sekali'),
+(3, 'INABA', '', 'jl. raya', '1', 'Sehat Selalu'),
+(4, 'Merdeka', '', 'JL. 123', 'k', 'Bersama'),
+(5, 'ITB', '', 'jl raya', 'database.png', 'test'),
+(6, 'fiksi', '', 'binong', 'fghvjkl', 'teuing');
 
 -- --------------------------------------------------------
 
@@ -99,6 +98,7 @@ INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `alamat`, `foto`, `slogan`) VALUE
 CREATE TABLE `tbl_nilai` (
   `id` int(11) NOT NULL,
   `id_kampus` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `akreditasi` varchar(255) NOT NULL,
   `dosen` varchar(255) NOT NULL,
   `jurusan` varchar(255) NOT NULL,
@@ -112,12 +112,10 @@ CREATE TABLE `tbl_nilai` (
 -- Dumping data for table `tbl_nilai`
 --
 
-INSERT INTO `tbl_nilai` (`id`, `id_kampus`, `akreditasi`, `dosen`, `jurusan`, `lingkungan`, `prestasi`, `mata_kuliah`, `biaya`) VALUES
-(2, 2, '10', '8', '10', '9', '7', '8', '6'),
-(3, 3, '7', '8', '9', '10', '9', '8', '7'),
-(4, 4, '100', '80', '60', '40', '20', '100', '80'),
-(5, 1, '100', '80', '60', '40', '20', '40', '60'),
-(6, 5, '100', '100', '100', '100', '100', '100', '100');
+INSERT INTO `tbl_nilai` (`id`, `id_kampus`, `username`, `akreditasi`, `dosen`, `jurusan`, `lingkungan`, `prestasi`, `mata_kuliah`, `biaya`) VALUES
+(11, 1, 'jek', '60', '40', '40', '40', '40', '20', '20'),
+(12, 6, 'alsa', '100', '100', '100', '60', '60', '20', '20'),
+(13, 1, 'dea', '100', '100', '100', '100', '100', '100', '100');
 
 -- --------------------------------------------------------
 
@@ -165,8 +163,10 @@ CREATE TABLE `tbl_register` (
 --
 
 INSERT INTO `tbl_register` (`username`, `email`, `password`) VALUES
-('juheri', 'juheri842@gmail.com', '123'),
-('test', 'test@mail.com', '123');
+('alsa', 'alsa@mail.com', '123'),
+('dea', 'dea@mail.com', '123'),
+('jek', 'jek@mail.com', '123'),
+('juheri', 'juheri842@gmail.com', '123');
 
 -- --------------------------------------------------------
 
@@ -238,7 +238,7 @@ ALTER TABLE `tbl_survei`
 -- AUTO_INCREMENT for table `tbl_detail_profil`
 --
 ALTER TABLE `tbl_detail_profil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_detail_survei`
@@ -256,7 +256,7 @@ ALTER TABLE `tbl_kampus`
 -- AUTO_INCREMENT for table `tbl_nilai`
 --
 ALTER TABLE `tbl_nilai`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tbl_pertanyaan`

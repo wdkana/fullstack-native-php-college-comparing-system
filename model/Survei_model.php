@@ -1,6 +1,6 @@
 <?php
 
-    include "Database_Connection.php";
+    include_once "Database_Connection.php";
     /**
      *
      */
@@ -15,21 +15,30 @@
           $sql = "SELECT * FROM tbl_pertanyaan";
           $query = mysql_query($sql);
           return $query;
-      }      
-	  
+      }
+
 	  //function menampilkan data kampus
 	  public function ambilkampus(){
           $sql = "SELECT * FROM tbl_kampus";
           $query = mysql_query($sql);
           return $query;
       }
-	  
-      //function untuk input nilai survei
-      public function inputNilai($kampus, $akreditasi, $dosen, $jurusan, $lingkungan, $prestasi, $mata_kuliah, $biaya){
 
-          $sql = "INSERT INTO `tbl_nilai` VALUES (null,'$kampus', '$akreditasi', '$dosen', '$jurusan', '$lingkungan', '$prestasi', '$mata_kuliah', '$biaya');";
+      //function untuk input nilai survei
+      public function inputNilai($kampus, $username, $akreditasi, $dosen, $jurusan, $lingkungan, $prestasi, $mata_kuliah, $biaya){
+
+          $sql = "INSERT INTO `tbl_nilai` VALUES (null,'$kampus','$username', '$akreditasi', '$dosen', '$jurusan', '$lingkungan', '$prestasi', '$mata_kuliah', '$biaya');";
           $query = mysql_query($sql);
           return $query;
+      }
+
+      //function untuk validasi username
+      public function viewUser($username){
+
+          $sql = "SELECT * FROM tbl_nilai WHERE username = '$username'";
+          $query = mysql_query($sql);
+          $check = mysql_num_rows($query);
+          return $check;
       }
     }
 

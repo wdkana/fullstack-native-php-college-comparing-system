@@ -1,5 +1,5 @@
 <?php
-    include "Database_Connection.php";
+    include_once "Database_Connection.php";
 
     /**
      *
@@ -13,14 +13,21 @@
       }
 
       //function untuk add kampus
-      public function addKampus($nama_kampus, $alamat, $foto, $slogan){
-        $sql = "INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `alamat`, `foto`, `slogan`)
-        VALUES (NULL, '$nama_kampus', '$alamat', '$foto', '$slogan');";
+      public function addKampus($nama_kampus,$akreditasi, $alamat, $foto, $slogan){
+        $sql = "INSERT INTO `tbl_kampus` (`id`, `nama_kampus`,`akreditasi`, `alamat`, `foto`, `slogan`)
+        VALUES (NULL, '$nama_kampus','$akreditasi', '$alamat', '$foto', '$slogan');";
         $query = mysql_query($sql);
         return $query;
 
       }
 
+      //function untuk menampilkan nama kampus berdasarkan yang loginUser
+      public function viewKampus($kampus){
+
+        $sql = "SELECT * FROM tbl_kampus WHERE nama_kampus = '$kampus'";
+        $query = mysql_query($sql);
+        return $query;
+      }
     }
 
 

@@ -11,6 +11,7 @@
     $fakultas = $_POST['fakultas'];
     $kelas = $_POST['kelas'];
     $no_hp = $_POST['no_hp'];
+    $asal_kampus = $_POST['asal_kampus'];
 
     if(isset($_POST['simpan'])){
         $foto_ktm = $_FILES['foto_ktm']['name'];
@@ -22,7 +23,7 @@
   			if($tipe_file == "image/jpeg" || $tipe_file == "image/png"){
   				if($ukuran_file < 1044070){
   					move_uploaded_file($tmp_file, $path);
-  					$test = $user->setProfil($username, $nim, $nama_lengkap, $fakultas, $kelas, $no_hp, $foto_ktm);
+  					$test = $user->setProfil($username, $nim, $asal_kampus, $nama_lengkap, $fakultas, $kelas, $no_hp, $foto_ktm);
   					if($test){
                 header('location:../dashboard.php');
   					}else{

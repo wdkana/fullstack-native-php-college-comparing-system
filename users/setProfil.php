@@ -34,6 +34,12 @@
         </div>
         <div class="row margin">
           <div class="input-field col s12">
+            <input id="asal_kampus" name="asal_kampus" type="text">
+            <label for="asal_kampus" class="center-align">Asal Kampus</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
             <input id="nama_lengkap" name="nama_lengkap" type="text">
             <label for="nama_lengkap" class="center-align">Nama Lengkap</label>
           </div>

@@ -1,9 +1,10 @@
 <?php
     include_once("../../model/Survei_model.php");
-
+    session_start();
+    $username = $_SESSION['username'];
     $survei = new Survei_model();
 
-	$kampus = $_POST['id'];
+	  $kampus = $_POST['id'];
     $pilihan1 = $_POST['pilihan1'];
     $pilihan2 = $_POST['pilihan2'];
     $pilihan3 = $_POST['pilihan3'];
@@ -11,7 +12,7 @@
     $pilihan5 = $_POST['pilihan5'];
     $pilihan6 = $_POST['pilihan6'];
     $pilihan7 = $_POST['pilihan7'];
-	
-	$survei->inputNilai($kampus, $pilihan1, $pilihan2, $pilihan3, $pilihan4, $pilihan5, $pilihan6, $pilihan7);
+
+	$survei->inputNilai($kampus, $username,$pilihan1, $pilihan2, $pilihan3, $pilihan4, $pilihan5, $pilihan6, $pilihan7);
 	header('location: ../dashboard.php');
 ?>
