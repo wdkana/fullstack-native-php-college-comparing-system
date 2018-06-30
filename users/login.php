@@ -2,15 +2,15 @@
 <html>
 <head>
 	<?php include 'views/head.php'; ?>
-  <link href="assets/css/page-center.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../assets/css/page-center.css" type="text/css" rel="stylesheet" media="screen,projection">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <title>Banding kampus</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body style="background: #45598c">
   <div id="login-page" class="row">
