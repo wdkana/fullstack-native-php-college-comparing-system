@@ -69,7 +69,7 @@
                     <div class="collapsible-body favorite-associates">
                         <div class="favorite-associate-list chat-out-list row">
                             <div class="col s4">
-                                <img src="assets/images/avatar.jpg" alt="" class="circle responsive-img online-user valign profile-image">
+                                <img src="../../assets/images/avatar.jpg" alt="" class="circle responsive-img online-user valign profile-image">
                             </div>
                             <div class="col s8">
                                 <p>Teks</p>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="favorite-associate-list chat-out-list row">
                             <div class="col s4">
-                                <img src="assets/images/avatar.jpg" alt="" class="circle responsive-img online-user valign profile-image">
+                                <img src="../../assets/images/avatar.jpg" alt="" class="circle responsive-img online-user valign profile-image">
                             </div>
                             <div class="col s8">
                                 <p>Teks</p>

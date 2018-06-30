@@ -4,7 +4,7 @@
     <div class="navbar-fixed">
         <nav class="blue">
             <div class="nav-wrapper">
-                <h1 class="logo-wrapper"><a href="index.php" class="brand-logo darken-1"><img src="../../../assets/images/materialize-logo.png" alt="Banding Kampus"></a> <span class="logo-text">Banding Kampus</span></h1>
+                <h1 class="logo-wrapper"><a href="index.php" class="brand-logo darken-1"><img src="../../assets/images/materialize-logo.png" alt="Banding Kampus"></a> <span class="logo-text">Banding Kampus</span></h1>
                 <ul class="right hide-on-med-and-down">
                     <li>
                         <a href="" class="waves-effect waves-block waves-light"><i class="mdi-social-notifications"></i></a>
