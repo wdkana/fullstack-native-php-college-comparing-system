@@ -1,7 +1,10 @@
 <?php
     include "../model/User_model.php";
+    include "../model/Kampus_model.php";
 
     $user = new User_model();
+    $kmp = new Kampus_model();
+
     session_start();
 
     $username = $_SESSION['username'];
@@ -11,6 +14,14 @@
     if($user->detailProfil($username) == 0){
         header('location: setProfil.php');
     }
+
+    $row = mysql_fetch_array($user->kampus($username));
+    $kampus = $row['asal_kampus'];
+
+    $row = mysql_fetch_array($kmp->viewKampus($kampus));
+    $id = $row['id'];
+    $nama_kampus = $row['nama_kampus'];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,7 +38,7 @@
 	<link href="../assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
 	<link href="../assets/css/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
 
-	<script type="text/javascript" src="../assets/js/jquery-1.11.2.min.js"></script>    
+	<script type="text/javascript" src="../assets/js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="../assets/js/materialize.min.js"></script>
     <script type="text/javascript" src="../assets/js/perfect-scrollbar.min.js"></script>
     <script type="text/javascript" src="../assets/js/plugins.js"></script>
@@ -45,7 +56,7 @@
 						<li>
 							<a href="" class="waves-effect waves-block waves-light"><i class="mdi-social-notifications"></i></a>
 						</li>
-						<!-- Dropdown Trigger -->                        
+						<!-- Dropdown Trigger -->
 						<li>
 							<a href="#" data-activates="chat-out" class="waves-effect waves-block waves-light chat-collapse"><i class="mdi-communication-chat"></i></a>
 						</li>
@@ -187,16 +198,29 @@
 			<section id="content">
                 <div class="container">
                 <br>
-				<form>
-					<textarea name="editor1" id="editor1" rows="10" cols="80">
-						This is my textarea to be replaced with CKEditor.
+      <?php
+          if($nama_kampus == ''){
+              echo "maaf kampus anda belum tersedia";
+          } else {
+
+        ?>
+				<form action="process/ulasanProcess.php" method="post">
+          <input type="text" name="nama_kampus" value="<?php echo $nama_kampus;?>" hidden>
+          <input type="text" name="judul" placeholder="judul"><br>
+					<textarea name="ulasan" id="editor1" rows="10" cols="80">
+
 					</textarea>
 					<script>
 						// Replace the <textarea id="editor1"> with a CKEditor
 						// instance, using default configuration.
 						CKEDITOR.replace( 'editor1' );
-					</script>
+					</script><br>
+          <input type="text" name="tag" placeholder="tag"><br>
+          <input type="submit" value="simpan">
 				</form>
+        <?php
+            }
+        ?>
                 </div>
             </section>
         <aside id="right-sidebar-nav">
@@ -211,6 +235,7 @@
 								<label for="icon_prefix">Search</label>
 							</div>
 						</form>
+
 					</div>
 				</li>
 				<li class="li-hover">

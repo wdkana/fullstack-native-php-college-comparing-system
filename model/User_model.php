@@ -64,11 +64,7 @@
         $query = mysql_query($sql);
         return $query;
       }
-
-
-
-
-
+      
     }
 
 ?>
