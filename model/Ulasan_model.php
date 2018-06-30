@@ -14,18 +14,10 @@
 
       public function addUlasan($username, $nama_kampus, $tanggal, $judul, $ulasan, $tag){
 
-        $sql = "INSERT INTO `tbl_ulasan` (`id`, `username`, `nama_kampus`, `tanggal`, `judul`, `ulasan`, `tag`) V
+        $sql = "INSERT INTO `tbl_ulasan` (`id`, `username`, `nama_kampus`, `tanggal`, `judul`, `ulasan`, `tag`)
         VALUES (NULL, '$username', '$nama_kampus', '$tanggal', '$judul', '$ulasan', '$tag');";
         $query = mysql_query($sql);
         return $query;
-      }
-
-      public function inputNilai($username, $nama_kampus, $tanggal, $judul, $ulasan, $tag){
-
-          $sql = "INSERT INTO `tbl_ulasan` (`id`, `username`, `nama_kampus`, `tanggal`, `judul`, `ulasan`, `tag`) V
-          VALUES (NULL, '$username', '$nama_kampus', '$tanggal', '$judul', '$ulasan', '$tag');";
-          $query = mysql_query($sql);
-          return $query;
       }
 
     }
