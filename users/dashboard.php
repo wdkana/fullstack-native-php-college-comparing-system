@@ -24,8 +24,9 @@
 
 					<a href="process/logoutProcess.php">Logout</a><br>
           <a href="setting.php">Setting</a><br>
+          <a href="profil.php">Detail Profil</a><br>
 
-					<a href="../users/dashboard.php" class="waves-effect waves-cyan">
+					<a href="../users/dashboard.php">
 						Dashboard
 					</a><br>
 					<a href="../users/ulasan.php" class="waves-effect waves-cyan">

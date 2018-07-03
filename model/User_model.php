@@ -74,17 +74,17 @@
 	  //validasi login email
 	  public function validasi_email($username){
 		  $sql = "SELECT status FROM tbl_register WHERE username = '$username'";
-          $query = mysql_query($sql);
+      $query = mysql_query($sql);
 		  $row = mysql_fetch_array($query);
-          return $row['status'];
+      return $row['status'];
 	  }
 
     //function untuk validasi hak akses
 	  public function hak_akses($username){
 		  $sql = "SELECT hak_akses FROM tbl_register WHERE username = '$username'";
-          $query = mysql_query($sql);
+      $query = mysql_query($sql);
 		  $row = mysql_fetch_array($query);
-          return $row['hak_akses'];
+      return $row['hak_akses'];
 	  }
 
     //function untuk setting profile
@@ -104,9 +104,10 @@
             status = '$status',
             status_kerja = '$status_kerja' WHERE id = '$id'";
       $query = mysql_query($sql);
-      echo $sql;
       return $query;
     }
+
+    //function untuk menampilkan Password
 
     }
 

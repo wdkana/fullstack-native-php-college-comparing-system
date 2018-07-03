@@ -1,3 +1,9 @@
+<?php
+		include "model/Survei_model.php";
+		$kmp = new Survei_model();
+		$result = $kmp->ambilkampus();
+		$result1 = $kmp->ambilkampus();
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -61,54 +67,41 @@
 
 		<div class="ui hidden divider"></div>
 
-		<form action="users/bandinHasil.php" method="POST">
+		<form action="users/bandingHasil.php" method="POST">
 		<div class="ui center aligned stackable grid container">
 		  	<div class="column">
-		  		
-		    	<select class="ui huge search dropdown">
-					 <option value="">Kampus 1</option>
-					 <option value="lpkia">LPKIA</option>
-					 <option value="itb">ITB</option>
-					 <option value="unpad">UNPAD</option>
-					 <option value="inaba">INABA</option>
-					 <option value="unikom">UNIKOM</option>
-					 <option value="telkom">TELKOM</option>
-					 <option value="bsi">BSI</option>
-					 <option value="widyatama">WIDYATAMA</option>
+		    	<select class="ui huge search dropdown" name="kampus1">
+						<option value="">Kampus 1</option>
+						<?php while($row = mysql_fetch_array($result)){?>
+					 <option value="<?php echo $row['nama_kampus'];?>"><?php echo $row['nama_kampus'];?></option>
+				 		<?php }?>
 				</select>
+
 		  	</div>
 		 </div>
 
 		  	<div class="ui horizontal divider">
     			<h1>VERSUS</h1>
   			</div>
-
   		<div class="ui center aligned stackable grid container">
 		  	<div class="column">
-		    	<select class="ui huge search dropdown">
+		    	<select class="ui huge search dropdown" name="kampus2">
 					 <option value="">Kampus 2</option>
-					 <option value="lpkia">LPKIA</option>
-					 <option value="itb">ITB</option>
-					 <option value="unpad">UNPAD</option>
-					 <option value="inaba">INABA</option>
-					 <option value="unikom">UNIKOM</option>
-					 <option value="telkom">TELKOM</option>
-					 <option value="bsi">BSI</option>
-					 <option value="widyatama">WIDYATAMA</option>
+					 <?php while($row = mysql_fetch_array($result1)){?>
+					<option value="<?php echo $row['nama_kampus'];?>"><?php echo $row['nama_kampus'];?></option>
+					 <?php }?>
 				</select>
 		  	</div>
 		 </div>
-		</form>
-
 		 <div class="ui hidden divider"></div>
 
 		<div class="ui buttons">
 			 <button class="ui huge facebook button">Lihat Website</button>
 			 	<div class="or"></div>
-			 <button class="ui huge google plus button"> Bandingkan</button>
+			 <button class="ui huge google plus button" type="submit"> Bandingkan</button>
 		</div>
-		</div>		
-
+		</div>
+	</form>
 		<!-- tab2 -->
 		<div class="ui bottom attached tab segment" data-tab="peringkat"">
 
@@ -130,7 +123,7 @@
 				<h1>SEMUA KAMPUS</h1>
 	  			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
-			
+
 		</div>
 
 		<!-- tab4 -->
@@ -142,7 +135,7 @@
 				<h1>MASUK AKUN</h1>
 	  			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
-			
+
 		</div>
 
 		<div id="slideshow" class="ui visible message">
@@ -181,7 +174,7 @@
 	      		<hr/>
 	      		<!-- end looping -->
 	    	</div>
-	    	
+
 	    	<!-- mid content -->
 	    	<div class="ten wide column">
 	    		<h1 class="ui header">Panduan Pengguna</h1>
@@ -218,7 +211,7 @@
 	    </div>
 	</div>
 </div>
-</div>  
+</div>
 </div>
 </div>
 
@@ -305,17 +298,17 @@
 	$('.ui.modal.pertanyaan1')
   		.modal('show')
 	;
-	}	
+	}
 	function pertanyaan2(){
 	$('.ui.modal.pertanyaan2')
   		.modal('show')
 	;
-	}	
+	}
 	function pertanyaan3(){
 	$('.ui.modal.pertanyaan3')
   		.modal('show')
 	;
-	}	
+	}
 	function pertanyaan4(){
 	$('.ui.modal.pertanyaan4')
   		.modal('show')
@@ -333,7 +326,7 @@
 			    .appendTo('#slideshow');
 			}, 2500);
 		</script>
-		
+
 		<script src="element/popup.js"></script>
 		<script type="text/javascript">
 			$('.ui.dropdown')
