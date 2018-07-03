@@ -5,14 +5,18 @@
     $survei = new Survei_model();
 
 	  $kampus = $_POST['id'];
-    $pilihan1 = $_POST['pilihan1'];
-    $pilihan2 = $_POST['pilihan2'];
-    $pilihan3 = $_POST['pilihan3'];
-    $pilihan4 = $_POST['pilihan4'];
-    $pilihan5 = $_POST['pilihan5'];
-    $pilihan6 = $_POST['pilihan6'];
-    $pilihan7 = $_POST['pilihan7'];
+    $dosen = $_POST['pilihan1'];
+    $jurusan = $_POST['pilihan2'];
+    $lingkungan = $_POST['pilihan3'];
+    $prestasi = $_POST['pilihan4'];
+    $mata_kuliah = $_POST['pilihan5'];
+    $biaya = $_POST['pilihan6'];
 
-	$survei->inputNilai($kampus, $username,$pilihan1, $pilihan2, $pilihan3, $pilihan4, $pilihan5, $pilihan6, $pilihan7);
-	header('location: ../dashboard.php');
+    $survei->inputNilai($kampus, $username, $dosen, $jurusan, $lingkungan, $prestasi, $mata_kuliah, $biaya);
+    if($survei == TRUE){
+        header('location: ../dashboard.php');
+    } else {
+        echo "gagal input data";
+    }
+
 ?>

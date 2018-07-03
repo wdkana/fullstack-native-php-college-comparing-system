@@ -46,15 +46,19 @@
 			<td>Mata Kuliah : <?php echo $row2['mata_kuliah']?></td>
 		  </tr>
       <tr>
+     <td>Biaya : <?php echo $row1['biaya']?></td>
+     <td>Biaya : <?php echo $row2['biaya']?></td>
+      </tr>
+      <tr>
 			<td>TOTAL NILAI : <?php echo $total1?> <br>
       <?php while($row = mysql_fetch_array($result1)){?>
-        AKREDITASI: <?php echo $row['fakultas'];?> - <?php echo $row['akreditasi'];?><br>
+        AKREDITASI JURUSAN: <?php echo $row['fakultas'];?> - <?php echo $row['akreditasi'];?><br>
 
       <?php }?>
-    </td>
+      </td>
 			<td>TOTAL NILAI : <?php echo $total2?><br>
       <?php while($row = mysql_fetch_array($result2)){?>
-        AKREDITASI: <?php echo $row['fakultas'];?> - <?php echo $row['akreditasi'];?><br>
+        AKREDITASI JURUSAN: <?php echo $row['fakultas'];?> - <?php echo $row['akreditasi'];?><br>
       <?php }?>
     </td>
 		  </tr>

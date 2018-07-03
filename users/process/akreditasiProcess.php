@@ -4,12 +4,21 @@
     $ak = new Akreditasi_model();
 
     $nama_kampus = $_POST['nama_kampus'];
-    if(isset($id_kampus)){
-        echo $id_kampus;
-    }
-    echo $fakultas = $_POST['fakultas'];
-    echo $akreditasi = $_POST['akreditasi'];
+    $fakultas = $_POST['fakultas'];
+    $akreditasi = $_POST['akreditasi'];
 
-    $ak->addAkreditasi($nama_kampus,$fakultas,$akreditasi);
-    header('location:../akreditasi.php');
+    if($ak->checkFakultas($fakultas) == 0){
+        $ak->addAkreditasi($nama_kampus,$fakultas,$akreditasi);
+        if($ak == TRUE){
+            header('location:../akreditasi.php');
+        } else {
+            echo "data gagal diinput";
+        }
+    } else {
+        echo "<script>window.alert('Maaf, jurusan ini sudah ada akreditasi !!');
+              window.location.href='../akreditasi.php';</script>";
+    }
+
+
+
 ?>

@@ -19,19 +19,6 @@
 <meta name="msapplication-TileColor" content="#00bcd4">
 <meta name="msapplication-TileImage" content="../assets/images/favicon/mstile-144x144.png">
 
-<link rel="icon" href="../assets/images/favicon/favicon-32x32.png" sizes="32x32">
-<link rel="apple-touch-icon-precomposed" href="../assets/images/favicon/apple-touch-icon-152x152.png">
-
-<link href="../assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
-<link href="../assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
-<link href="../assets/css/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
-
-<script type="text/javascript" src="../assets/js/jquery-1.11.2.min.js"></script>    
-  <script type="text/javascript" src="../assets/js/materialize.min.js"></script>
-  <script type="text/javascript" src="../assets/js/perfect-scrollbar.min.js"></script>
-  <script type="text/javascript" src="../assets/js/plugins.js"></script>
-<script type="text/javascript" src="../assets/ckeditor/ckeditor.js"></script>
-  <link href="../assets/css/page-center.css" type="text/css" rel="stylesheet" media="screen,projection">
 </head>
 <body class="cyan">
   <div id="login-page" class="row">
@@ -84,14 +71,41 @@
             <input name="foto_ktm" type="file">
           </div>
         </div>
+        <div>
+          <div>
+				<input value="mahasiswa" type="radio" name="status" onClick="displayForm(this)">Mahasiswa</input>
+				<input value="alumni" type="radio" name="status" onClick="displayForm(this)">Alumni</input>
+          </div>
+        </div>		
+		
+		<div style="visibility:hidden; position:relative" id="pekerjaan">
+			<select name="status_kerja">
+				<option value="tidak bekerja" selected>Tidak Bekerja</option>
+				<option value="bekerja">Bekerja</option>
+			</select>
+		</div>
+		
+		
         <div class="row">
           <div class="input-field col s12">
             <input type="submit" name="simpan" value="Simpan" class="btn waves-effect waves-light col s12 blue"><br><br>
             <a href="process/logoutProcess.php">logout</a>
           </div>
         </div>
+		
       </form>
     </div>
   </div>
 </body>
 </html>
+
+<script type="text/javascript"> 
+    function displayForm(c) {
+        if (c.value == "mahasiswa") {
+            document.getElementById("pekerjaan").style.visibility = 'hidden';
+        } else if (c.value == "alumni") {
+            document.getElementById("pekerjaan").style.visibility = 'visible';
+        } 
+	}
+
+</script>

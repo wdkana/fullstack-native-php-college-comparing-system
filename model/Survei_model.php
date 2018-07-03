@@ -17,7 +17,7 @@
           return $query;
       }
 
-	  //function menampilkan data kampus
+	  //function menampilkan semua data kampus
 	  public function ambilkampus(){
           $sql = "SELECT * FROM tbl_kampus";
           $query = mysql_query($sql);
@@ -27,12 +27,13 @@
       //function untuk input nilai survei
       public function inputNilai($kampus, $username, $dosen, $jurusan, $lingkungan, $prestasi, $mata_kuliah, $biaya){
 
-          $sql = "INSERT INTO `tbl_nilai` VALUES (null,'$kampus','$username', $dosen', '$jurusan', '$lingkungan', '$prestasi', '$mata_kuliah', '$biaya');";
+          $sql = "INSERT INTO `tbl_nilai` (`id`, `id_kampus`, `username`, `dosen`, `jurusan`, `lingkungan`, `prestasi`, `mata_kuliah`, `biaya`)
+          VALUES (NULL, '$kampus', '$username', '$dosen', '$jurusan', '$lingkungan', '$prestasi', '$mata_kuliah ', '$biaya');";
           $query = mysql_query($sql);
           return $query;
       }
 
-      //function untuk validasi username
+      //function untuk validasi username yang sudah survei agar tidak bisa input lagi
       public function viewUser($username){
 
           $sql = "SELECT * FROM tbl_nilai WHERE username = '$username'";

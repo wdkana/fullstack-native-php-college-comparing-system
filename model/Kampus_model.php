@@ -15,19 +15,44 @@
       //function untuk add kampus
       public function addKampus($nama_kampus,$alamat, $foto, $slogan){
         $sql = "INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `alamat`, `foto`, `slogan`)
-        VALUES (NULL, '$nama_kampus','$akreditasi', '$alamat', '$foto', '$slogan');";
+        VALUES (NULL, '$nama_kampus', '$alamat', '$foto', '$slogan');";
         $query = mysql_query($sql);
         return $query;
 
       }
 
-      //function untuk menampilkan nama kampus berdasarkan yang loginUser
+      //function untuk menampilkan nama kampus sesuai yang loginUser
       public function viewKampus($kampus){
 
         $sql = "SELECT * FROM tbl_kampus WHERE nama_kampus = '$kampus'";
         $query = mysql_query($sql);
         return $query;
       }
+
+      //function untuk check validasi nama kampus
+      public function checkKampus($nama_kampus){
+
+        $sql = "SELECT * FROM tbl_kampus WHERE nama_kampus = '$nama_kampus'";
+        $query = mysql_query($sql);
+        $check = mysql_num_rows($query);
+        return $check;
+      }
+
+      //function untuk menghapus kampus
+      public function deleteKampus($id){
+
+        $sql = "DELETE FROM tbl_kampus WHERE id = '$id'";
+        $query = mysql_query($sql);
+        return $query;
+      }
+
+      //function untuk menampilkan kampus berdasarkan id
+      public function detailKampus($id){
+          $sql = "SELECT * FROM tbl_kampus WHERE id = '$id'";
+          $query = mysql_query($sql);
+          return $query;
+      }
+
     }
 
 

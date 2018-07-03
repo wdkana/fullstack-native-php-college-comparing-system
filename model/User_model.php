@@ -48,10 +48,10 @@
       }
 
       //function untuk insert detail profil
-      public function setProfil($username, $nim, $asal_kampus, $nama_lengkap, $fakultas, $kelas, $no_hp, $foto_ktm){
+      public function setProfil($username, $nim, $asal_kampus, $nama_lengkap, $fakultas, $kelas, $no_hp, $foto_ktm, $status, $status_kerja){
 
-          $sql = "INSERT INTO `tbl_detail_profil` (`id`, `username`, `nim`, `asal_kampus`,`nama_lengkap`, `fakultas`, `kelas`, `no_hp`, `foto_ktm`) VALUES
-          (NULL, '$username', '$nim', '$asal_kampus','$nama_lengkap', '$fakultas', '$kelas', '$no_hp', '$foto_ktm');";
+          $sql = "INSERT INTO `tbl_detail_profil` (`id`, `username`, `nim`, `asal_kampus`,`nama_lengkap`, `fakultas`, `kelas`, `no_hp`, `foto_ktm`, `status`, `status_kerja`) VALUES
+          (NULL, '$username', '$nim', '$asal_kampus','$nama_lengkap', '$fakultas', '$kelas', '$no_hp', '$foto_ktm', '$status', '$status_kerja');";
           $query = mysql_query($sql);
           return $query;
 

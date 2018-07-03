@@ -13,5 +13,10 @@
     $tag = $_POST['tag'];
 
     $insert->addUlasan($username, $nama_kampus, $tanggal, $judul, $ulasan, $tag);
-    header('location: ../dashboard.php');
+    if($insert == TRUE){
+        header('location: ../dashboard.php');
+    } else {
+        echo "gagal input data";
+    }
+
 ?>

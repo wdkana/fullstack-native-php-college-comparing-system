@@ -12,14 +12,14 @@
 
       //function untuk banding kampus
       public function Kampus($kampus){
-          $sql = "SELECT tbl_kampus.id, tbl_kampus.nama_kampus,
-                  AVG(tbl_nilai.dosen) AS dosen,
-                  AVG(tbl_nilai.biaya) AS biaya,
-                  AVG(tbl_nilai.jurusan) AS jurusan,
-                  AVG(tbl_nilai.lingkungan) AS lingkungan,
-                  AVG(tbl_nilai.prestasi) AS prestasi,
-                  AVG(tbl_nilai.mata_kuliah) AS mata_kuliah
-                  FROM tbl_kampus join tbl_nilai on tbl_kampus.id = tbl_nilai.id_kampus WHERE nama_kampus = '$kampus'";
+          $sql = "SELECT tbl_kampus.id, tbl_kampus.nama_kampus, 
+		  SUM(tbl_nilai.dosen) as dosen, 
+		  SUM(tbl_nilai.jurusan) as jurusan, 
+		  SUM(tbl_nilai.lingkungan) as lingkungan, 
+		  SUM(tbl_nilai.prestasi) as prestasi, 
+		  SUM(tbl_nilai.mata_kuliah) as mata_kuliah, 
+		  SUM(tbl_nilai.biaya) as biaya
+          FROM tbl_kampus join tbl_nilai on tbl_kampus.id = tbl_nilai.id_kampus WHERE nama_kampus = '$kampus'";
           $query = mysql_query($sql);
 		      $row = mysql_fetch_array($query);
           return $row;

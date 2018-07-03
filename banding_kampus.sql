@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 30, 2018 at 03:32 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 5.6.35
+-- Host: 127.0.0.1
+-- Generation Time: Jul 03, 2018 at 08:49 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 5.6.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,12 +40,8 @@ CREATE TABLE `tbl_akreditasi` (
 --
 
 INSERT INTO `tbl_akreditasi` (`id`, `nama_kampus`, `fakultas`, `akreditasi`) VALUES
-(20, 'LPKIA', 'manajeman informatika', 'A'),
-(22, 'LPKIA', 'adbis', 'B'),
-(23, 'LPKIA', 'akuntansI', 'b'),
-(24, 'fiksi', 'manajeman informatika', 'b'),
-(25, 'fiksi', 'adbis', 'C'),
-(26, 'fiksi', 'akuntansi', 'C');
+(36, 'lpkia', 'informatika', 'a'),
+(38, 'lpkia', 'sistem informasi', 'b');
 
 -- --------------------------------------------------------
 
@@ -62,32 +58,24 @@ CREATE TABLE `tbl_detail_profil` (
   `fakultas` varchar(255) NOT NULL,
   `kelas` varchar(255) NOT NULL,
   `no_hp` varchar(255) NOT NULL,
-  `foto_ktm` varchar(255) NOT NULL
+  `foto_ktm` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `status_kerja` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_detail_profil`
 --
 
-INSERT INTO `tbl_detail_profil` (`id`, `username`, `nim`, `asal_kampus`, `nama_lengkap`, `fakultas`, `kelas`, `no_hp`, `foto_ktm`) VALUES
-(9, 'juheri', '150613035', 'lpkia', 'juheri', 'manajeman informastika', '3IF1', '756890', 'Haworthia-attenuata-_2_.jpg'),
-(10, 'jek', '768970889867', 'lpkia', 'jek weh lah', 'manajeman informastika', '3IF1', '567890', 'database.png'),
-(11, 'alsa', '678890', 'fiksi', 'alsa gunadi', 'naon weh', 'kbih', '7689', 'Haworthia-attenuata-_2_.jpg'),
-(12, 'dea', '657789', 'lpkia', 'dea', 'manajeman informatika', '3IF1', '657899', 'Haworthia-attenuata-_2_.jpg'),
-(13, 'saha', '6578', 'lpkia', 'saha weh', 'manajeman informatika', '3if', '6578', 'Haworthia-attenuata-_2_.jpg'),
-(14, 'abc', '789009', 'naon', ';bhlj', 'abc', 'kh', '7890', 'Haworthia-attenuata-_2_.jpg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_detail_survei`
---
-
-CREATE TABLE `tbl_detail_survei` (
-  `id` int(11) NOT NULL,
-  `id_survei` int(11) NOT NULL,
-  `id_pertanyaan` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `tbl_detail_profil` (`id`, `username`, `nim`, `asal_kampus`, `nama_lengkap`, `fakultas`, `kelas`, `no_hp`, `foto_ktm`, `status`, `status_kerja`) VALUES
+(9, 'juheri', '150613035', 'lpkia', 'juheri', 'manajeman informastika', '3IF1', '756890', 'Haworthia-attenuata-_2_.jpg', '', ''),
+(10, 'jek', '768970889867', 'lpkia', 'jek weh lah', 'manajeman informastika', '3IF1', '567890', 'database.png', '', ''),
+(11, 'alsa', '678890', 'fiksi', 'alsa gunadi', 'naon weh', 'kbih', '7689', 'Haworthia-attenuata-_2_.jpg', '', ''),
+(12, 'dea', '657789', 'lpkia', 'dea', 'manajeman informatika', '3IF1', '657899', 'Haworthia-attenuata-_2_.jpg', '', ''),
+(13, 'saha', '6578', 'lpkia', 'saha weh', 'manajeman informatika', '3if', '6578', 'Haworthia-attenuata-_2_.jpg', '', ''),
+(14, 'abc', '789009', 'inaba', ';bhlj', 'abc', 'kh', '7890', 'Haworthia-attenuata-_2_.jpg', '', ''),
+(15, 'b', '125367899', 'inaba', 'kjb', 'kjvb;', 'jvkb', '567789', 'IMG_20100101_073902.jpg', '', ''),
+(17, 'gunadi', '1507', 'unpad', 'gunadi', 'kedokteran', '3if-03', '0812321312', 'Object 1.png', 'mahasiswa', 'tidak bekerja');
 
 -- --------------------------------------------------------
 
@@ -108,12 +96,11 @@ CREATE TABLE `tbl_kampus` (
 --
 
 INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `alamat`, `foto`, `slogan`) VALUES
-(1, 'LPKIA', 'jl. Soekarno Hatta', 'k', 'Lulusannya mudah bekerja'),
-(2, 'kampus lain', 'Jl. kampus lain', 'k', 'Kampusnya mahal sekali'),
 (3, 'INABA', 'jl. raya', '1', 'Sehat Selalu'),
 (4, 'Merdeka', 'JL. 123', 'k', 'Bersama'),
 (5, 'ITB', 'jl raya', 'database.png', 'test'),
-(6, 'fiksi', 'binong', 'fghvjkl', 'teuing');
+(6, 'fiksi', 'binong', 'fghvjkl', 'teuing'),
+(24, 'lpkia', 'j; raya', 'IMG_20100101_073902.jpg', 'jhvvk');
 
 -- --------------------------------------------------------
 
@@ -138,9 +125,11 @@ CREATE TABLE `tbl_nilai` (
 --
 
 INSERT INTO `tbl_nilai` (`id`, `id_kampus`, `username`, `dosen`, `jurusan`, `lingkungan`, `prestasi`, `mata_kuliah`, `biaya`) VALUES
-(11, 1, 'jek', '40', '40', '40', '40', '20', '20'),
 (12, 6, 'alsa', '100', '100', '60', '60', '20', '20'),
-(13, 1, 'dea', '100', '100', '100', '100', '100', '100');
+(20, 24, 'saha', '100', '100', '100', '100', '100 ', '100'),
+(21, 24, 'jek', '60', '40', '60', '40', '60 ', '40'),
+(22, 3, 'abc', '100', '80', '60', '40', '20 ', '100'),
+(23, 3, 'b', '100', '100', '100', '100', '100 ', '100');
 
 -- --------------------------------------------------------
 
@@ -187,27 +176,15 @@ CREATE TABLE `tbl_register` (
 --
 
 INSERT INTO `tbl_register` (`username`, `email`, `password`) VALUES
+('123', 'asd@gmail.com', '123'),
 ('abc', 'abc@mail.com', '123'),
 ('alsa', 'alsa@mail.com', '123'),
+('b', 'b@mail.com', '123'),
 ('dea', 'dea@mail.com', '123'),
+('gunadi', 'gunadi@gmail.com', '123'),
 ('jek', 'jek@mail.com', '123'),
 ('juheri', 'juheri842@gmail.com', '123'),
 ('saha', 'saha@mail.com', '123');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_survei`
---
-
-CREATE TABLE `tbl_survei` (
-  `id` int(11) NOT NULL,
-  `id_nilai` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `nama_lengkap` varchar(255) NOT NULL,
-  `tgl` date NOT NULL,
-  `komentar` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -234,17 +211,8 @@ INSERT INTO `tbl_ulasan` (`id`, `username`, `nama_kampus`, `tanggal`, `judul`, `
 (4, 'saha', 'LPKIA', '2018-06-30', 'abc', '<p>kjbldf;</p>\r\n', 'kjln'),
 (5, 'saha', 'LPKIA', '2018-06-30', 'ULASAN', '<p>ULASAN</p>\r\n', 'ULASAN'),
 (6, 'saha', 'LPKIA', '2018-06-30', 'ULASAN', '<p>ULASAN</p>\r\n', 'ULASAN'),
-(7, 'saha', 'LPKIA', '2018-06-30', 'ULASAN', '<p>ULASAN</p>\r\n', 'ULASAN');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `test`
---
-
-CREATE TABLE `test` (
-  `nama` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(7, 'saha', 'LPKIA', '2018-06-30', 'ULASAN', '<p>ULASAN</p>\r\n', 'ULASAN'),
+(8, 'saha', 'LPKIA', '2018-07-01', 'abckasvdfkasuv', '<p>;kdasbfva</p>\r\n', 'k;sb');
 
 --
 -- Indexes for dumped tables
@@ -260,12 +228,6 @@ ALTER TABLE `tbl_akreditasi`
 -- Indexes for table `tbl_detail_profil`
 --
 ALTER TABLE `tbl_detail_profil`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_detail_survei`
---
-ALTER TABLE `tbl_detail_survei`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -294,12 +256,6 @@ ALTER TABLE `tbl_register`
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- Indexes for table `tbl_survei`
---
-ALTER TABLE `tbl_survei`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `tbl_ulasan`
 --
 ALTER TABLE `tbl_ulasan`
@@ -313,31 +269,25 @@ ALTER TABLE `tbl_ulasan`
 -- AUTO_INCREMENT for table `tbl_akreditasi`
 --
 ALTER TABLE `tbl_akreditasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `tbl_detail_profil`
 --
 ALTER TABLE `tbl_detail_profil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT for table `tbl_detail_survei`
---
-ALTER TABLE `tbl_detail_survei`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tbl_kampus`
 --
 ALTER TABLE `tbl_kampus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilai`
 --
 ALTER TABLE `tbl_nilai`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `tbl_pertanyaan`
@@ -346,16 +296,10 @@ ALTER TABLE `tbl_pertanyaan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tbl_survei`
---
-ALTER TABLE `tbl_survei`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `tbl_ulasan`
 --
 ALTER TABLE `tbl_ulasan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

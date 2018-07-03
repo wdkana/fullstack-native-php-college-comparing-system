@@ -12,7 +12,9 @@
     $kelas = $_POST['kelas'];
     $no_hp = $_POST['no_hp'];
     $asal_kampus = $_POST['asal_kampus'];
-
+	$status = $_POST['status'];
+	$status_kerja = $_POST['status_kerja'];
+	
     if(isset($_POST['simpan'])){
         $foto_ktm = $_FILES['foto_ktm']['name'];
         $ukuran_file = $_FILES['foto_ktm']['size'];
@@ -21,10 +23,10 @@
         $path = "../../assets/images/".$foto_ktm;
 
   			if($tipe_file == "image/jpeg" || $tipe_file == "image/png"){
-  				if($ukuran_file < 1044070){
+  				if($ukuran_file < 5044070){
   					move_uploaded_file($tmp_file, $path);
-  					$test = $user->setProfil($username, $nim, $asal_kampus, $nama_lengkap, $fakultas, $kelas, $no_hp, $foto_ktm);
-  					if($test){
+  					$user->setProfil($username, $nim, $asal_kampus, $nama_lengkap, $fakultas, $kelas, $no_hp, $foto_ktm, $status, $status_kerja);
+  					if($user == TRUE){
                 header('location:../dashboard.php');
   					}else{
   						echo 'GAGAL MENGUPLOAD GAMBAR';

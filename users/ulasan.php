@@ -1,11 +1,10 @@
 <?php
     include "../model/User_model.php";
     include "../model/Kampus_model.php";
+    session_start();
 
     $user = new User_model();
     $kmp = new Kampus_model();
-
-    session_start();
 
     $username = $_SESSION['username'];
     if(!$username){

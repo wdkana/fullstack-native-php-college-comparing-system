@@ -14,15 +14,15 @@
               $tmp_file = $_FILES['foto']['tmp_name'];
               $path = "../../assets/images/".$foto;
 
-        			if($tipe_file == "image/jpg" || $tipe_file == "image/png"){
-        				if($ukuran_file < 1044070){
-        					move_uploaded_file($tmp_file, $path);
-        					$test = $kampus->addKampus($nama_kampus, $alamat, $foto, $slogan);
-        					if($test){
-                      echo "data berhasil disimpan";
-        					}else{
-        						echo 'GAGAL MENGUPLOAD GAMBAR';
-        					}
+        			if($tipe_file == "image/jpeg" || $tipe_file == "image/png"){
+        				if($ukuran_file < 5044070){
+                  if($kampus->checkKampus($nama_kampus) > 0){
+                      echo "<script>window.alert('Maaf, nama kampus sudah ada!');
+                            window.location.href='../kampus.php';</script>";
+                  }
+        					     move_uploaded_file($tmp_file, $path);
+        					     $kampus->addKampus($nama_kampus, $alamat, $foto, $slogan);
+                       header('location:../kampus.php');
         				}else{
         					echo 'UKURAN FILE TERLALU BESAR';
         				}
