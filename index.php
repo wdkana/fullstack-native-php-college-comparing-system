@@ -354,7 +354,6 @@
 		    </div>
 	  	</div>
 	  	<div class="ui hidden divider"></div>
-<<<<<<< HEAD
 			<div class="actions">
 				<button class="ui negative right labeled icon button" type="submit">
 						Daftar
@@ -362,15 +361,6 @@
 				</button>
 			</div>
 	  </form>
-=======
-	  	<div class="actions">
-		    <button class="ui negative right labeled icon button" type="submit">
-		      Daftar
-		      <i class="checkmark icon"></i>
-		    </button>
-	  	</div>
-	  	</form>
->>>>>>> 23e5e8cd560c567778b0351d2fb6f6f82f691d21
 	</div>
 
 	<!-- modal daftar user berakhir -->
@@ -395,11 +385,8 @@
 	  	</div>
 	  	<div class="ui hidden divider"></div>
 	  	<div class="actions">
-<<<<<<< HEAD
+
 		    <button class="ui negative right labeled icon button" type="submit" name="kirim">
-=======
-		    <button class="ui negative right labeled icon button" type="submit">
->>>>>>> 23e5e8cd560c567778b0351d2fb6f6f82f691d21
 		      Reset Password
 		      <i class="checkmark icon"></i>
 		    </button>
