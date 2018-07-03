@@ -6,7 +6,6 @@
 
     $username = $_POST['username'];
     $password = md5($_POST['password']);
-
     if($user->loginUser($username, $password) > 0){
 		if($user->validasi_email($username) =='Verifikasi'){
 			if($user->hak_akses($username) == 'user'){

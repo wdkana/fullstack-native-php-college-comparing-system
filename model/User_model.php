@@ -13,7 +13,7 @@
       //function untuk register
       public function register($username, $email, $password){
 
-          $sql = "INSERT INTO `tbl_register` (`username`, `email`, `password`, `status`) VALUES ('$username', '$email', '$password', 'Belum Verifikasi','user');";
+          $sql = "INSERT INTO `tbl_register` (`username`, `email`, `password`, `status`,`hak_akses`) VALUES ('$username', '$email', '$password', 'Belum Verifikasi','user');";
           $query = mysql_query($sql);
           return $query;
       }

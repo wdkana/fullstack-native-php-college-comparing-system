@@ -19,7 +19,7 @@
 </head>
 <body>
 
-      <form action="process/setProfilProcess.php" method="post">
+      <form action="process/setProfilProcess.php" method="post" enctype="multipart/form-data">
   
             <h4>Setting Profil</h4>
  
@@ -38,7 +38,7 @@
             <input name="no_hp" type="number">
             <label>No HP</label>
    
-            <label>Foto KTM</label><br><br><br>
+            <label>Foto KTM</label><br>
             <input name="foto_ktm" type="file">
           <input type="text" name="instagram" placeholder="instagram"><br>
           <input type="text" name="facebook" placeholder="facebook"><br>

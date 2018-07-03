@@ -5,7 +5,6 @@
 				header('location: dashboard.php');
 		}
 ?>
-<!DOCTYPE html>
 <html>
 <head>
 	
