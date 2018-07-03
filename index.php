@@ -1,12 +1,13 @@
 <?php
 		include "model/Survei_model.php";
-		include "model/User_model.php";
+		include "model/Testimoni_model.php";
 
-		$user = new User_model();
+		$testimoni = new Testimoni_model();
 		$kmp = new Survei_model();
 		$result = $kmp->ambilkampus();
 		$result1 = $kmp->ambilkampus();
-		$result2 = $user->testimoniAlumni();
+		$result2 = $testimoni->viewTestimoni();
+		$result3 = $kmp->ambilkampus();
 
 ?>
 <!DOCTYPE HTML>
@@ -173,6 +174,7 @@
   			Testimonial Alumni
 		</h3>
 		<!-- random looping mulai dari sini -->
+<<<<<<< HEAD
 			
 <div class="containers">
 	<?php while($row = mysql_fetch_array($result2)){?>
@@ -181,6 +183,25 @@
 </div>
 <?php } ?>
    		<!-- random beres -->
+=======
+   			<div class="ui link items">
+  				<div class="item">
+  					<div class="ui tiny image">
+      					<img src="assets/img/logouser.png">
+    				</div>
+    				<div class="content">
+							<?php while($row = mysql_fetch_array($result2)){?>
+      					<div class="header"><?php echo $row['username'];?></div>
+      					<div class="description">
+        					<p><?php echo $row['nama_kampus'];?></p>
+      					</div>
+								<?php } ?>
+    				</div>
+
+  				</div>
+			</div>
+		<!-- random beres -->
+>>>>>>> ee070010df1a37a1ed9b3e6c0a2ea883e2fa64b3
 		</div>
 
 	<div class="ui hidden divider"></div>
@@ -193,9 +214,11 @@
 	      		<hr/>
 	      		<br/>
 	    		<!-- looping list kampus -->
-	      		<img src="assets/img/logolpkia.jpg" class="ui small image">
-	      		<p class="ui large header">LPKIA</p>
+						<?php while($row = mysql_fetch_array($result3)){?>
+	      		<img src="assets/images/<?php echo $row['foto'];?>" class="ui small image">
+	      		<p class="ui large header"><?php echo $row['nama_kampus'];?></p>
 	      		<hr/>
+						<?php } ?>
 	      		<!-- end looping -->
 	    	</div>
 
@@ -345,6 +368,7 @@
 		    </div>
 	  	</div>
 	  	<div class="ui hidden divider"></div>
+<<<<<<< HEAD
 			<div class="actions">
 				<button class="ui negative right labeled icon button" type="submit">
 						Daftar
@@ -352,6 +376,15 @@
 				</button>
 			</div>
 	  </form>
+=======
+	  	<div class="actions">
+		    <button class="ui negative right labeled icon button" type="submit">
+		      Daftar
+		      <i class="checkmark icon"></i>
+		    </button>
+	  	</div>
+	  	</form>
+>>>>>>> 23e5e8cd560c567778b0351d2fb6f6f82f691d21
 	</div>
 
 	<!-- modal daftar user berakhir -->
@@ -376,8 +409,11 @@
 	  	</div>
 	  	<div class="ui hidden divider"></div>
 	  	<div class="actions">
-
+<<<<<<< HEAD
 		    <button class="ui negative right labeled icon button" type="submit" name="kirim">
+=======
+		    <button class="ui negative right labeled icon button" type="submit">
+>>>>>>> 23e5e8cd560c567778b0351d2fb6f6f82f691d21
 		      Reset Password
 		      <i class="checkmark icon"></i>
 		    </button>

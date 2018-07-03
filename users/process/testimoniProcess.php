@@ -8,15 +8,15 @@
     session_start();
     $username = $_SESSION['username'];
 
-    $result = $user->kampus($username);
-    $row = mysql_fetch_array($result);
 
-    $nama_kampus = $row['nama_kampus'];
+    $row = mysql_fetch_array($user->kampus($username));
+
+    $nama_kampus = $row['asal_kampus'];
     $testimoni = $_POST['testimoni'];
 
     $test->insertTestimoni($username,$nama_kampus,$testimoni);
     if($test == TRUE){
-        header('location: ../dashboard.php');
+      header('location: ../dashboard.php');
     } else {
         echo "data gagal disimpan";
     }
