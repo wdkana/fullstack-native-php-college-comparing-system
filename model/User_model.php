@@ -63,22 +63,23 @@
         $query = mysql_query($sql);
         return $query;
       }
-	  
+
 	  //function untuk memverifikasi pendaftaran lewat email
 	  public function verify_email($email){
 		  $sql = "UPDATE `tbl_register` SET `status` = 'Verifikasi' WHERE `email` = '$email'";
 		  $query = mysql_query($sql);
 		  return $query;
 	  }
-	  
-	  //validasi login email 
+
+	  //validasi login email
 	  public function validasi_email($username){
 		  $sql = "SELECT status FROM tbl_register WHERE username = '$username'";
           $query = mysql_query($sql);
 		  $row = mysql_fetch_array($query);
           return $row['status'];
 	  }
-	  
+
+    //function untuk validasi hak akses
 	  public function hak_akses($username){
 		  $sql = "SELECT hak_akses FROM tbl_register WHERE username = '$username'";
           $query = mysql_query($sql);
@@ -86,6 +87,26 @@
           return $row['hak_akses'];
 	  }
 
+    //function untuk setting profile
+    public function updateProfil($id,$nim,$asal_kampus,$nama_lengkap,$fakultas,$kelas,$no_hp,$foto_ktm,$instagram,$facebook,$twitter,$status,$status_kerja){
+
+      $sql = "UPDATE tbl_detail_profil SET
+            nim = '$nim',
+            asal_kampus = '$asal_kampus',
+            nama_lengkap = '$nama_lengkap',
+            fakultas = '$fakultas',
+            kelas = '$kelas',
+            no_hp = '$no_hp',
+            foto_ktm = '$foto_ktm',
+            instagram = '$instagram',
+            facebook = '$facebook',
+            twitter = '$twitter',
+            status = '$status',
+            status_kerja = '$status_kerja' WHERE id = '$id'";
+      $query = mysql_query($sql);
+      echo $sql;
+      return $query;
+    }
 
     }
 
