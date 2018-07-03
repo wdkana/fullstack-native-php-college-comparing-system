@@ -6,10 +6,10 @@
         header('location:login.php');
     }
 ?>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+
+<html>
   <head>
-    <meta charset="utf-8">
+
     <title>Setting Profil</title>
   </head>
   <body>

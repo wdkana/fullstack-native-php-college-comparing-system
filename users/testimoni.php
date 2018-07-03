@@ -16,26 +16,11 @@
     $status = $row['status'];
 
     if($test->checkTestimoni($username) == 0 && $status == 'alumni'){
-      ?>
-      <!DOCTYPE html>
-      <html lang="en" dir="ltr">
+?>
+
+      <html>
         <head>
-          <meta charset="utf-8">
           <title>Testimoni</title>
-          <meta name="msapplication-TileColor" content="#00bcd4">
-          <meta name="msapplication-TileImage" content="../assets/images/favicon/mstile-144x144.png">
-
-          <link rel="icon" href="../assets/images/favicon/favicon-32x32.png" sizes="32x32">
-          <link rel="apple-touch-icon-precomposed" href="../assets/images/favicon/apple-touch-icon-152x152.png">
-
-          <link href="../assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
-          <link href="../assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
-          <link href="../assets/css/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
-
-          <script type="text/javascript" src="../assets/js/jquery-1.11.2.min.js"></script>
-            <script type="text/javascript" src="../assets/js/materialize.min.js"></script>
-            <script type="text/javascript" src="../assets/js/perfect-scrollbar.min.js"></script>
-            <script type="text/javascript" src="../assets/js/plugins.js"></script>
           <script type="text/javascript" src="../assets/ckeditor/ckeditor.js"></script>
 
         </head>
