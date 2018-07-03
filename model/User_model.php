@@ -2,7 +2,7 @@
   include_once "Database_Connection.php";
 
     /**
-     *
+     *Copyright Banding Kampus
      */
     class User_model{
 
