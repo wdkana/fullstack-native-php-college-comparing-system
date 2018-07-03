@@ -141,17 +141,17 @@
 				    </div>
 				    <div class="field">
 				      <label>Password</label>
-				      <input type="text">
+				      <input type="password">
 				    </div>
 				  </div>
-				  <button class="ui google plus button" type="submit" style="float:right">Masuk</button>
+				  <div class="ui center aligned container">
+				  	<button class="ui facebook button" type="submit" style="width:200px">Masuk</button>
+				  </div>
 				</form>
-				<br/>
-				<div class="ui hidden divider"></div>
 				<h4 class="ui horizontal divider header">
-				<a href="">Daftar Disini</a>
+				<button onclick="daftar()" class="ui button">Daftar Disini</button>
 				atau
- 				<a href="#">Lupa Password?</a>
+ 				<button onclick="lupapassword()" class="ui button">Lupa Password?</button>
 				</h4>
 				<div class="ui hidden divider"></div>
 				<div class="ui hidden divider"></div>
@@ -315,6 +315,77 @@
 
 	<!-- pertanyaan berakhir -->
 
+	<!-- modal daftar user -->
+		<div class="ui modal daftar">
+  		<i class="close icon"></i>
+	  	<div class="content">
+		    <div class="description">
+		     	<div class="ui large header"><i class="user circle icon"></i> Daftar Akun BandingKampus</div>
+		     	<div class="ui divider"></div>
+	  				<div class="ui hidden divider"></div>
+		      	<form class="ui large form">
+				  <div class="four fields">
+				    <div class="field">
+				      <label>Username</label>
+				      <input type="text">
+				    </div>	
+				    <div class="field">
+				      <label>Email</label>
+				      <input type="text">
+				    </div>
+				    <div class="field">
+				      <label>Password</label>
+				      <input type="password">
+				    </div>
+				    <div class="field">
+				      <label>Ulangi Password</label>
+				      <input type="password">
+				    </div>
+				  </div>
+		    </div>
+	  	</div>
+	  	<div class="ui hidden divider"></div>
+	  	<div class="actions">
+		    <div class="ui negative right labeled icon button">
+		      Daftar
+		      <i class="checkmark icon"></i>
+		    </div>
+	  	</div>
+	  	</form>
+	</div>
+
+	<!-- modal daftar user berakhir -->
+
+		<!-- modal lupa password -->
+		<div class="ui modal lupapassword">
+  		<i class="close icon"></i>
+	  	<div class="content">
+		    <div class="description">
+		     	<div class="ui large header"><i class="question circle icon"></i> Lupa Password </div>
+		     	<div class="ui divider"></div>
+	  				<div class="ui hidden divider"></div>
+		      	<form class="ui large form">
+	  				<div class="ui center aligned container">
+				  <div class="field">
+				      <label>Masukan Alamat Email</label>
+				      <input type="email" style="width:50%">
+				  </div>
+				  <small><i>Kami akan mengirimkan konfirmasi reset password ke email yang anda masukan diatas.</i></small>
+				  	</div>
+		    </div>
+	  	</div>
+	  	<div class="ui hidden divider"></div>
+	  	<div class="actions">
+		    <div class="ui negative right labeled icon button">
+		      Reset Password
+		      <i class="checkmark icon"></i>
+		    </div>
+	  	</div>
+	  	</form>
+	</div>
+
+	<!-- modal lupa password berakhir -->
+
 
 	<!-- js start -->
 	<script type="text/javascript">
@@ -338,6 +409,18 @@
   		.modal('show')
 	;
 	}
+	function daftar(){
+	$('.ui.modal.daftar')
+  		.modal('show')
+	;
+	}
+	function lupapassword(){
+	$('.ui.modal.lupapassword')
+  		.modal('show')
+	;
+	}
+
+
 	</script>
 		<script type="text/javascript">
 			$("#slideshow > div:gt(0)").hide();
