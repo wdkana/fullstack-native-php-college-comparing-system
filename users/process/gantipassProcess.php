@@ -2,19 +2,19 @@
     include "../../model/Lupapass_model.php";
 
     $user = new Lupapass_model();
-	  
-	$old = $_POST['old'];
-	$new = $_POST['new'];
-	$newconfirm = $_POST['newconfirm'];
+
+	$old = md5($_POST['old']);
+	$new = md5($_POST['new']);
+	$newconfirm = md5($_POST['newconfirm']);
 	$email = $_POST['email'];
 	$cekpass = $user->check_pass($old, $email);
-	
+
 	if(isset($_POST['simpan'])){
 		if($cekpass == 1){
 			if($new == $newconfirm){
 				$user->update_pass($new, $email);
-				echo "Password berhasil diubah";
-				echo "<a href='http://localhost/bandingkampus/users/login.php'> kembali </a>";
+				echo "<script>window.alert('Password berhasil diubah');
+              window.location.href='../login.php';</script>";
 			} else {
 				echo "Password tidak sesuai";
 			}

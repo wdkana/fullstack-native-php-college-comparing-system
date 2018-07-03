@@ -5,7 +5,7 @@
     $user = new User_model();
 
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
 
     if($user->loginUser($username, $password) > 0){
         session_start();

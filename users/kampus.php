@@ -16,6 +16,12 @@
           foto <br><input type="file" name="foto"><br>
           slogan <br>
           <textarea name="slogan" rows="8" cols="80"></textarea><br>
+          <input type="number" name="no_hp" placeholder="no hp"><br>
+          <input type="email" name="email" placeholder="email"><br>
+          <input type="text" name="fax" placeholder="fax"><br>
+          <input type="text" name="instagram" placeholder="instagram"><br>
+          <input type="text" name="facebook" placeholder="facebook"><br>
+          <input type="text" name="twitter" placeholder="twitter">
           <input type="submit" name="simpan" value="simpan">
       </form>
       <hr>
@@ -28,6 +34,12 @@
               <th>Alamat</th>
               <th>Foto</th>
               <th>Slogan</th>
+              <th>No Hp</th>
+              <th>Email</th>
+              <th>Fax</th>
+              <th>instgram</th>
+              <th>facebook</th>
+              <th>Twitter</th>
               <th>Pilihan</th>
             </tr>
         </thead>
@@ -43,6 +55,12 @@
             <td><?php echo $row['alamat'];?></td>
             <td><img src="../assets/images/<?php echo $row['foto'];?>" width="80" height="80"></td>
             <td><?php echo $row['slogan'];?></td>
+            <td><?php echo $row['no_hp'];?></td>
+            <td><?php echo $row['email'];?></td>
+            <td><?php echo $row['fax'];?></td>
+            <td><?php echo $row['instagram'];?></td>
+            <td><?php echo $row['facebook'];?></td>
+            <td><?php echo $row['twitter'];?></td>
             <td><a href="#">edit</a>
                 <button onclick="hapus(<?php echo $row['id'];?>)">Hapus</button></td>
           </tr>

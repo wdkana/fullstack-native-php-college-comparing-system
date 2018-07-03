@@ -15,9 +15,11 @@
 
     $row = mysql_fetch_array($kmp->viewKampus($kampus));
     $id = $row['id'];
+    $id_kampus = $row['id'];
     $nama_kampus = $row['nama_kampus'];
 
     $result = $survei->pertanyaan();
+    $test = $survei->viewUser($username,$id_kampus);
 
 ?>
 <html>
@@ -29,7 +31,7 @@
             <?php
                 if($nama_kampus == ''){
                     echo "maaf nama kampus anda tidak tersedia di aplikasi ini";
-                } else if($survei->viewUser($username) > 0){
+                } else if($test > 0){
                     echo "anda sudah mengisi survei";
                 } else {
             ?>

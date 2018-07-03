@@ -72,40 +72,43 @@
           </div>
         </div>
         <div>
+          <input type="text" name="instagram" placeholder="instagram"><br>
+          <input type="text" name="facebook" placeholder="facebook"><br>
+          <input type="text" name="twitter" placeholder="twitter"><br>
           <div>
 				<input value="mahasiswa" type="radio" name="status" onClick="displayForm(this)">Mahasiswa</input>
 				<input value="alumni" type="radio" name="status" onClick="displayForm(this)">Alumni</input>
           </div>
-        </div>		
-		
+        </div>
+
 		<div style="visibility:hidden; position:relative" id="pekerjaan">
 			<select name="status_kerja">
 				<option value="tidak bekerja" selected>Tidak Bekerja</option>
 				<option value="bekerja">Bekerja</option>
 			</select>
 		</div>
-		
-		
+
+
         <div class="row">
           <div class="input-field col s12">
             <input type="submit" name="simpan" value="Simpan" class="btn waves-effect waves-light col s12 blue"><br><br>
             <a href="process/logoutProcess.php">logout</a>
           </div>
         </div>
-		
+
       </form>
     </div>
   </div>
 </body>
 </html>
 
-<script type="text/javascript"> 
+<script type="text/javascript">
     function displayForm(c) {
         if (c.value == "mahasiswa") {
             document.getElementById("pekerjaan").style.visibility = 'hidden';
         } else if (c.value == "alumni") {
             document.getElementById("pekerjaan").style.visibility = 'visible';
-        } 
+        }
 	}
 
 </script>

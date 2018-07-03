@@ -12,9 +12,12 @@
     $kelas = $_POST['kelas'];
     $no_hp = $_POST['no_hp'];
     $asal_kampus = $_POST['asal_kampus'];
-	$status = $_POST['status'];
-	$status_kerja = $_POST['status_kerja'];
-	
+	  $status = $_POST['status'];
+	  $status_kerja = $_POST['status_kerja'];
+    $instagram = $_POST['instagram'];
+    $facebook = $_POST['facebook'];
+    $twitter = $_POST['twitter'];
+
     if(isset($_POST['simpan'])){
         $foto_ktm = $_FILES['foto_ktm']['name'];
         $ukuran_file = $_FILES['foto_ktm']['size'];
@@ -25,7 +28,10 @@
   			if($tipe_file == "image/jpeg" || $tipe_file == "image/png"){
   				if($ukuran_file < 5044070){
   					move_uploaded_file($tmp_file, $path);
-  					$user->setProfil($username, $nim, $asal_kampus, $nama_lengkap, $fakultas, $kelas, $no_hp, $foto_ktm, $status, $status_kerja);
+
+  					$user->setProfil($username, $nim, $asal_kampus, $nama_lengkap, $fakultas, $kelas, $no_hp, $foto_ktm,
+            $instagram, $facebook, $twitter, $status, $status_kerja);
+
   					if($user == TRUE){
                 header('location:../dashboard.php');
   					}else{

@@ -6,6 +6,12 @@
       $nama_kampus = $_POST['nama_kampus'];
       $alamat = $_POST['alamat'];
       $slogan = $_POST['slogan'];
+      $no_hp = $_POST['no_hp'];
+      $fax = $_POST['fax'];
+      $email = $_POST['email'];
+      $instagram = $_POST['instagram'];
+      $facebook = $_POST['facebook'];
+      $twitter = $_POST['twitter'];
 
           if(isset($_POST['simpan'])){
               $foto = $_FILES['foto']['name'];
@@ -21,7 +27,7 @@
                             window.location.href='../kampus.php';</script>";
                   }
         					     move_uploaded_file($tmp_file, $path);
-        					     $kampus->addKampus($nama_kampus, $alamat, $foto, $slogan);
+        					     $kampus->addKampus($nama_kampus,$alamat, $foto, $slogan,$no_hp,$email,$fax,$instagram,$facebook,$twitter);
                        header('location:../kampus.php');
         				}else{
         					echo 'UKURAN FILE TERLALU BESAR';

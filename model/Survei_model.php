@@ -34,9 +34,9 @@
       }
 
       //function untuk validasi username yang sudah survei agar tidak bisa input lagi
-      public function viewUser($username){
+      public function viewUser($username, $id_kampus){
 
-          $sql = "SELECT * FROM tbl_nilai WHERE username = '$username'";
+          $sql = "SELECT * FROM tbl_nilai WHERE username = '$username' AND id_kampus = '$id_kampus'";
           $query = mysql_query($sql);
           $check = mysql_num_rows($query);
           return $check;

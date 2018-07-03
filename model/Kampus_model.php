@@ -13,9 +13,9 @@
       }
 
       //function untuk add kampus
-      public function addKampus($nama_kampus,$alamat, $foto, $slogan){
-        $sql = "INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `alamat`, `foto`, `slogan`)
-        VALUES (NULL, '$nama_kampus', '$alamat', '$foto', '$slogan');";
+      public function addKampus($nama_kampus,$alamat, $foto, $slogan,$no_hp,$email,$fax,$instagram,$facebook,$twitter){
+        $sql = "INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `alamat`, `foto`, `slogan`, `no_hp`, `email`, `fax`, `instagram`, `facebook`, `twitter`) VALUES
+        (NULL, '$nama_kampus','$alamat','$foto','$slogan','$no_hp','$email','$fax','$instagram','$facebook','$twitter');";
         $query = mysql_query($sql);
         return $query;
 

@@ -8,7 +8,7 @@
     session_start();
     $username = $_SESSION['username'];
     if(!isset($username)){
-        header('location: ../');
+        header('location: login.php');
     }
 
     $result = $user->kampus($username);

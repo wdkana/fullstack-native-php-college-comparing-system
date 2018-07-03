@@ -6,8 +6,8 @@
 
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
-    $repassword = $_POST['repassword'];
+    $password = md5($_POST['password']);
+    $repassword = md5($_POST['repassword']);
 
     if($password == $repassword){
         if($user->checkUser($username, $email) > 0){
