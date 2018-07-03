@@ -168,28 +168,19 @@
 
 		</div>
 
-		<div id="slideshow" class="ui visible message">
+
 		<h3 class="ui top attached header">
   			Testimonial Alumni
 		</h3>
 		<!-- random looping mulai dari sini -->
-   			<div class="ui link items">
-  				<div class="item">
-  					<div class="ui tiny image">
-      					<img src="assets/img/logouser.png">
-    				</div>
-    				<div class="content">
-							<?php while($row = mysql_fetch_array($result2)){?>
-      					<div class="header"><?php echo $row['nama_lengkap'];?></div>
-      					<div class="description">
-        					<p><?php echo $row['asal_kampus'];?></p>
-      					</div>
-								<?php } ?>
-    				</div>
-
-  				</div>
-			</div>
-		<!-- random beres -->
+			
+<div class="containers">
+	<?php while($row = mysql_fetch_array($result2)){?>
+  <h4 class="slides"> 
+<?php echo $row['testimonial']. '― ' .$row['nama_lengkap'] . ' dari: ' . $row['asal_kampus'];?></h4>
+</div>
+<?php } ?>
+   		<!-- random beres -->
 		</div>
 
 	<div class="ui hidden divider"></div>
@@ -432,15 +423,19 @@
 	}
 	</script>
 		<script type="text/javascript">
-			$("#slideshow > div:gt(0)").hide();
-			setInterval(function() {
-			  $('#slideshow > div:first')
-			    .fadeOut(1000)
-			    .next()
-			    .fadeIn(1000)
-			    .end()
-			    .appendTo('#slideshow');
-			}, 2500);
+			$(document).ready(function(){
+  
+  $(function(){
+    
+    $('.containers .slides:gt(0)').hide();
+    setInterval(function(){
+      $('.containers :first-child').fadeOut(2000).next('.slides').fadeIn(2000)
+      .end().appendTo('.containers');
+  }, 3000);
+    
+  });
+  
+});
 		</script>
 
 		<script src="element/popup.js"></script>
