@@ -1,13 +1,16 @@
 <?php
 		include "model/Survei_model.php";
 		include "model/Testimoni_model.php";
+		include "model/Kampus_model.php";
 
 		$testimoni = new Testimoni_model();
-		$kmp = new Survei_model();
-		$result = $kmp->ambilkampus();
-		$result1 = $kmp->ambilkampus();
+		$survei = new Survei_model();
+		$kmp = new Kampus_model();
+
+		$result = $survei->ambilkampus();
+		$result1 = $survei->ambilkampus();
 		$result2 = $testimoni->viewTestimoni();
-		$result3 = $kmp->ambilkampus();
+		$result3 = $kmp->daftarKampus();
 
 ?>
 <!DOCTYPE HTML>
@@ -181,14 +184,14 @@
 
 		<div class="ui center aligned container top attached">
   			<h1>Testimonial Alumni</h1>
-		
-		
+
+
 		<!-- random looping mulai dari sini -->
 		<div class="ui cards" style="position: relative;left:120px">
-		<?php while($row = mysql_fetch_array($result2)){?>	
+		<?php while($row = mysql_fetch_array($result2)){?>
 			<div class="card">
 		 	<div class="content">
-		    	<div class="header"><?php echo $row['username'];?></div>
+		    	<div class="header"><?php echo $row['nama_lengkap'];?></div>
 		    	<div class="description">
 		      		<p><?php echo $row['testimoni']?></p>
 		    	</div>
@@ -456,8 +459,8 @@
 
 	<script type="text/javascript">
 		function next(){
-		document.querySelector('#next').scrollIntoView({ 
-  behavior: 'smooth' 
+		document.querySelector('#next').scrollIntoView({
+  behavior: 'smooth'
 });
 	}
 	</script>

@@ -13,10 +13,10 @@
 
       //function untuk insert ke tbl testimoni
 
-      public function insertTestimoni($username, $nama_kampus, $testimoni){
+      public function insertTestimoni($username,$nama_lengkap, $nama_kampus, $testimoni){
 
-        $sql = "INSERT INTO `tbl_testimoni` (`id`, `username`, `nama_kampus`, `testimoni`) VALUES
-        (NULL, '$username', '$nama_kampus', '$testimoni');";
+        $sql = "INSERT INTO `tbl_testimoni` (`id`, `username`,`nama_lengkap`,`nama_kampus`, `testimoni`) VALUES
+        (NULL, '$username', '$nama_lengkap','$nama_kampus', '$testimoni');";
         $query = mysql_query($sql);
         return $query;
 
@@ -38,7 +38,6 @@
         $query = mysql_query($sql);
         return $query;
       }
-
     }
 
 ?>

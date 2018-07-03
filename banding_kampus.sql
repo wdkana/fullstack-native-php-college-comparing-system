@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 03, 2018 at 01:35 PM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 5.6.32
+-- Host: localhost
+-- Generation Time: Jul 03, 2018 at 09:38 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -63,8 +63,11 @@ CREATE TABLE `tbl_detail_profil` (
 --
 
 INSERT INTO `tbl_detail_profil` (`id`, `username`, `nim`, `asal_kampus`, `nama_lengkap`, `fakultas`, `kelas`, `no_hp`, `foto_ktm`, `instagram`, `facebook`, `twitter`, `status`, `status_kerja`) VALUES
-(24, 'alsa gunadi', '123', 'lpkia', 'alsa gunadi', 'informatika', 'asd', '321798471', 'Object 1.png', 'Instagram', 'facebook', 'twitter', 'alumni', 'bekerja'),
-(25, 'kiki setiawan', '3', 'lpkia', 'kiki setiawan', 'informatika', '3if-03', '2317', 'Object 1.png', 'Instagram', 'facebook', 'twitter', 'alumni', 'tidak bekerja');
+(24, 'alsa gunadi', '123', 'lpkia', 'alsa gunadi', 'informatika', 'asd', '321798471', 'IMG_20100101_073902.jpg', 'Instagram', 'facebook', 'twitter', 'alumni', 'tidak bekerja'),
+(25, 'kiki setiawan', '3', 'lpkia', 'kiki setiawan', 'informatika', '3if-03', '2317', 'Object 1.png', 'Instagram', 'facebook', 'twitter', 'alumni', 'tidak bekerja'),
+(26, 'juheri', '768907', 'lpkia', 'juheri weh', 'informatika', '3IF1', '7689', 'Haworthia-attenuata-_2_.jpg', 'ig', 'fb', 'twitter', 'alumni', 'bekerja'),
+(27, 'jek', '7898867', 'inaba', 'jek weh', 'informatika', '3IF1', '09878675899', 'Haworthia-attenuata-_2_.jpg', 'ig', 'fb', 'tw', 'alumni', 'bekerja'),
+(28, 'asep', '986756890', 'lpkia', 'asep kustiana', 'informatika', '3if', '0879867', 'IMG_20100101_073902.jpg', 'ig', 'fb', 'tw', 'alumni', 'tidak bekerja');
 
 -- --------------------------------------------------------
 
@@ -92,7 +95,9 @@ CREATE TABLE `tbl_kampus` (
 
 INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `alamat`, `foto`, `slogan`, `no_hp`, `email`, `fax`, `instagram`, `facebook`, `twitter`) VALUES
 (30, 'lpkia', 'jl soekarno hatta', 'Haworthia-attenuata-_2_.jpg', 'kampus bersih', '986789', 'lpkia@mail.com', 'fax', 'instagram', 'facebook', 'twitter'),
-(31, 'inaba', 'jl soekarno hatta', 'IMG_20100101_073902.jpg', 'kvhlshl', '8678', 'mail@mail.com', 'oihloj;', 'vkbl;j', 'vhkjbln;', 'vhkbjkl');
+(31, 'inaba', 'jl soekarno hatta', 'IMG_20100101_073902.jpg', 'kvhlshl', '8678', 'mail@mail.com', 'oihloj;', 'vkbl;j', 'vhkjbln;', 'vhkbjkl'),
+(41, 'itb', 'dimana weh', 'Haworthia-attenuata-_2_.jpg', 'jhkjl', '68789', 'mail@mail.com', 'hghjkl', 'jhkl', 'jhk', 'jhk'),
+(42, 'telkom', 'jl bojongsoang', 'database.png', 'kampus terbaik', '7890867', 'mail@mail.com', 'fax', 'ig', 'fb', 'tw');
 
 -- --------------------------------------------------------
 
@@ -167,6 +172,9 @@ CREATE TABLE `tbl_register` (
 
 INSERT INTO `tbl_register` (`username`, `email`, `password`, `status`, `hak_akses`) VALUES
 ('alsa gunadi', 'alsagunadi@gmail.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'user'),
+('asep', 'asepkustiana7@gmail.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'user'),
+('jek', 'jek@mail.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'user'),
+('juheri', 'juheri842@gmail.com', 'caf1a3dfb505ffed0d024130f58c5cfa', 'Verifikasi', 'user'),
 ('kiki setiawan', 'kikikiller28@yahoo.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'admin');
 
 -- --------------------------------------------------------
@@ -178,9 +186,18 @@ INSERT INTO `tbl_register` (`username`, `email`, `password`, `status`, `hak_akse
 CREATE TABLE `tbl_testimoni` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
+  `nama_lengkap` varchar(255) NOT NULL,
   `nama_kampus` varchar(255) NOT NULL,
   `testimoni` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_testimoni`
+--
+
+INSERT INTO `tbl_testimoni` (`id`, `username`, `nama_lengkap`, `nama_kampus`, `testimoni`) VALUES
+(7, 'alsa gunadi', 'alsa gunadi', 'lpkia', '<p>kesan kesannya mantap sekali</p>\r\n'),
+(8, 'juheri', 'juheri weh', 'lpkia', '<p>mantap sekali bung!!!!!!!</p>\r\n');
 
 -- --------------------------------------------------------
 
@@ -259,19 +276,19 @@ ALTER TABLE `tbl_ulasan`
 -- AUTO_INCREMENT for table `tbl_akreditasi`
 --
 ALTER TABLE `tbl_akreditasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_detail_profil`
 --
 ALTER TABLE `tbl_detail_profil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tbl_kampus`
 --
 ALTER TABLE `tbl_kampus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilai`
@@ -289,13 +306,13 @@ ALTER TABLE `tbl_pertanyaan`
 -- AUTO_INCREMENT for table `tbl_testimoni`
 --
 ALTER TABLE `tbl_testimoni`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_ulasan`
 --
 ALTER TABLE `tbl_ulasan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -53,6 +53,14 @@
           return $query;
       }
 
+      //function untuk kampus Terdaftar
+      public function daftarKampus(){
+
+        $sql = "SELECT * FROM tbl_kampus ORDER BY RAND() LIMIT 10";
+        $query = mysql_query($sql);
+        return $query;
+      }
+
     }
 
 
