@@ -1,12 +1,14 @@
 <?php
-    include "../model/Survei_model.php";
-    include "../model/Akreditasi_model.php";
+    include "../../model/Survei_model.php";
+    include "../../model/Akreditasi_model.php";
 
     $survei = new Survei_model();
     $akr = new Akreditasi_model();
+	$id = $_GET['id'];
 
-    $result = $survei->ambilkampus();
-    $resultAkr = $akr->detailAkreditasi();
+    $result = $survei->kampus($id);
+	$nama = $result['nama_kampus'];
+    $resultAkr = $akr->detailAkreditasi2($nama);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -15,13 +17,10 @@
     <title>Akreditasi</title>
   </head>
   <body>
+	<h1>Kampus <?php echo $result['nama_kampus']?></h1><a href="kampus.php">Back</a>
     <form action="process/akreditasiProcess.php" method="post">
-      nama kampus
-        <select name="nama_kampus">
-            <?php while($row = mysql_fetch_array($result)){?>?>
-            <option value="<?php echo $row['nama_kampus'];?>"><?php echo $row['nama_kampus'];?></option>
-          <?php }?>
-        </select><br>
+        <input name="nama_kampus" type="hidden" value="<?php echo $result['nama_kampus']?>"><br>
+        <input name="id" type="hidden" value="<?php echo $id?>"><br>
         <input type="text" name="fakultas" placeholder="jurusan"><br>
         <input type="text" name="akreditasi" placeholder="akreditasi"><br>
         <input type="submit" value="simpan">
@@ -48,8 +47,8 @@
           <td><?php echo $row['nama_kampus'];?></td>
           <td><?php echo $row['fakultas'];?></td>
           <td><?php echo $row['akreditasi'];?></td>
-          <td><a href="ubahAkreditasi.php?i=<?php echo $row['id'];?>">Ubah</a>
-          <button onclick="hapus(<?php echo $row['id'];?>)">Hapus</button></td></td>
+          <td><a href="ubahAkreditasi.php?i=<?php echo $row['id']?>&id=<?php echo $id?>">Ubah</a>
+          <button onclick="hapus(<?php echo $row['id']?>, <?php echo $id?>)">Hapus</button></td></td>
         </tr>
         <?php
             $no++;
@@ -58,10 +57,10 @@
       </tbody>
     </table>
     <script>
-        function hapus(id) {
+        function hapus(id, idk) {
             var r = confirm("Apakah anda akan menghapus data ini?");
             if (r == true) {
-                window.location.href="process/deleteAkreditasiProcess.php?i="+id;
+                window.location.href="process/deleteAkreditasiProcess.php?i="+id+"&id="+idk;
             } else {
                 window.location.href="akreditasi.php";
             }

@@ -15,7 +15,7 @@
 			}else if($user->hak_akses($username) == 'admin') {
 				session_start();
 				$_SESSION['username'] = $username;
-				header('location: ../dashboard-admin.php');
+				header('location: ../admin/dashboard-admin.php');
 			}
 		} else if($user->validasi_email($username) =='Belum Verifikasi'){
 			header('location: ../pesan_verify.php');

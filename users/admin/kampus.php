@@ -1,7 +1,6 @@
 <?php
-    include "../model/Survei_model.php";
+    include "../../model/Survei_model.php";
     $survei = new Survei_model();
-
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -10,18 +9,19 @@
     <title>Kampus</title>
   </head>
   <body>
+  <a href="dashboard-admin.php">Back</a>
       <form action="process/kampusProcess.php" method="post" enctype="multipart/form-data">
           <input type="text" name="nama_kampus" required placeholder="nama_kampus"><br>
           <input type="text" name="alamat" required placeholder="alamat"><br>
           foto <br><input type="file" name="foto"><br>
           slogan <br>
           <textarea name="slogan" rows="8" cols="80"></textarea><br>
-          <input type="number" name="no_hp" placeholder="no hp"><br>
-          <input type="email" name="email" placeholder="email"><br>
-          <input type="text" name="fax" placeholder="fax"><br>
-          <input type="text" name="instagram" placeholder="instagram"><br>
-          <input type="text" name="facebook" placeholder="facebook"><br>
-          <input type="text" name="twitter" placeholder="twitter">
+          no.hp<input type="number" name="no_hp" placeholder="no hp"><br>
+          email<input type="email" name="email" placeholder="email"><br>
+          fax<input type="text" name="fax" placeholder="fax"><br>
+          instagram<input type="text" name="instagram" placeholder="instagram"><br>
+          facebook<input type="text" name="facebook" placeholder="facebook"><br>
+          twitter<input type="text" name="twitter" placeholder="twitter">
           <input type="submit" name="simpan" value="simpan">
       </form>
       <hr>
@@ -53,7 +53,7 @@
             <td><?php echo $no;?></td>
             <td><?php echo $row['nama_kampus'];?></td>
             <td><?php echo $row['alamat'];?></td>
-            <td><img src="../assets/images/<?php echo $row['foto'];?>" width="80" height="80"></td>
+            <td><img src="../../assets/images/<?php echo $row['foto'];?>" width="80" height="80"></td>
             <td><?php echo $row['slogan'];?></td>
             <td><?php echo $row['no_hp'];?></td>
             <td><?php echo $row['email'];?></td>
@@ -61,8 +61,10 @@
             <td><?php echo $row['instagram'];?></td>
             <td><?php echo $row['facebook'];?></td>
             <td><?php echo $row['twitter'];?></td>
-            <td><a href="#">edit</a>
-                <button onclick="hapus(<?php echo $row['id'];?>)">Hapus</button></td>
+            <td>
+			<a href="akreditasi.php?id=<?php echo $row['id'];?>">tambah akreditasi</a>
+			<a href="edit_kampus.php?id=<?php echo $row['id'];?>">Edit</a>
+            <button onclick="hapus(<?php echo $row['id'];?>)">Hapus</button></td>
           </tr>
           <?php
               $no++;
@@ -79,6 +81,7 @@
                   window.location.href="kampus.php";
               }
           }
+		  
       </script>
   </body>
 </html>

@@ -50,7 +50,8 @@
       public function detailKampus($id){
           $sql = "SELECT * FROM tbl_kampus WHERE id = '$id'";
           $query = mysql_query($sql);
-          return $query;
+		  $row = mysql_fetch_array($query);
+          return $row;
       }
 
       //function untuk kampus Terdaftar
@@ -60,7 +61,24 @@
         $query = mysql_query($sql);
         return $query;
       }
-
+	  
+	  public function ubahKampus($nama_kampus,$alamat, $foto, $slogan,$no_hp,$email,$fax,$instagram,$facebook,$twitter,$id){
+	  $sql = "UPDATE `tbl_kampus` SET 
+	  `nama_kampus` = '$nama_kampus', 
+	  `alamat` = '$alamat', 
+	  `foto` = '$foto', 
+	  `slogan` = '$slogan', 
+	  `no_hp` = '$no_hp', 
+	  `email` = '$email', 
+	  `fax` = '$fax', 
+	  `instagram` = '$instagram', 
+	  `facebook` = '$facebook', 
+	  `twitter` = '$twitter' 
+	   WHERE `id` = $id";
+	   echo $sql;
+      $query = mysql_query($sql);
+      return $query;
+	  }
     }
 
 

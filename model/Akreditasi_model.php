@@ -25,9 +25,9 @@
       }
 
       //function untuk validasi fakultas yang sudah di akreditasi berdasarkan fakultas
-      public function checkFakultas($fakultas){
+      public function checkFakultas($fakultas, $nama_kampus){
 
-          $sql = "SELECT * FROM tbl_akreditasi WHERE fakultas = '$fakultas'";
+          $sql = "SELECT * FROM tbl_akreditasi WHERE fakultas = '$fakultas' and nama_kampus='$nama_kampus'";
           $query = mysql_query($sql);
           $check = mysql_num_rows($query);
           return $check;
@@ -49,7 +49,15 @@
         return $query;
 
       }
+	  
+      //function untuk menampilkan semua Akreditasi berdasarkan id
+      public function detailAkreditasi2($nama){
 
+        $sql = "SELECT * FROM tbl_akreditasi where nama_kampus='$nama'";
+        $query = mysql_query($sql);
+        return $query;
+
+      }
       //function untuk edit akreditasi
       public function editAkreditasi($id,$fakultas,$akreditasi){
 

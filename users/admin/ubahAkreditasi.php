@@ -1,8 +1,9 @@
 <?php
-    include "../model/Akreditasi_model.php";
+    include "../../model/Akreditasi_model.php";
     $akr = new Akreditasi_model();
 
     $id = $_GET['i'];
+	$idk = $_GET['id'];
     $result = $akr->getId($id);
     $row = mysql_fetch_array($result);
 ?>
@@ -14,6 +15,7 @@
   </head>
   <body>
     <form action="process/ubahAkreditasiProcess.php" method="post">
+	  <input type="hidden" name="idk" value="<?php echo$idk;?>">
       <input type="text" name="id" value="<?php echo $row['id'];?>"hidden>
       nama kampus
       <input type="text" name="nama_kampus" value="<?php echo $row['nama_kampus'];?>" readonly> <br>

@@ -41,6 +41,21 @@
           $check = mysql_num_rows($query);
           return $check;
       }
+	  
+	  //function menampilkan data kampus berdasarkan id
+	  public function kampus($id){
+          $sql = "SELECT * FROM tbl_kampus where id=$id";
+          $query = mysql_query($sql);
+		  $row = mysql_fetch_array($query);
+          return $row;
+      }
+	  
+	  //function menampilkan semua data kampus berdasarkan id
+	  public function ambilkampus2($id){
+          $sql = "SELECT * FROM tbl_kampus where id='$id'";
+          $query = mysql_query($sql);
+          return $query;
+	  }
     }
 
 ?>
