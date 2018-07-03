@@ -162,47 +162,44 @@
 				</h4>
 				<div class="ui hidden divider"></div>
 				<div class="ui hidden divider"></div>
-
-
-
 			</div>
-
 		</div>
 
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
 
-		<h3 class="ui top attached header">
-  			Testimonial Alumni
-		</h3>
+		<div class="ui center aligned container">
+			<span onclick="next()" style="color:#dc5538;cursor: pointer"><i class="huge arrow alternate circle down outline icon"></i></span>
+		</div>
+
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+
+		<div class="ui top attached">
+  			<h1>Testimonial Alumni</h1>
+		
 		<!-- random looping mulai dari sini -->
-<<<<<<< HEAD
-			
-<div class="containers">
-	<?php while($row = mysql_fetch_array($result2)){?>
-  <h4 class="slides"> 
-<?php echo $row['testimonial']. '― ' .$row['nama_lengkap'] . ' dari: ' . $row['asal_kampus'];?></h4>
-</div>
+		
+<div class="ui cards">
+		<?php while($row = mysql_fetch_array($result2)){?>	
+  <div class="card">
+    <div class="content">
+      <div class="header"><?php echo $row['username']?></div>
+      <div class="meta"><?php echo $row['nama_kampus']?></div>
+      <div class="description">
+        <?php echo $row['testimoni']?>
+      </div>
+    </div>
+  </div>
 <?php } ?>
-   		<!-- random beres -->
-=======
-   			<div class="ui link items">
-  				<div class="item">
-  					<div class="ui tiny image">
-      					<img src="assets/img/logouser.png">
-    				</div>
-    				<div class="content">
-							<?php while($row = mysql_fetch_array($result2)){?>
-      					<div class="header"><?php echo $row['username'];?></div>
-      					<div class="description">
-        					<p><?php echo $row['nama_kampus'];?></p>
-      					</div>
-								<?php } ?>
-    				</div>
-
-  				</div>
-			</div>
+</div>
+</div>
+		<div class="ui hidden divider"></div>
 		<!-- random beres -->
->>>>>>> ee070010df1a37a1ed9b3e6c0a2ea883e2fa64b3
-		</div>
 
 	<div class="ui hidden divider"></div>
 	<div class="ui hidden divider"></div>
@@ -220,10 +217,11 @@
 	      		<hr/>
 						<?php } ?>
 	      		<!-- end looping -->
+	      		<center><a href="#">Lihat Semua</a></center>
 	    	</div>
 
 	    	<!-- mid content -->
-	    	<div class="ten wide column">
+	    	<div class="ten wide column" id="next">
 	    		<h1 class="ui header">Panduan Pengguna</h1>
 					<div class="ui list">
 						<div class="item">
@@ -368,7 +366,6 @@
 		    </div>
 	  	</div>
 	  	<div class="ui hidden divider"></div>
-<<<<<<< HEAD
 			<div class="actions">
 				<button class="ui negative right labeled icon button" type="submit">
 						Daftar
@@ -376,7 +373,6 @@
 				</button>
 			</div>
 	  </form>
-=======
 	  	<div class="actions">
 		    <button class="ui negative right labeled icon button" type="submit">
 		      Daftar
@@ -384,7 +380,6 @@
 		    </button>
 	  	</div>
 	  	</form>
->>>>>>> 23e5e8cd560c567778b0351d2fb6f6f82f691d21
 	</div>
 
 	<!-- modal daftar user berakhir -->
@@ -409,11 +404,7 @@
 	  	</div>
 	  	<div class="ui hidden divider"></div>
 	  	<div class="actions">
-<<<<<<< HEAD
 		    <button class="ui negative right labeled icon button" type="submit" name="kirim">
-=======
-		    <button class="ui negative right labeled icon button" type="submit">
->>>>>>> 23e5e8cd560c567778b0351d2fb6f6f82f691d21
 		      Reset Password
 		      <i class="checkmark icon"></i>
 		    </button>
@@ -458,21 +449,14 @@
 	;
 	}
 	</script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-  
-  $(function(){
-    
-    $('.containers .slides:gt(0)').hide();
-    setInterval(function(){
-      $('.containers :first-child').fadeOut(2000).next('.slides').fadeIn(2000)
-      .end().appendTo('.containers');
-  }, 3000);
-    
-  });
-  
+
+	<script type="text/javascript">
+		function next(){
+		document.querySelector('#next').scrollIntoView({ 
+  behavior: 'smooth' 
 });
-		</script>
+	}
+	</script>
 
 		<script src="element/popup.js"></script>
 		<script type="text/javascript">
