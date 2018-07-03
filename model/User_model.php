@@ -108,6 +108,26 @@
     }
 
     //function untuk menampilkan Password
+    public function getPassword($username){
+      $sql = "SELECT * FROM tbl_register WHERE username = '$username'";
+      $query = mysql_query($sql);
+      return $query;
+    }
+
+    //function update Password
+    public function updatePassword($username,$newPassword){
+
+      $sql = "UPDATE tbl_register SET password = '$newPassword' WHERE username = '$username'";
+      $query = mysql_query($sql);
+      return $query;
+    }
+    //function untuk menampilkan testimoni Alumni
+    public function testimoniAlumni(){
+
+      $sql = "SELECT * FROM tbl_detail_profil WHERE status = 'alumni' ORDER BY RAND() LIMIT 1";
+      $query = mysql_query($sql);
+      return $query;
+    }
 
     }
 

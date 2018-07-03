@@ -1,8 +1,12 @@
 <?php
 		include "model/Survei_model.php";
+		include "model/User_model.php";
+
+		$user = new User_model();
 		$kmp = new Survei_model();
 		$result = $kmp->ambilkampus();
 		$result1 = $kmp->ambilkampus();
+		$result2 = $user->testimoniAlumni();
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -70,7 +74,7 @@
 		<form action="users/bandingHasil.php" method="POST">
 		<div class="ui center aligned stackable grid container">
 		  	<div class="column">
-		    	<select class="ui huge search dropdown" name="kampus1">
+		    	<select class="ui huge search dropdown" name="kampus1" required>
 						<option value="">Kampus 1</option>
 						<?php while($row = mysql_fetch_array($result)){?>
 					 <option value="<?php echo $row['nama_kampus'];?>"><?php echo $row['nama_kampus'];?></option>
@@ -85,7 +89,7 @@
   			</div>
   		<div class="ui center aligned stackable grid container">
 		  	<div class="column">
-		    	<select class="ui huge search dropdown" name="kampus2">
+		    	<select class="ui huge search dropdown" name="kampus2" required>
 					 <option value="">Kampus 2</option>
 					 <?php while($row = mysql_fetch_array($result1)){?>
 					<option value="<?php echo $row['nama_kampus'];?>"><?php echo $row['nama_kampus'];?></option>
@@ -133,15 +137,15 @@
 
 			<div class="ui justified aligned container">
 			<div class="ui hidden divider"></div>
-	  			<form class="ui large form">
+	  			<form class="ui large form" action="users/process/loginProcess.php" method="post">
 				  <div class="two fields">
 				    <div class="field">
 				      <label>Username</label>
-				      <input type="text">
+				      <input type="text" name="username">
 				    </div>
 				    <div class="field">
 				      <label>Password</label>
-				      <input type="password">
+				      <input type="password" name="password">
 				    </div>
 				  </div>
 				  <div class="ui center aligned container">
@@ -173,11 +177,14 @@
       					<img src="assets/img/logouser.png">
     				</div>
     				<div class="content">
-      					<div class="header">Nama Lengkap</div>
+							<?php while($row = mysql_fetch_array($result2)){?>
+      					<div class="header"><?php echo $row['nama_lengkap'];?></div>
       					<div class="description">
-        					<p>Testimonial dari database</p>
+        					<p><?php echo $row['asal_kampus'];?></p>
       					</div>
+								<?php } ?>
     				</div>
+
   				</div>
 			</div>
 		<!-- random beres -->
@@ -323,35 +330,35 @@
 		     	<div class="ui large header"><i class="user circle icon"></i> Daftar Akun BandingKampus</div>
 		     	<div class="ui divider"></div>
 	  				<div class="ui hidden divider"></div>
-		      	<form class="ui large form">
+		      	<form class="ui large form" action="users/process/registerProcess.php" method="post">
 				  <div class="four fields">
 				    <div class="field">
 				      <label>Username</label>
-				      <input type="text">
-				    </div>	
+				      <input name="username" type="text">
+				    </div>
 				    <div class="field">
 				      <label>Email</label>
-				      <input type="text">
+				      <input name="email" type="email">
 				    </div>
 				    <div class="field">
 				      <label>Password</label>
-				      <input type="password">
+				      <input name="password" type="password">
 				    </div>
 				    <div class="field">
 				      <label>Ulangi Password</label>
-				      <input type="password">
+				      <input name="repassword" type="password">
 				    </div>
 				  </div>
 		    </div>
 	  	</div>
 	  	<div class="ui hidden divider"></div>
-	  	<div class="actions">
-		    <div class="ui negative right labeled icon button">
-		      Daftar
-		      <i class="checkmark icon"></i>
-		    </div>
-	  	</div>
-	  	</form>
+			<div class="actions">
+				<button class="ui negative right labeled icon button" type="submit">
+						Daftar
+						<i class="checkmark icon"></i>
+				</button>
+			</div>
+	  </form>
 	</div>
 
 	<!-- modal daftar user berakhir -->
@@ -364,11 +371,11 @@
 		     	<div class="ui large header"><i class="question circle icon"></i> Lupa Password </div>
 		     	<div class="ui divider"></div>
 	  				<div class="ui hidden divider"></div>
-		      	<form class="ui large form">
+		      	<form class="ui large form" action="users/process/lupaProcess.php" method="post">
 	  				<div class="ui center aligned container">
 				  <div class="field">
 				      <label>Masukan Alamat Email</label>
-				      <input type="email" style="width:50%">
+				      <input type="email" style="width:50%" name="email">
 				  </div>
 				  <small><i>Kami akan mengirimkan konfirmasi reset password ke email yang anda masukan diatas.</i></small>
 				  	</div>
@@ -376,10 +383,10 @@
 	  	</div>
 	  	<div class="ui hidden divider"></div>
 	  	<div class="actions">
-		    <div class="ui negative right labeled icon button">
+		    <button class="ui negative right labeled icon button" type="submit" name="kirim">
 		      Reset Password
 		      <i class="checkmark icon"></i>
-		    </div>
+		    </button>
 	  	</div>
 	  	</form>
 	</div>

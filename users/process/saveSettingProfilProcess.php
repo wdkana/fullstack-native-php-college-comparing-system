@@ -30,7 +30,7 @@
                  move_uploaded_file($tmp_file, $path);
                  $user->updateProfil($id,$nim,$asal_kampus,$nama_lengkap,$fakultas,$kelas,$no_hp,$foto_ktm,$instagram,$facebook,$twitter,$status,$status_kerja);
                  if($user == TRUE){
-                   header('location: ../dashboard.php');
+                   header('location: ../profil.php');
                  } else {
                   echo "gagal merubah profil";
                  }
