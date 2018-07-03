@@ -27,7 +27,7 @@
 	<link href="../assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
 	<link href="../assets/css/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
 
-	<script type="text/javascript" src="../assets/js/jquery-1.11.2.min.js"></script>    
+	<script type="text/javascript" src="../assets/js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="../assets/js/materialize.min.js"></script>
     <script type="text/javascript" src="../assets/js/perfect-scrollbar.min.js"></script>
     <script type="text/javascript" src="../assets/js/plugins.js"></script>
@@ -45,7 +45,7 @@
 						<li>
 							<a href="" class="waves-effect waves-block waves-light"><i class="mdi-social-notifications"></i></a>
 						</li>
-						<!-- Dropdown Trigger -->                        
+						<!-- Dropdown Trigger -->
 						<li>
 							<a href="#" data-activates="chat-out" class="waves-effect waves-block waves-light chat-collapse"><i class="mdi-communication-chat"></i></a>
 						</li>
@@ -97,8 +97,8 @@
 				<li class="no-padding">
 					<ul class="collapsible collapsible-accordion">
 						<li class="bold">
-							<a class="collapsible-header waves-effect waves-cyan">
-								<i class="mdi-action-invert-colors"></i> Dropdown
+							<a href="testimoni.php" class="collapsible-header waves-effect waves-cyan">
+								<i class="mdi-action-invert-colors"></i> isi testimoni
 							</a>
 							<div class="collapsible-body">
 								<ul>
@@ -242,7 +242,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<form>
 					<textarea name="editor1" id="editor1" rows="10" cols="80">
 						This is my textarea to be replaced with CKEditor.

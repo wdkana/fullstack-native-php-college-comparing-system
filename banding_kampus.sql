@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 03, 2018 at 08:49 AM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 5.6.32
+-- Host: localhost
+-- Generation Time: Jul 03, 2018 at 09:22 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -75,7 +75,8 @@ INSERT INTO `tbl_detail_profil` (`id`, `username`, `nim`, `asal_kampus`, `nama_l
 (13, 'saha', '6578', 'lpkia', 'saha weh', 'manajeman informatika', '3if', '6578', 'Haworthia-attenuata-_2_.jpg', '', ''),
 (14, 'abc', '789009', 'inaba', ';bhlj', 'abc', 'kh', '7890', 'Haworthia-attenuata-_2_.jpg', '', ''),
 (15, 'b', '125367899', 'inaba', 'kjb', 'kjvb;', 'jvkb', '567789', 'IMG_20100101_073902.jpg', '', ''),
-(17, 'gunadi', '1507', 'unpad', 'gunadi', 'kedokteran', '3if-03', '0812321312', 'Object 1.png', 'mahasiswa', 'tidak bekerja');
+(17, 'gunadi', '1507', 'unpad', 'gunadi', 'kedokteran', '3if-03', '0812321312', 'Object 1.png', 'mahasiswa', 'tidak bekerja'),
+(18, 'bandingkampus', '67890968790', 'lpkia', 'banding', 'informatika', '3if', '87687589069', 'IMG_20100101_073902.jpg', 'alumni', 'bekerja');
 
 -- --------------------------------------------------------
 
@@ -180,11 +181,34 @@ INSERT INTO `tbl_register` (`username`, `email`, `password`) VALUES
 ('abc', 'abc@mail.com', '123'),
 ('alsa', 'alsa@mail.com', '123'),
 ('b', 'b@mail.com', '123'),
+('bandingkampus', 'bandingkampus@gmail.com', '123'),
 ('dea', 'dea@mail.com', '123'),
 ('gunadi', 'gunadi@gmail.com', '123'),
 ('jek', 'jek@mail.com', '123'),
 ('juheri', 'juheri842@gmail.com', '123'),
 ('saha', 'saha@mail.com', '123');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_testimoni`
+--
+
+CREATE TABLE `tbl_testimoni` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `nama_kampus` varchar(255) NOT NULL,
+  `testimoni` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_testimoni`
+--
+
+INSERT INTO `tbl_testimoni` (`id`, `username`, `nama_kampus`, `testimoni`) VALUES
+(1, 'abc', 'ljbgio', 'kjbnl'),
+(2, 'saha', '', '<p>test euy</p>\r\n'),
+(3, 'bandingkampus', '', '<p>kampus ini bersih</p>\r\n');
 
 -- --------------------------------------------------------
 
@@ -256,6 +280,12 @@ ALTER TABLE `tbl_register`
   ADD UNIQUE KEY `username` (`username`);
 
 --
+-- Indexes for table `tbl_testimoni`
+--
+ALTER TABLE `tbl_testimoni`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_ulasan`
 --
 ALTER TABLE `tbl_ulasan`
@@ -275,7 +305,7 @@ ALTER TABLE `tbl_akreditasi`
 -- AUTO_INCREMENT for table `tbl_detail_profil`
 --
 ALTER TABLE `tbl_detail_profil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tbl_kampus`
@@ -294,6 +324,12 @@ ALTER TABLE `tbl_nilai`
 --
 ALTER TABLE `tbl_pertanyaan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `tbl_testimoni`
+--
+ALTER TABLE `tbl_testimoni`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_ulasan`
