@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 03, 2018 at 12:05 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 5.6.35
+-- Host: 127.0.0.1
+-- Generation Time: Jul 03, 2018 at 01:35 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 5.6.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -63,7 +63,8 @@ CREATE TABLE `tbl_detail_profil` (
 --
 
 INSERT INTO `tbl_detail_profil` (`id`, `username`, `nim`, `asal_kampus`, `nama_lengkap`, `fakultas`, `kelas`, `no_hp`, `foto_ktm`, `instagram`, `facebook`, `twitter`, `status`, `status_kerja`) VALUES
-(23, 'alsa', '564346789', 'inaba', 'alsa gunadi', 'informatika', '3IF1', '76457890', 'database.png', 'instagram', 'facebook', 'twitter', 'mahasiswa', 'tidak bekerja');
+(24, 'alsa gunadi', '123', 'lpkia', 'alsa gunadi', 'informatika', 'asd', '321798471', 'Object 1.png', 'Instagram', 'facebook', 'twitter', 'alumni', 'bekerja'),
+(25, 'kiki setiawan', '3', 'lpkia', 'kiki setiawan', 'informatika', '3if-03', '2317', 'Object 1.png', 'Instagram', 'facebook', 'twitter', 'alumni', 'tidak bekerja');
 
 -- --------------------------------------------------------
 
@@ -155,15 +156,18 @@ INSERT INTO `tbl_pertanyaan` (`id`, `pertanyaan`, `pil1`, `pil2`, `pil3`, `pil4`
 CREATE TABLE `tbl_register` (
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `hak_akses` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_register`
 --
 
-INSERT INTO `tbl_register` (`username`, `email`, `password`) VALUES
-('alsa', 'alsagunadi@gmail.com', 'caf1a3dfb505ffed0d024130f58c5cfa');
+INSERT INTO `tbl_register` (`username`, `email`, `password`, `status`, `hak_akses`) VALUES
+('alsa gunadi', 'alsagunadi@gmail.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'user'),
+('kiki setiawan', 'kikikiller28@yahoo.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'admin');
 
 -- --------------------------------------------------------
 
@@ -261,7 +265,7 @@ ALTER TABLE `tbl_akreditasi`
 -- AUTO_INCREMENT for table `tbl_detail_profil`
 --
 ALTER TABLE `tbl_detail_profil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `tbl_kampus`

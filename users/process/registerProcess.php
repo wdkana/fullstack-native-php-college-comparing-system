@@ -1,9 +1,11 @@
 <?php
 
     include_once("../../model/User_model.php");
+    include_once("../../model/Lupapass_model.php");
 
     $user = new User_model();
-
+	$mail = new Lupapass_model();
+	
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = md5($_POST['password']);
@@ -16,6 +18,7 @@
                 </script>";
         }else{
             $user->register($username, $email, $password);
+			$send = $mail->mail_verify($email);
             header('location: ../login.php');
         }
 

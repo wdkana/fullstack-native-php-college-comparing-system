@@ -13,7 +13,7 @@
       //function untuk register
       public function register($username, $email, $password){
 
-          $sql = "INSERT INTO `tbl_register` (`username`, `email`, `password`) VALUES ('$username', '$email', '$password');";
+          $sql = "INSERT INTO `tbl_register` (`username`, `email`, `password`, `status`) VALUES ('$username', '$email', '$password', 'Belum Verifikasi','user');";
           $query = mysql_query($sql);
           return $query;
       }
@@ -63,6 +63,28 @@
         $query = mysql_query($sql);
         return $query;
       }
+	  
+	  //function untuk memverifikasi pendaftaran lewat email
+	  public function verify_email($email){
+		  $sql = "UPDATE `tbl_register` SET `status` = 'Verifikasi' WHERE `email` = '$email'";
+		  $query = mysql_query($sql);
+		  return $query;
+	  }
+	  
+	  //validasi login email 
+	  public function validasi_email($username){
+		  $sql = "SELECT status FROM tbl_register WHERE username = '$username'";
+          $query = mysql_query($sql);
+		  $row = mysql_fetch_array($query);
+          return $row['status'];
+	  }
+	  
+	  public function hak_akses($username){
+		  $sql = "SELECT hak_akses FROM tbl_register WHERE username = '$username'";
+          $query = mysql_query($sql);
+		  $row = mysql_fetch_array($query);
+          return $row['hak_akses'];
+	  }
 
 
     }

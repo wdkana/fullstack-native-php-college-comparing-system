@@ -43,9 +43,9 @@
 		$mail->Port = 587;
 		$mail->SMTPSecure = 'tls';
 		$mail->SMTPAuth = true;
-		$mail->Username = "alsagunadi@gmail.com";
-		$mail->Password = "aschente";
-		$mail->setFrom('alsagunadi@gmail.com', 'Reset Password');
+		$mail->Username = "bandingkampusid@gmail.com";
+		$mail->Password = "BandingKampus2018";
+		$mail->setFrom('bandingkampusid@gmail.com', 'Reset Password');
 		$mail->addAddress($email, 'Banding Kampus');
 		$mail->isHTML(true);
 		// Set email format to HTML
@@ -91,5 +91,50 @@
 			  }
 			  return $mail;
 		  }	  
+		  
+		public function mail_verify($email){
+			$mail = new PHPMailer;
+			$mail->isSMTP();
+			$mail->SMTPDebug = 0;
+			$mail->SMTPOptions = array(
+				'ssl' => array(
+				'verify_peer' => false,
+				'verify_peer_name' => false,
+				'allow_self_signed' => true
+				)
+			);
+			$mail->Host = 'tls://smtp.gmail.com:587';
+			$mail->Port = 587;
+			$mail->SMTPSecure = 'tls';
+			$mail->SMTPAuth = true;
+			$mail->Username = "bandingkampusid@gmail.com";
+			$mail->Password = "BandingKampus2018";
+			$mail->setFrom('bandingkampusid@gmail.com', 'Verifikasi Email');
+			$mail->addAddress($email, 'Banding Kampus');
+			$mail->isHTML(true);
+			// Set email format to HTML
+			$mail->Subject = trim("Registration | Verifikasi");
+			$blank = ' ';
+			$message = '
+			<html>
+			<head>
+			</head>
+				<body">
+					<p> Silahkan lakukan verifikasi email dengan cara klik tombol dibawah ini.</p> <br>
+					<a class="tombol" href="http://localhost/bandingkampus/users/process/verifyemail.php?email=' .$email.'"> Konfirmasi </a>
+					</body>
+				</html>';
+				$mail->MsgHTML($message);
+				
+				if(!$mail->send()) 
+				{
+				   return true;
+
+				}
+				else
+				{
+					return false;
+				}
+		  }
 	  
 	}
