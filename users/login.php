@@ -53,6 +53,7 @@
         <div class="row center">
           <div class="input-field col s12">
             <p">Belum punya akun? <a href="register.php">Daftar Disini</a></p>
+			<p"><a href="lupaPassword.php">Lupa Password</a></p>
           </div>
         </div>
       </form>
