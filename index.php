@@ -132,8 +132,32 @@
 			<div class="ui hidden divider"></div>
 
 			<div class="ui justified aligned container">
-				<h1>MASUK AKUN</h1>
-	  			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<div class="ui hidden divider"></div>
+	  			<form class="ui large form">
+				  <div class="two fields">
+				    <div class="field">
+				      <label>Username</label>
+				      <input type="text">
+				    </div>
+				    <div class="field">
+				      <label>Password</label>
+				      <input type="text">
+				    </div>
+				  </div>
+				  <button class="ui google plus button" type="submit" style="float:right">Masuk</button>
+				</form>
+				<br/>
+				<div class="ui hidden divider"></div>
+				<h4 class="ui horizontal divider header">
+				<a href="">Daftar Disini</a>
+				atau
+ 				<a href="#">Lupa Password?</a>
+				</h4>
+				<div class="ui hidden divider"></div>
+				<div class="ui hidden divider"></div>
+
+
+
 			</div>
 
 		</div>
