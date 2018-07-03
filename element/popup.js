@@ -1,0 +1,3 @@
+$('.activating.element')
+  .popup()
+;
