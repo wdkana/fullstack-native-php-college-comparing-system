@@ -34,7 +34,7 @@
       //function untuk mengambil data testimoni
       public function viewTestimoni(){
 
-        $sql = "SELECT * FROM tbl_testimoni ORDER BY RAND() LIMIT 8";
+        $sql = "SELECT * FROM tbl_testimoni ORDER BY RAND() LIMIT 6";
         $query = mysql_query($sql);
         return $query;
       }

@@ -179,24 +179,28 @@
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
 
-		<div class="ui top attached">
+		<div class="ui center aligned container top attached">
   			<h1>Testimonial Alumni</h1>
 		
-		<!-- random looping mulai dari sini -->
 		
-<div class="ui cards">
+		<!-- random looping mulai dari sini -->
+		<div class="ui cards" style="position: relative;left:120px">
 		<?php while($row = mysql_fetch_array($result2)){?>	
-  <div class="card">
-    <div class="content">
-      <div class="header"><?php echo $row['username']?></div>
-      <div class="meta"><?php echo $row['nama_kampus']?></div>
-      <div class="description">
-        <?php echo $row['testimoni']?>
-      </div>
-    </div>
-  </div>
-<?php } ?>
-</div>
+			<div class="card">
+		 	<div class="content">
+		    	<div class="header"><?php echo $row['username'];?></div>
+		    	<div class="description">
+		      		<p><?php echo $row['testimoni']?></p>
+		    	</div>
+		  	</div>
+		  	<div class="extra content">
+		    	<div class="author">
+			 		<?php echo $row['nama_kampus'];?>
+		    	</div>
+		  	</div>
+		</div>
+  		<?php } ?>
+	</div>
 </div>
 		<div class="ui hidden divider"></div>
 		<!-- random beres -->
