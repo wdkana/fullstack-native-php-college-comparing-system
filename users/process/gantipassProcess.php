@@ -1,7 +1,7 @@
 <?php
-    include "../../model/User_model.php";
+    include "../../model/Lupapass_model.php";
 
-    $user = new User_model();
+    $user = new Lupapass_model();
 	  
 	$old = $_POST['old'];
 	$new = $_POST['new'];

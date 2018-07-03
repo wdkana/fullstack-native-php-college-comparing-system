@@ -1,7 +1,7 @@
 <?php
-      include "../../model/User_model.php";
+      include "../../model/Lupapass_model.php";
 
-      $mail = new User_model();
+      $mail = new Lupapass_model();
 
       $email = $_POST['email'];
 	  $verivikasi = $mail->check_mail($email);
