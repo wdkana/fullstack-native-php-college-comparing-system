@@ -1,6 +1,6 @@
 <?php
-    include "../model/Banding_model.php";
-    include "../model/Akreditasi_model.php";
+    include "model/Banding_model.php";
+    include "model/Akreditasi_model.php";
 
     $akreditasi = new Akreditasi_model();
     $banding = new Banding_model();
