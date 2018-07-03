@@ -202,7 +202,7 @@
   		<?php } ?>
 	</div>
 </div>
-		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider" id="next"></div>
 		<!-- random beres -->
 
 	<div class="ui hidden divider"></div>
@@ -225,7 +225,7 @@
 	    	</div>
 
 	    	<!-- mid content -->
-	    	<div class="ten wide column" id="next">
+	    	<div class="ten wide column">
 	    		<h1 class="ui header">Panduan Pengguna</h1>
 					<div class="ui list">
 						<div class="item">
