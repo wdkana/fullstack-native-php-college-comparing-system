@@ -31,6 +31,14 @@
           return $check;
       }
 
+      //function untuk mengambil data testimoni
+      public function viewTestimoni(){
+
+        $sql = "SELECT * FROM tbl_testimoni ORDER BY RAND() LIMIT 1";
+        $query = mysql_query($sql);
+        return $query;
+      }
+
     }
 
 ?>

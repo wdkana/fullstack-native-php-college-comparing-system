@@ -121,13 +121,6 @@
       $query = mysql_query($sql);
       return $query;
     }
-    //function untuk menampilkan testimoni Alumni
-    public function testimoniAlumni(){
-
-      $sql = "SELECT * FROM tbl_detail_profil WHERE status = 'alumni' ORDER BY RAND() LIMIT 1";
-      $query = mysql_query($sql);
-      return $query;
-    }
 
     }
 
