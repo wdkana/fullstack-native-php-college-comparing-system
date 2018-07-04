@@ -23,6 +23,7 @@
 	<h1>banding kampus</h1>
 	<?php //awal pembuatan alsa?>
 	<a href="kampus.php">Akreditasi</a>
+	<a href="pertanyaan.php">Buat Pertanyaan</a>
 	
 	
 	

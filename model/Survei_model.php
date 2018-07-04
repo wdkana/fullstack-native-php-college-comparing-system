@@ -56,6 +56,45 @@
           $query = mysql_query($sql);
           return $query;
 	  }
+	  
+	  //function menambahkan pertanyaan
+      public function addPertanyaan($pertanyaan, $pil1, $pil2, $pil3, $pil4, $pil5){
+
+          $sql = "INSERT INTO `tbl_pertanyaan`
+          VALUES (NULL, '$pertanyaan', '$pil1', '$pil2', '$pil3', '$pil4', '$pil5');";
+          $query = mysql_query($sql);
+          return $query;
+      }	  
+	  
+	  //function untuk hapus pertanyaan
+      public function deletePertanyaan($id){
+
+        $sql = "DELETE FROM tbl_pertanyaan WHERE id = '$id'";
+        $query = mysql_query($sql);
+        return $query;
+      }
+	  
+	  //function untuk merubah pertanyaan
+	  public function editPertanyaan($id,$pertanyaan, $pil1, $pil2,$pil3,$pil4,$pil5){
+	  $sql = "UPDATE `tbl_pertanyaan` SET 
+	  `pertanyaan` = '$pertanyaan', 
+	  `pil1` = '$pil1', 
+	  `pil2` = '$pil2', 
+	  `pil3` = '$pil3', 
+	  `pil4` = '$pil4', 
+	  `pil5` = '$pil5'
+	   WHERE `id` = $id";
+      $query = mysql_query($sql);
+      return $query;
+	  }
+	  
+      //function untuk menampilkan pertanyaan berdasarkan id
+      public function pertanyaanId($id){
+          $sql = "SELECT * FROM tbl_pertanyaan where id=$id";
+          $query = mysql_query($sql);
+ 		  $row = mysql_fetch_array($query);
+          return $row;
+      }	  
     }
 
 ?>

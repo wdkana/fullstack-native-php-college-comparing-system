@@ -75,7 +75,6 @@
 	  `facebook` = '$facebook', 
 	  `twitter` = '$twitter' 
 	   WHERE `id` = $id";
-	   echo $sql;
       $query = mysql_query($sql);
       return $query;
 	  }
