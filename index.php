@@ -41,8 +41,8 @@
 
 			<div class="right item">
 			    <div class="ui action input">
-			    	<input type="text" placeholder="Navigate to...">
-			      	<div class="ui button">Go</div>
+			    	<input type="text" placeholder="nama kampus...">
+			      	<div class="ui button">Cari</div>
 			    </div>
 			</div>
 		</div>
@@ -100,7 +100,7 @@
 
 		<div class="ui hidden divider"></div>
 
-		<form action="bandingHasil.php" method="POST" class="animated bounceInRight">
+		<form action="bandingHasil.php" method="POST" class="ui large form animated bounceInRight">
 		<div class="ui center aligned stackable grid container">
 		  	<div class="column">
 		    	<select class="ui huge search dropdown" name="kampus1" required>

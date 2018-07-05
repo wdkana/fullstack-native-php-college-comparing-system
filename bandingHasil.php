@@ -22,8 +22,115 @@
 ?>
 <html>
 <head>
-  <title>Hasil Perbandingan</title>
+	<title></title>
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="element/animate.css">
+    <script src="element/jquery-3.1.1.min.js"></script>
+	<script src="semantic/dist/semantic.min.js"></script>
+	<script src="semantic/dist/components/accordion.js"></script>
+	<script src="element/overlay.js"></script>
+	<script src="element/transition.js"> </script>
+	<script src="../element/angular.js"></script>
+	<script src="element/date.js"></script>
 </head>
+	<body>
+		<div class="ui top fixed menu">
+		    	<div class="ui icon input">
+		    		<a class="item">Tentang</a>
+					<a class="item">Kontak</a>
+					<a class="item">Blog</a>
+		    	</div>
+
+			<div class="right item">
+			    <div class="ui action input">
+			    	<input type="text" placeholder="nama kampus...">
+			      	<div class="ui button">Cari</div>
+			    </div>
+			</div>
+		</div>
+		<div class="ui center aligned container">
+			<br/>
+			<br/>
+			<h2 class="ui center aligned icon header">
+				<img src="assets/img/bklogo.jpg">
+			</h2>
+
+			<h2 class="ui center aligned icon header">
+  				<span style="color:#dc5538">Banding</span>&nbsp;&nbsp;<i class="id flag"></i><span style="color:#3B5998">Kampus</span>
+			</h2>
+
+			<table class="ui five column table">
+			  	<thead>
+			  		<h3><?php echo $row1['nama_kampus']?></h3>
+				    <tr>
+				    	<th>Kualitas Dosen</th>
+					    <th>Lingkungan</th>
+					    <th>Prestasi</th>
+					    <th>Kesesuaian Mata Kuliah</th>
+					    <th>Biaya Kuliah</th>
+				  	</tr>
+				</thead>
+				<tbody>
+				    <tr>
+				      <td></td>
+				    </tr>
+				    <tr>
+				      <td></td>
+				    </tr>
+				    <tr>
+				      <td></td>
+				    </tr>
+				</tbody>
+			  <tfoot>
+			    <tr><th>3 People</th>
+			    <th>2 Approved</th>
+			    <th></th>
+			    <th></th>
+			    <th></th>
+			  </tr></tfoot>
+			</table>
+
+			<div class="ui hidden divider"></div>
+			<div class="ui horizontal divider">
+    			<h1>VERSUS</h1>
+  			</div>
+			<div class="ui hidden divider"></div>
+			
+			<table class="ui five column table">
+			  	<thead>
+			  		<h3><?php echo $row2['nama_kampus']?></h3>
+				    <tr>
+				    	<th>Kualitas Dosen</th>
+					    <th>Lingkungan</th>
+					    <th>Prestasi</th>
+					    <th>Kesesuaian Mata Kuliah</th>
+					    <th>Biaya Kuliah</th>
+				  	</tr>
+				</thead>
+				<tbody>
+				    <tr>
+				      <td></td>
+				    </tr>
+				    <tr>
+				      <td></td>
+				    </tr>
+				    <tr>
+				      <td></td>
+				    </tr>
+				</tbody>
+			  <tfoot>
+			    <tr><th>3 People</th>
+			    <th>2 Approved</th>
+			    <th></th>
+			    <th></th>
+			    <th></th>
+			  </tr></tfoot>
+			</table>
+
+
 
 	<table border=1>
 		  <tr>
@@ -69,5 +176,11 @@
 		  </tr>
 		</table>
 
-
+	</div>
+<script type="text/javascript">
+	$('.ui.rating')
+  .rating()
+;
+</script>
+</body>
 </html>
