@@ -32,8 +32,10 @@
 	<body>
 		<div class ="ui container">
 			<br/>
-			<h2 class="ui center aligned icon header">
+			<!-- 
 				<a href="space_iklan1.php"><center><div class="ui leaderboard test ad" style="background: #222; opacity: 0.9" data-text="Space Iklan 1"></div></center></a>
+			-->
+			<h2 class="ui center aligned icon header">
   				<span style="color:#dc5538">Banding</span>&nbsp;&nbsp;<i class="id flag"></i><span style="color:#3B5998">Kampus</span>
 			</h2>
 
@@ -380,13 +382,6 @@
 				</button>
 			</div>
 	  </form>
-	  	<div class="actions">
-		    <button class="ui negative right labeled icon button" type="submit">
-		      Daftar
-		      <i class="checkmark icon"></i>
-		    </button>
-	  	</div>
-	  	</form>
 	</div>
 
 	<!-- modal daftar user berakhir -->
