@@ -62,6 +62,75 @@
   				<span style="color:#dc5538">Banding</span>&nbsp;&nbsp;<i class="id flag"></i><span style="color:#3B5998">Kampus</span>
 			</h2>
 
+			<table class="ui celled stripped table">
+  <thead class="center aligned">
+  	<tr>
+  	<th colspan="3">
+
+      <h3 align="center">
+
+    <div class="ui small image">
+      <div class="ui black ribbon label">
+        <i class="id flag"></i> 
+        <!-- nama kampus ti database -->
+        LPKIA
+      </div>
+      <img src="assets/images/lpkia.jpeg">
+    </div>
+
+      </h3>
+
+
+    </th>
+	</tr>
+    <tr>
+      <th>Indikator</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Kualitas Dosen</td>
+      <td class="center aligned">Nilai</td>
+    </tr>
+    <tr>
+      <td>Lingkungan</td>
+      <td class="center aligned">Nilai</td>
+    </tr>
+    <tr>
+      <td>Prestasi</td>
+      <td class="center aligned">Nilai</td>
+    </tr>
+    <tr>
+      <td>Kesesuaian Matakuliah</td>
+      <td class="center aligned">Nilai</td>
+    </tr>
+    <tr>
+      <td>Biaya Kuliah</td>
+      <td class="center aligned">Nilai</td>
+    </tr>
+    <tr> 
+      <td>Fakultas</td>
+      <td class="center aligned double line">Nilai</td>
+    </tr>
+    <tr>  
+      <td>Akreditasi Jurusan</td>
+      <td class="center aligned double line">Nilai</td>
+    </tr>
+  </tbody>
+
+  <tfoot class="full-width">
+    <tr>
+      <th colspan="3">
+          
+         <div class="ui label"><i class="user icon"></i> 223 Anggota Bandingkampus</div>
+         <div class="ui right floated small primary button" style="width: 280px"> <i class="trophy icon"></i>Total Score 500<!-- nilai total disini --></div>
+      </th>
+      </tr>
+  </tfoot>
+
+</table>
+
 			<table class="ui five column table">
 			  	<thead>
 			  		<h3><?php echo $row1['nama_kampus']?></h3>
@@ -110,6 +179,7 @@
 					    <th>Prestasi</th>
 					    <th>Kesesuaian Mata Kuliah</th>
 					    <th>Biaya Kuliah</th>
+					    <th>Nilai Akreditasi Jurusan</th>
 				  	</tr>
 				</thead>
 				<tbody>
