@@ -77,7 +77,8 @@
             <td><?php echo $row['twitter'];?></td>
             <td><?php echo $row['website'];?></td>
             <td>
-			<a href="akreditasi.php?id=<?php echo $row['id'];?>">tambah akreditasi</a>
+			<a href="akreditasi.php?id=<?php echo $row['id'];?>">Akreditasi</a>
+			<a href="fakultas.php?id=<?php echo $row['id'];?>">Fakultas</a>
 			<a href="edit_kampus.php?id=<?php echo $row['id'];?>">Edit</a>
             <button onclick="hapus(<?php echo $row['id'];?>)">Hapus</button></td>
           </tr>

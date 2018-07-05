@@ -4,19 +4,79 @@
 
     $akreditasi = new Akreditasi_model();
     $banding = new Banding_model();
-
+	
     $kampus1 = $_POST['kampus1'];
-	  $row1 = $banding->Kampus($kampus1);
+	//melihat total nilai kampus
+	$row1 = $banding->Kampus($kampus1);
     $result1 = $akreditasi->viewAkreditasi($kampus1);
-
+	
+	//melihat fakultas pada kampus 1
+	$fakultas1 = $banding->fakultas($kampus1);
+	$jurusan1 = $banding->jurusan($kampus1);
+	
     $kampus2 = $_POST['kampus2'];
-	  $row2 = $banding->Kampus($kampus2);
+	$row2 = $banding->Kampus($kampus2);
     $result2 = $akreditasi->viewAkreditasi($kampus2);
+	
+	//melihat fakultas pada kampus 2
+	$fakultas2 = $banding->fakultas($kampus2);
+	$jurusan2 = $banding->jurusan($kampus2);
+	
     $total1=$row1['dosen']+$row1['jurusan']+$row1['lingkungan']+$row1['prestasi']+$row1['mata_kuliah']+$row1['biaya'];
     $total2= $row2['dosen']+$row2['jurusan']+$row2['lingkungan']+$row2['prestasi']+$row2['mata_kuliah']+$row2['biaya'];
 
 	$indikator1 = $total1 / ($total1+$total2) * 100;	$indikator2 = $total2 / ($total1+$total2) * 100;
 
+	//mencari list jurusan kampus 1
+	$listjurusan1 = "";
+	$i=0;
+    while($list = mysql_fetch_array($jurusan1)){
+		if($i==0){
+			$listjurusan1 = $listjurusan1 . $list['fakultas']. " [".$list['akreditasi']."]";
+		}else {
+			$listjurusan1 = $listjurusan1 . "<br>" .$list['fakultas']. " [".$list['akreditasi']."]";
+		}
+		$i++;
+    }	
+	
+	//mencari list jurusan kampus 2
+	$listjurusan2 = "";
+	$i=0;
+    while($list = mysql_fetch_array($jurusan2)){
+		if($i==0){
+			$listjurusan2 = $listjurusan2 . $list['fakultas']. " [".$list['akreditasi']."]";
+		}else {
+			$listjurusan2 = $listjurusan2 . "<br>" .$list['fakultas']. " [".$list['akreditasi']."]";
+		}
+		$i++;
+    }	
+	
+	//mencari list fakultas kampus 1
+	$i=0;
+	$listfakultas1 = "";
+    while($list = mysql_fetch_array($fakultas1)){
+		if($i==0){
+			$listfakultas1 = $listfakultas1 . $list['fakultas'];
+		}else {
+			$listfakultas1 = $listfakultas1 . ", " .$list['fakultas'];
+		}
+			$i++;
+    }	
+	
+	//mencari list fakultas kampus 2
+	$i=0;
+	$listfakultas2 = "";
+    while($list = mysql_fetch_array($fakultas2)){
+		if($i==0){
+			$listfakultas2 = $listfakultas2 . $list['fakultas'];
+		}else {
+			$listfakultas2 = $listfakultas2 . ", " .$list['fakultas'];
+		}
+			$i++;
+    }	
+	
+	
+	//menentukan kampus terbaik
 	if($indikator1>$indikator2){
 		$unggulkam = $kampus1;
 		$ungguldos = ($row1['dosen'] - $row2['dosen']) / $row1['dosen'] * 100;
@@ -24,9 +84,9 @@
 		$unggulprestasi = ($row1['prestasi'] - $row2['prestasi']) / $row1['prestasi'] * 100;
 		$unggulmatkul = ($row1['mata_kuliah'] - $row2['mata_kuliah']) / $row1['mata_kuliah'] * 100;
 		$unggulbiaya = ($row1['biaya'] - $row2['biaya']) / $row1['biaya'] * 100;
-		$unggulfakultas = ($row1['dosen'] - $row2['dosen']) / $row1['dosen'] * 100;
-		$unggulakreditasi = ($row1['dosen'] - $row2['dosen']) / $row1['dosen'] * 100;
-		echo "if ke 1 aktif";
+		$unggulfakultas = $listfakultas1;
+		$unggulakreditasi = $listjurusan1;
+
 	}else if($indikator2>$indikator1){
 		$unggulkam = $kampus2;
 		$ungguldos = ($row2['dosen'] - $row1['dosen']) / $row2['dosen'] * 100;
@@ -34,8 +94,8 @@
 		$unggulprestasi = ($row2['prestasi'] - $row1['prestasi']) / $row2['prestasi'] * 100;
 		$unggulmatkul = ($row2['mata_kuliah'] - $row1['mata_kuliah']) / $row2['mata_kuliah'] * 100;
 		$unggulbiaya = ($row2['biaya'] - $row1['biaya']) / $row2['biaya'] * 100;
-		$unggulfakultas = ($row2['dosen'] - $row1['dosen']) / $row2['dosen'] * 100;
-		$unggulakreditasi = ($row2['dosen'] - $row1['dosen']) / $row2['dosen'] * 100;
+		$unggulfakultas = $listfakultas2;
+		$unggulakreditasi = $listjurusan2;
 	}else {
 		$unggulkam = "Nilai Kampus Seimbang";
 		$ungguldos = 0;
@@ -43,14 +103,15 @@
 		$unggulprestasi = 0;
 		$unggulmatkul = 0;
 		$unggulbiaya = 0;
-		$unggulfakultas = 0;
-		$unggulakreditasi = 0;
+		$unggulfakultas = "";
+		$unggulakreditasi = "";
 	}
 	
     if($kampus1 == $kampus2){
         echo "<script>window.alert('Nama Kampus tidak boleh sama!!');
               window.location.href='index.php';</script>";
     }
+		
 ?>
 <html>
 <head>
@@ -116,9 +177,9 @@
       				<div class="ui black ribbon label">
         			<i class="id flag"></i> 
         			<!-- nama kampus ti database -->
-        			LPKIA
+        			<?php echo $kampus1 ?>
       				</div>
-      				<img src="assets/images/lpkia.jpeg">
+      				<img height="200" width="200" src="assets/images/<?php echo $row1['foto'] ?>">
     			</div>
     		</th>
 		</tr>
@@ -153,11 +214,13 @@
     	</tr>
     	<tr> 
       		<td>Fakultas</td>
-      		<td class="center aligned double line"><?php echo $row1['dosen'] ?></td>
+			<td class="center aligned double line">
+			<?php echo $listfakultas1; ?></td>
     	</tr>
     	<tr>  
       		<td>Akreditasi Jurusan</td>
-      		<td class="center aligned double line"><?php echo $row1['dosen'] ?></td>
+      		<td class="center aligned double line">
+			<?php echo $listjurusan1;?></td>
     	</tr>
   	</tbody>
 
@@ -218,9 +281,9 @@
       				<div class="ui black ribbon label">
         			<i class="id flag"></i> 
         			<!-- nama kampus ti database -->
-        			LPKIA
+        			<?php echo $kampus2?>
       				</div>
-      				<img src="assets/images/lpkia.jpeg">
+      				<img height="200" width="200" src="assets/images/<?php echo $row2['foto']?>">
     			</div>
     		</th>
 		</tr>
@@ -255,11 +318,37 @@
     	</tr>
     	<tr> 
       		<td>Fakultas</td>
-      		<td class="center aligned double line"><?php echo $row2['dosen'] ?></td>
+			<td class="center aligned double line">
+			<?php
+			  $i=0;
+			  $listfakultas = "";
+              while($list = mysql_fetch_array($fakultas2)){
+				if($i==0){
+					$listfakultas = $listfakultas . $list['fakultas'];
+				}else {
+					$listfakultas = $listfakultas . ", " .$list['fakultas'];
+				}
+				$i++;
+              }
+			  echo $listfakultas;
+          ?></td>
     	</tr>
     	<tr>  
       		<td>Akreditasi Jurusan</td>
-      		<td class="center aligned double line"><?php echo $row2['dosen'] ?></td>
+      		<td class="center aligned double line">
+			<?php
+			  $listjurusan = "";
+			  $i=0;
+              while($list = mysql_fetch_array($jurusan2)){
+				if($i==0){
+					$listjurusan = $listjurusan . $list['fakultas']. " [".$list['akreditasi']."]";
+				}else {
+					$listjurusan = $listjurusan . "<br>" .$list['fakultas']. " [".$list['akreditasi']."]";
+				}
+				$i++;
+              }
+			  echo $listjurusan;
+          ?></td>
     	</tr>
   	</tbody>
 
@@ -350,16 +439,16 @@
 	      <td><?php echo floor($unggulbiaya) ?><i> % Lebih Besar</i></td>
 	    </tr>
 		<?php }?>
-		<?php if($unggulfakultas>0){ ?>
+		<?php if($unggulfakultas!=""){ ?>
 		<tr>
 	      <td>Fakultas</td>
-	      <td><?php echo floor($unggulfakultas) ?><i> % Lebih Besar</i></td>
+	      <td><?php echo $unggulfakultas ?></td>
 	    </tr>
 		<?php }?>
-		<?php if($unggulfakultas>0){ ?>
+		<?php if($unggulakreditasi!=""){ ?>
 		<tr>
 	      <td>Akreditasi Jurusan</td>
-	      <td><?php echo floor($unggulfakultas) ?><i> % Lebih Besar</i></td>
+	      <td><?php echo $unggulakreditasi ?></td>
 	    </tr>
 		<?php }?>
   	</tbody>

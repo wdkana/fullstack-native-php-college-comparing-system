@@ -12,7 +12,9 @@
 
       //function untuk banding kampus
       public function Kampus($kampus){
-          $sql = "SELECT tbl_kampus.id, tbl_kampus.nama_kampus,
+          $sql = "SELECT tbl_kampus.id, 
+		  tbl_kampus.foto,
+		  tbl_kampus.nama_kampus,
 		      SUM(tbl_nilai.dosen) as dosen,
 		      SUM(tbl_nilai.jurusan) as jurusan,
 		      SUM(tbl_nilai.lingkungan) as lingkungan,
@@ -39,8 +41,17 @@
         $query = mysql_query($sql);
         return $query;
       }
-
-
-    }
-
+	  
+	  public function fakultas($nama_kampus){
+          $sql = "SELECT * FROM `tbl_fakultas` WHERE nama_kampus = '$nama_kampus'";
+          $query = mysql_query($sql);
+          return $query;
+		}
+		
+		public function jurusan($nama_kampus){
+		  $sql = "SELECT * FROM `tbl_akreditasi` WHERE nama_kampus = '$nama_kampus'";
+          $query = mysql_query($sql);
+          return $query;
+		}
+	}
 ?>
