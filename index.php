@@ -183,27 +183,31 @@
 			<div class="ui hidden divider"></div>
 
 			<div class="ui justified aligned container animated bounceInDown">
+			
 			<div class="ui hidden divider"></div>
+	  			
 	  			<form class="ui large form" action="users/process/loginProcess.php" method="post">
-				  <div class="two fields">
-				    <div class="field">
-				      <label>Username</label>
-				      <input type="text" name="username">
-				    </div>
-				    <div class="field">
-				      <label>Password</label>
-				      <input type="password" name="password">
-				    </div>
-				  </div>
-				  <div class="ui center aligned container">
-				  	<button class="ui facebook button" type="submit" style="width:200px">Masuk</button>
-				  </div>
+  					<div class="ui center aligned stackable grid container">
+						<div class="ui huge icon input">
+	  						<input type="text" placeholder="username" name="username">
+						</div>
+			    		<div class="ui huge icon input">
+	  						<input type="password" name="password" placeholder="password">
+						</div>
+	  						<input class="ui huge google plus button" type="submit" value="masuk">
+		 			</div>
 				</form>
-				<h4 class="ui horizontal divider header">
-				<button onclick="daftar()" class="ui button">daftar disini</button>
-				atau
- 				<button onclick="lupapassword()" class="ui button">lupa password?</button>
-				</h4>
+
+		 		<div class="ui hidden divider"></div>
+		 		<div class="ui hidden divider"></div>
+
+		 		<div class="ui center aligned container">
+					<div class="ui floating compact message" style="width:73%">
+	  					<p>Belum punya akun? <span onclick="daftar()" style="cursor: pointer;color:#3B5998">Daftar disini</span></p>
+	  					<p><span onclick="lupapassword()" style="cursor: pointer;color:#3B5998">Lupa password?</span></p>
+					</div>
+				</div>
+
 				<div class="ui hidden divider"></div>
 				<div class="ui hidden divider"></div>
 			</div>
@@ -280,7 +284,7 @@
 	      		<hr/>
 						<?php } ?>
 	      		<!-- end looping -->
-	      		<center><a href="#" class="ui google plus button">Lihat Semua</a></center>
+	      		<center><a href="#" class="ui facebook button">Lihat Semua</a></center>
 	    	</div>
 
 	    	<!-- mid content -->
