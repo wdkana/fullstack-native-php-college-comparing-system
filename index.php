@@ -29,8 +29,8 @@
 		<script src="../element/angular.js"></script>
     	<script src="element/date.js"></script>
 	</head>
-	<body>
-		<div class ="ui container">
+	<body style="background: #dc5538">
+		<div class ="ui container" style="background: #f5f5f5">
 			<br/>
 			<!-- 
 				<a href="space_iklan1.php"><center><div class="ui leaderboard test ad" style="background: #222; opacity: 0.9" data-text="Space Iklan 1"></div></center></a>
@@ -161,9 +161,9 @@
 				  </div>
 				</form>
 				<h4 class="ui horizontal divider header">
-				<button onclick="daftar()" class="ui button">Daftar Disini</button>
+				<button onclick="daftar()" class="ui button">daftar disini</button>
 				atau
- 				<button onclick="lupapassword()" class="ui button">Lupa Password?</button>
+ 				<button onclick="lupapassword()" class="ui button">lupa password?</button>
 				</h4>
 				<div class="ui hidden divider"></div>
 				<div class="ui hidden divider"></div>
@@ -175,10 +175,25 @@
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
 
-		<div class="ui center aligned container">
-			<span onclick="next()" style="color:#dc5538;cursor: pointer"><i class="huge arrow alternate circle down outline icon"></i></span>
+		<div class="ui right aligned container">
+			<span onclick="next()" style="color:#f5f5f5; cursor: pointer; top:20; position: fixed; z-index: 99"><i class="huge arrow alternate circle down outline icon tobot"></i></span>
 		</div>
 
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
@@ -226,7 +241,7 @@
 	      		<hr/>
 						<?php } ?>
 	      		<!-- end looping -->
-	      		<center><a href="#">Lihat Semua</a></center>
+	      		<center><a href="#" class="ui google plus button">Lihat Semua</a></center>
 	    	</div>
 
 	    	<!-- mid content -->
@@ -472,3 +487,13 @@
 	<!-- js end -->
 	</body>
 </html>
+
+<style>
+	p, small, b, h1, h2, h3, h4, h5, h6 {
+		color: #555666;
+	}
+	.tobot:hover{
+		color:#222;
+		transition: .6s;
+	}
+</style>
