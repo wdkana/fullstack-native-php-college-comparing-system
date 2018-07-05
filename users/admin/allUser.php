@@ -89,11 +89,9 @@
             <td><?php echo $row['twitter'];?></td>
             <td><?php echo $row['status'];?></td>
             <td><?php echo $row['status_kerja'];?></td>
-
-
             <td>
 			<a href="edit_user.php?id=<?php echo $row['id'];?>">Edit</a>
-            <button onclick="hapus(<?php echo $row['id'];?>)">Hapus</button></td>
+			<button onclick="hapus('<?php echo $row['username'];?>')">Hapus</button></td>
           </tr>
           <?php
               $no++;
@@ -101,7 +99,18 @@
           ?>
         </tbody>
       </table>
+      <script>
+          function hapus(username) {
+              var r = confirm("Apakah anda akan menghapus data ini?");
+              if (r == true) {
+                  window.location.href="process/deleteUserProcess.php?i="+username;
+              } else {
+                  window.location.href="allUser.php";
+              }
+          }
+
+      </script>  
   </body>
 </html>
 
-<Scr
+
