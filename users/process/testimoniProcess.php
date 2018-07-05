@@ -13,10 +13,11 @@
 
     $nama_kampus = $row['asal_kampus'];
     $testimoni = $_POST['testimoni'];
+    $nama_lengkap = $row['nama_lengkap'];
 
-    $test->insertTestimoni($username,$nama_kampus,$testimoni);
+    $test->insertTestimoni($username,$nama_lengkap,$nama_kampus,$testimoni);
     if($test == TRUE){
-      header('location: ../dashboard.php');
+      header('location: ../testimoni.php');
     } else {
         echo "data gagal disimpan";
     }

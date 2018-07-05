@@ -55,6 +55,28 @@
           $query = mysql_query($sql);
           return $query;
       }
+
+      //function untuk hapus testimoni
+      public function deleteTestimoni($id){
+
+          $sql = "DELETE FROM tbl_testimoni WHERE id = '$id'";
+          $query = mysql_query($sql);
+          return $sql;
+      }
+
+      //function untuk edit testimoni
+      public function editTestimoni($testimoni,$id){
+          $sql = "UPDATE `tbl_testimoni` SET `testimoni` = '$testimoni' WHERE `tbl_testimoni`.`id` = '$id';";
+          $query = mysql_query($sql);
+          return $query;
+      }
+
+      //function untuk menampilkan testimoni berdasarkan id
+      public function getId($id){
+        $sql = "SELECT * FROM tbl_testimoni WHERE id = '$id'";
+        $query = mysql_query($sql);
+        return $query;
+      }
     }
 
 ?>

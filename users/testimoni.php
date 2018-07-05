@@ -13,7 +13,9 @@
     if($hak_akses == 'admin'){
         header('location:admin/dashboard-admin.php');
     } 
-    $row = mysql_fetch_array($testimoni->getTestimoni($username));
+
+    $result = $testimoni->getTestimoni($username);
+    $row = mysql_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,6 +23,9 @@
   <title>Testimoni</title>
 </head>
 <body>
+  <a href="dashboard.php">kembali</a><br>
+  <a href="addTestimoni.php">isi testimoni</a>
+            <h1>data testimoni</h1>
     <table border="1">
       <thead>
         <tr>
@@ -31,7 +36,8 @@
       <tbody>
         <tr>
           <td><?php echo $row['testimoni'];?></td>
-          <td><a href="#">Hapus</a><a href="#">Ubah</a></td>
+          <td><button onclick="hapus(<?php echo $row['id'];?>)">Hapus</button>
+            <a href="editTestimoni.php?i=<?php echo $row['id'];?>">Ubah</a></td>
         </tr>
       </tbody>
     </table>
