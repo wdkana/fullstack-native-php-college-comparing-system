@@ -30,20 +30,19 @@
 <body>
 	<h3>banding kampus</h3>
 	<?php //awal pembuatan alsa?>
+	<a href="../admin/dashboard-admin.php">Dashboard</a><br>	
 	<a href="pertanyaan.php">Buat Pertanyaan</a><br>
-  <a href="kampus.php">Kampus</a><br>
-  <a href="allUser.php">User</a><br>
-
+	<a href="kampus.php">Kampus</a><br>
+	<a href="allUser.php">User</a><br>
 	<?php //akhir pembuatan alsa?>
-
-	<a href="../admin/dashboard-admin.php">Dashboard</a><br>
-	<a href="../process/logoutProcess.php">Logout</a><br>
-    <a href="setting.php">Setting</a><br>
 	<a href="../users/ulasan.php" class="waves-effect waves-cyan">Ulasan</a>
 	<br>
 	<a href="../users/survei.php" class="waves-effect waves-cyan">Isi Survei</a>
 	<br>
 	<a href="testimoni.php">isi testimoni</a>
+    <a href="setting.php">Setting</a><br>
+	<a href="../process/logoutProcess.php">Logout</a><br>
+
     <h3>User yang terdaftar saat ini sebanyak #<?php echo $user->User();?></h3><br>
     <h3>Kampus yang terdaftar saat ini sebanyak #<?php echo $kmp->Kampus();?></h3><br>
     <h3>User yang berstatus mahasiswa sebanyak #<?php echo $user->Student();?></h3><br>

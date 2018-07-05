@@ -15,6 +15,20 @@
     $total1=$row1['dosen']+$row1['jurusan']+$row1['lingkungan']+$row1['prestasi']+$row1['mata_kuliah']+$row1['biaya'];
     $total2= $row2['dosen']+$row2['jurusan']+$row2['lingkungan']+$row2['prestasi']+$row2['mata_kuliah']+$row2['biaya'];
 
+	$indikator1 = $total1 / ($total1+$total2) * 100;	$indikator2 = $total2 / ($total1+$total2) * 100;
+	echo ceil($indikator1);
+	echo ceil($indikator2);
+	
+	$ungguldos = $row1['dosen'] - $row2['dosen'] / $row1['dosen'] * 100;
+	$unggullingkung = $row1['lingkungan'] - $row2['lingkungan'] / $row1['lingkungan'] * 100;
+	$unggulprestasi = $row1['prestasi'] - $row2['prestasi'] / $row1['prestasi'] * 100;
+	$unggulmatkul = $row1['mata_kuliah'] - $row2['mata_kuliah'] / $row1['mata_kuliah'] * 100;
+	$unggulbiaya = $row1['biaya'] - $row2['biaya'] / $row1['biaya'] * 100;
+	$unggulfakultas = $row1['dosen'] - $row2['dosen'] / $row1['dosen'] * 100;
+	$unggulakreditasi = $row1['dosen'] - $row2['dosen'] / $row1['dosen'] * 100;
+	
+	
+	
     if($kampus1 == $kampus2){
         echo "<script>window.alert('Nama Kampus tidak boleh sama!!');
               window.location.href='index.php';</script>";
@@ -61,15 +75,15 @@
 			<br/>
 			<br/>
 			
-			<div class="ui teal progress" data-percent="<?php echo '50'?>" id="kampus1">
+			<div class="ui teal progress" data-percent="<?php echo ceil($indikator1)?>" id="kampus1">
   				<div class="bar"></div>
-  				<div class="label"><p><i class="trophy icon"></i> kampus1 <i style="color:red">530 Point</i></p></div>
+  				<div class="label"><p><i class="trophy icon"></i> kampus 1 <i style="color:red"><?php echo $total1?> Point</i></p></div>
 			</div>
 			
 
-			<span onclick="next()"><div class="ui teal progress" data-percent="<?php echo '30'?>" id="kampus2" style="cursor: pointer;">
+			<span onclick="next()"><div class="ui teal progress" data-percent="<?php echo ceil($indikator2)?>" id="kampus2" style="cursor: pointer;">
   				<div class="bar"></div>
-  				<div class="label"><p>kampus2 <i style="color:red">300 Point</i></p></div>
+  				<div class="label"><p>kampus 2 <i style="color:red"><?php echo $total2?> Point</i></p></div>
 			</div>
 		</span>
 			
@@ -100,31 +114,31 @@
   	<tbody>
     	<tr>
       		<td>Kualitas Dosen</td>
-      		<td class="center aligned">Nilai</td>
+      		<td class="center aligned"><?php echo $row1['dosen'] ?></td>
     	</tr>
     	<tr>
       		<td>Lingkungan</td>
-      		<td class="center aligned">Nilai</td>
+      		<td class="center aligned"><?php echo $row1['lingkungan'] ?></td>
     	</tr>
     	<tr>
       		<td>Prestasi</td>
-      		<td class="center aligned">Nilai</td>
+      		<td class="center aligned"><?php echo $row1['prestasi'] ?></td>
     	</tr>
     	<tr>
       		<td>Kesesuaian Matakuliah</td>
-      		<td class="center aligned">Nilai</td>
+      		<td class="center aligned"><?php echo $row1['mata_kuliah'] ?></td>
     	</tr>
     	<tr>
       		<td>Biaya Kuliah</td>
-      		<td class="center aligned">Nilai</td>
+      		<td class="center aligned"><?php echo $row1['biaya'] ?></td>
     	</tr>
     	<tr> 
       		<td>Fakultas</td>
-      		<td class="center aligned double line">Nilai</td>
+      		<td class="center aligned double line"><?php echo $row1['dosen'] ?></td>
     	</tr>
     	<tr>  
       		<td>Akreditasi Jurusan</td>
-      		<td class="center aligned double line">Nilai</td>
+      		<td class="center aligned double line"><?php echo $row1['dosen'] ?></td>
     	</tr>
   	</tbody>
 
@@ -132,7 +146,7 @@
     	<tr>
       		<th colspan="3">
          		<div class="ui label"><i class="user icon"></i> 223 Anggota Bandingkampus</div>
-         		<div class="ui right floated small primary button" style="width: 280px;cursor:default;"> <i class="trophy icon"></i>Total Score 500<!-- nilai total disini --></div>
+         		<div class="ui right floated small primary button" style="width: 280px;cursor:default;"> <i class="trophy icon"></i>Total Score <?php echo $total1 ?><!-- nilai total disini --></div>
          		<!-- komentar -->
          		<div class="ui comments">
 				  	<div class="comment">
@@ -198,31 +212,31 @@
   	<tbody>
     	<tr>
       		<td>Kualitas Dosen</td>
-      		<td class="center aligned">Nilai</td>
+      		<td class="center aligned"><?php echo $row2['dosen'] ?></td>
     	</tr>
     	<tr>
       		<td>Lingkungan</td>
-      		<td class="center aligned">Nilai</td>
+      		<td class="center aligned"><?php echo $row2['lingkungan'] ?></td>
     	</tr>
     	<tr>
       		<td>Prestasi</td>
-      		<td class="center aligned">Nilai</td>
+      		<td class="center aligned"><?php echo $row2['prestasi'] ?></td>
     	</tr>
     	<tr>
       		<td>Kesesuaian Matakuliah</td>
-      		<td class="center aligned">Nilai</td>
+      		<td class="center aligned"><?php echo $row2['mata_kuliah'] ?></td>
     	</tr>
     	<tr>
       		<td>Biaya Kuliah</td>
-      		<td class="center aligned">Nilai</td>
+      		<td class="center aligned"><?php echo $row2['biaya'] ?></td>
     	</tr>
     	<tr> 
       		<td>Fakultas</td>
-      		<td class="center aligned double line">Nilai</td>
+      		<td class="center aligned double line"><?php echo $row2['dosen'] ?></td>
     	</tr>
     	<tr>  
       		<td>Akreditasi Jurusan</td>
-      		<td class="center aligned double line">Nilai</td>
+      		<td class="center aligned double line"><?php echo $row2['dosen'] ?></td>
     	</tr>
   	</tbody>
 
@@ -230,7 +244,7 @@
     	<tr>
       		<th colspan="3">
          		<div class="ui label"><i class="user icon"></i> 223 Anggota Bandingkampus</div>
-         		<div class="ui right floated small primary button" style="width: 280px;cursor:default;"> <i class="trophy icon"></i>Total Score 500<!-- nilai total disini --></div>
+         		<div class="ui right floated small primary button" style="width: 280px;cursor:default;"> <i class="trophy icon"></i>Total Score <?php echo $total2 ?><!-- nilai total disini --></div>
          		<!-- komentar -->
          		<div class="ui comments">
 				  	<div class="comment">
@@ -281,37 +295,38 @@
 	<tbody>
 	    <tr>
 	      <td>Kualitas Dosen</td>
-	      <td>10 % <i>lebih besar</i></td>
+	      <td><?php 
+		  if($ungguldos<0){echo $ungguldos * -1;} else { echo $ungguldos;} ?> % <i><?php if($ungguldos<0){echo 'lebih kecil';} else { echo 'lebih besar';} ?></i></td>
 	    </tr>
 		
 		<tr>
 	      <td>Lingkungan</td>
-	      <td>10 % <i>lebih besar</i></td>
+	      <td><?php if($unggullingkung<0){echo $unggullingkung * -1;} else { echo $unggullingkung;} ?> %<i><?php if($unggullingkung<0){echo 'lebih kecil';} else { echo 'lebih besar';} ?></i></td>
 	    </tr>
 
 		<tr>
 	      <td>Prestasi</td>
-	      <td>10 % <i>lebih besar</i></td>
+	      <td><?php if($unggulprestasi<0){echo $unggulprestasi * -1;} else { echo $unggulprestasi;} ?> %<i><?php if($unggulprestasi<0){echo 'lebih kecil';} else { echo 'lebih besar';} ?></i></td>
 	    </tr>		
 
 	    <tr>
 	      <td>Kesesuaian Matakuliah</td>
-	      <td>10 % <i>lebih besar</i></td>
+	      <td><?php if($unggulmatkul<0){echo $unggulmatkul * -1;} else { echo $unggulmatkul;} ?> %<i><?php if($unggulmatkul<0){echo 'lebih kecil';} else { echo 'lebih besar';} ?></i></td>
 	    </tr>
 
 		<tr>
 	      <td>Biaya Kuliah</td>
-	      <td>10 % <i>lebih besar</i></td>
+	      <td><?php if($unggulbiaya<0){echo $unggulbiaya * -1;} else { echo $unggulbiaya;} ?> %<i><?php if($unggulbiaya<0){echo 'lebih kecil';} else { echo 'lebih besar';} ?></i></td>
 	    </tr>
 
 		<tr>
 	      <td>Fakultas</td>
-	      <td>10 % <i>lebih besar</i></td>
+	      <td><?php echo $unggulfakultas ?> % <i>lebih besar</i></td>
 	    </tr>
 
 		<tr>
 	      <td>Akreditasi Jurusan</td>
-	      <td>10 % <i>lebih besar</i></td>
+	      <td><?php echo $unggulakreditasi ?> % <i>lebih besar</i></td>
 	    </tr>
 
   	</tbody>
