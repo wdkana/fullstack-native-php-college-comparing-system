@@ -21,6 +21,7 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
       	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    	<link rel="stylesheet" type="text/css" href="element/animate.css">
     	<script src="element/jquery-3.1.1.min.js"></script>
 	    <script src="semantic/dist/semantic.min.js"></script>
 	    <script src="semantic/dist/components/accordion.js"></script>
@@ -29,17 +30,21 @@
 		<script src="../element/angular.js"></script>
     	<script src="element/date.js"></script>
 	</head>
-	<body style="background: #dc5538">
-		<div class ="ui container" style="background: #f5f5f5">
+	<body style="background: #f9f9f9;">
+		<div class ="ui container" style="background: #f9f9f9">
 			<br/>
 			<!-- 
 				<a href="space_iklan1.php"><center><div class="ui leaderboard test ad" style="background: #222; opacity: 0.9" data-text="Space Iklan 1"></div></center></a>
 			-->
 			<h2 class="ui center aligned icon header">
+				<img src="assets/img/bklogo.jpg">
+			</h2>
+
+			<h2 class="ui center aligned icon header">
   				<span style="color:#dc5538">Banding</span>&nbsp;&nbsp;<i class="id flag"></i><span style="color:#3B5998">Kampus</span>
 			</h2>
 
-		<div class="ui top attached tabular menu">
+		<div class="ui top attached tabular menu animated fadeInDownBig">
 		  	<a class="item active" data-tab="bandingkan">Bandingkan</a>
 		  	<a class="item" data-tab="peringkat">Peringkat</a>
 		  	<a class="item" data-tab="semuakampus">Semua Kampus</a>
@@ -50,7 +55,7 @@
 
 		<div class="ui hidden divider"></div>
 
-		<div class="ui center aligned container">
+		<div class="ui center aligned container animated fadeInDownBig">
 				<div class="ui steps">
   <div class="active step">
     <i class="balance scale icon"></i>
@@ -78,7 +83,7 @@
 
 		<div class="ui hidden divider"></div>
 
-		<form action="bandingHasil.php" method="POST">
+		<form action="bandingHasil.php" method="POST" class="animated bounceInRight">
 		<div class="ui center aligned stackable grid container">
 		  	<div class="column">
 		    	<select class="ui huge search dropdown" name="kampus1" required>
@@ -109,7 +114,7 @@
 
 		<div class="ui buttons">
 			 <button class="ui huge facebook button">Lihat Website</button>
-			 	<div class="or"></div>
+			 	<div class="or animated bounceInUp"></div>
 			 <button class="ui huge google plus button" type="submit"> Bandingkan</button>
 		</div>
 		</div>
@@ -143,7 +148,7 @@
 
 			<div class="ui hidden divider"></div>
 
-			<div class="ui justified aligned container">
+			<div class="ui justified aligned container animated bounceInDown">
 			<div class="ui hidden divider"></div>
 	  			<form class="ui large form" action="users/process/loginProcess.php" method="post">
 				  <div class="two fields">
@@ -175,8 +180,8 @@
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
 
-		<div class="ui right aligned container">
-			<span onclick="next()" style="color:#f5f5f5; cursor: pointer; top:20; position: fixed; z-index: 99"><i class="huge arrow alternate circle down outline icon tobot"></i></span>
+		<div class="ui right aligned container animated bounce infinite">
+			<span onclick="next()" style="color:#dc5538; cursor: pointer; top:20; position: fixed; z-index: 99"><i class="huge arrow alternate circle down outline icon tobot"></i></span>
 		</div>
 
 		<div class="ui hidden divider"></div>
@@ -222,7 +227,7 @@
   		<?php } ?>
 	</div>
 </div>
-		<div class="ui hidden divider" id="next"></div>
+		<div class="ui hidden divider"></div>
 		<!-- random beres -->
 
 	<div class="ui hidden divider"></div>
@@ -251,6 +256,7 @@
 						<div class="item">
 						   	<i class="question circle large icon"></i>
 						    <div class="content">
+	    		<div class="ui hidden" id="next"></div>
 						     	<a class="ui medium header" onclick="pertanyaan1()">Bagaimana cara membandingkan kampus?</a>
 						    </div>
 						</div>
