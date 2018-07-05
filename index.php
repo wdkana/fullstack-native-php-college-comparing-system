@@ -141,9 +141,40 @@
 
 			<div class="ui justified aligned container">
 				<h1>PERINGKAT</h1>
-	  			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
 
+				<!-- table ranking peringkat -->
+				<table class="ui celled table">
+  					<thead>
+    					<tr class="center aligned">
+    						<th>No</th>
+    						<th>Nama Kampus</th>
+					    	<th>Alamat</th>
+					    	<th>Score</th>
+  						</tr>
+					</thead>
+  					
+  					<tbody>
+    					<tr>
+      						<td>
+        						<div class="ui ribbon label">1</div>
+      						</td>
+      						<td class="center aligned"></td>
+      						<td class="center aligned"></td>
+      						<td class="center aligned"></td>
+    					</tr>
+  					</tbody>
+  					
+  					<tfoot>
+    					<tr>
+    						<th colspan="4">
+      							<div class="ui right floated pagination menu">
+        							
+      							</div>
+    						</th>
+  						</tr>
+  					</tfoot>
+				</table>
+			</div>
 		</div>
 
 		<!-- tab3 -->
