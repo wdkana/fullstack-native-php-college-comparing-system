@@ -165,6 +165,11 @@
 
 </table>
 
+<div class="ui hidden divider"></div>
+<div class="ui horizontal divider">
+	<h1>VERSUS</h1>
+</div>
+<div class="ui hidden divider"></div>
 
 
 <!-- table kampus2 -->
