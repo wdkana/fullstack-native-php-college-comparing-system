@@ -4,8 +4,7 @@
     /**
      *
      */
-    class Kampus_model
-    {
+    class Kampus_model{
 
       function __construct()
       {
@@ -13,9 +12,9 @@
       }
 
       //function untuk add kampus
-      public function addKampus($nama_kampus,$alamat, $foto, $slogan,$no_hp,$email,$fax,$instagram,$facebook,$twitter){
-        $sql = "INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `alamat`, `foto`, `slogan`, `no_hp`, `email`, `fax`, `instagram`, `facebook`, `twitter`) VALUES
-        (NULL, '$nama_kampus','$alamat','$foto','$slogan','$no_hp','$email','$fax','$instagram','$facebook','$twitter');";
+      public function addKampus($nama_kampus,$alamat, $foto, $slogan,$no_hp,$email,$fax,$instagram,$facebook,$twitter,$website){
+        $sql = "INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `alamat`, `foto`, `slogan`, `no_hp`, `email`, `fax`, `instagram`, `facebook`, `twitter`,`website`) VALUES
+        (NULL, '$nama_kampus','$alamat','$foto','$slogan','$no_hp','$email','$fax','$instagram','$facebook','$twitter','$website');";
         $query = mysql_query($sql);
         return $query;
 
@@ -61,24 +60,36 @@
         $query = mysql_query($sql);
         return $query;
       }
-	  
-	  public function ubahKampus($nama_kampus,$alamat, $foto, $slogan,$no_hp,$email,$fax,$instagram,$facebook,$twitter,$id){
-	  $sql = "UPDATE `tbl_kampus` SET 
-	  `nama_kampus` = '$nama_kampus', 
-	  `alamat` = '$alamat', 
-	  `foto` = '$foto', 
-	  `slogan` = '$slogan', 
-	  `no_hp` = '$no_hp', 
-	  `email` = '$email', 
-	  `fax` = '$fax', 
-	  `instagram` = '$instagram', 
-	  `facebook` = '$facebook', 
-	  `twitter` = '$twitter' 
-	   WHERE `id` = $id";
-      $query = mysql_query($sql);
-      return $query;
-	  }
+
+      //function untuk mengubah kampus
+	     public function ubahKampus($nama_kampus,$alamat, $foto, $slogan,$no_hp,$email,$fax,$instagram,$facebook,
+                                  $twitter,$website,$id){
+	        $sql = "UPDATE `tbl_kampus` SET
+        	  `nama_kampus` = '$nama_kampus',
+        	  `alamat` = '$alamat',
+        	  `foto` = '$foto',
+        	  `slogan` = '$slogan',
+        	  `no_hp` = '$no_hp',
+        	  `email` = '$email',
+        	  `fax` = '$fax',
+        	  `instagram` = '$instagram',
+        	  `facebook` = '$facebook',
+        	  `twitter` = '$twitter',
+            `website` = '$website'
+        	   WHERE `id` = $id";
+        $query = mysql_query($sql);
+        return $query;
+      }
+
+      //function untuk menghitung jumlah kampus yang terdaftar
+      public function Kampus(){
+
+        $sql = "SELECT * FROM tbl_kampus";
+        $query = mysql_query($sql);
+        $check = mysql_num_rows($query);
+        return $check;
+      }
     }
 
 
- ?>
+?>

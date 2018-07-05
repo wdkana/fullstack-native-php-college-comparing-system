@@ -6,7 +6,7 @@
 
     $username = $_SESSION['username'];
     if(!isset($username)){
-        header('location:login.php');
+        header('location:../');
     }
     $row = mysql_fetch_array($user->kampus($username));
 ?>

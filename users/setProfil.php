@@ -5,7 +5,7 @@
     $username = $_SESSION['username'];
 
     if(!$username){
-        header('location: login.php');
+        header('location: ../');
     }
     if($user->detailProfil($username) > 0){
         header('location: dashboard.php');
@@ -20,24 +20,24 @@
 <body>
 
       <form action="process/setProfilProcess.php" method="post" enctype="multipart/form-data">
-  
+
             <h4>Setting Profil</h4>
- 
+
             <input name="nim" type="number">
             <label>NIM</label>
             <input name="asal_kampus" type="text">
-            <label>Asal Kampus</label>   
+            <label>Asal Kampus</label>
             <input name="nama_lengkap" type="text">
             <label>Nama Lengkap</label>
-    
+
             <input name="fakultas" type="text">
-            <label>Fakultas</label>
+            <label>Jurusan</label>
             <input name="kelas" type="text">
             <label>Kelas</label>
-        
+
             <input name="no_hp" type="number">
             <label>No HP</label>
-   
+
             <label>Foto KTM</label><br>
             <input name="foto_ktm" type="file">
           <input type="text" name="instagram" placeholder="instagram"><br>
@@ -54,7 +54,7 @@
 
             <input type="submit" name="simpan" value="Simpan"><br><br>
             <a href="process/logoutProcess.php">logout</a>
-     
+
       </form>
 </body>
 </html>

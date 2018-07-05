@@ -2,12 +2,20 @@
     include "../../model/Survei_model.php";
     include "../../model/Akreditasi_model.php";
 
+    session_start();
+
+    $username = $_SESSION['username'];
+    if(!isset($username)){
+        header('location: ../../');
+    }
     $survei = new Survei_model();
     $akr = new Akreditasi_model();
-	$id = $_GET['id'];
-
+	  $id = $_GET['id'];
+    if(!$id){
+        header('location:dashboard-admin.php');
+    }
     $result = $survei->kampus($id);
-	$nama = $result['nama_kampus'];
+	  $nama = $result['nama_kampus'];
     $resultAkr = $akr->detailAkreditasi2($nama);
 ?>
 <!DOCTYPE html>

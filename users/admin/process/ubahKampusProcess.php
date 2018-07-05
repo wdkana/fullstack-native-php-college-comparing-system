@@ -12,6 +12,7 @@
       $instagram = $_POST['instagram'];
       $facebook = $_POST['facebook'];
       $twitter = $_POST['twitter'];
+      $website = $_POST['website'];
 	  $id = $_POST['id'];
           if(isset($_POST['simpan'])){
             $foto = $_FILES['foto']['name'];
@@ -23,7 +24,8 @@
         			if($tipe_file == "image/jpeg" || $tipe_file == "image/png"){
         				if($ukuran_file < 5044070){
         					     move_uploaded_file($tmp_file, $path);
-        					     $kampus->ubahKampus($nama_kampus,$alamat, $foto, $slogan,$no_hp,$email,$fax,$instagram,$facebook,$twitter,$id);
+        					     $kampus->ubahKampus($nama_kampus,$alamat, $foto, $slogan,$no_hp,$email,$fax,$instagram,$facebook,$twitter, 
+                        $website, $id);
                        header('location:../kampus.php');
         				}else{
         					echo 'UKURAN FILE TERLALU BESAR';

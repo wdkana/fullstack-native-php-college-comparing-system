@@ -5,7 +5,7 @@
 
 <body>
 <p>Harap Verifikasi Email terlebih dahulu</p>
-<a href="login.php">back</a>
+<a href="../">back</a>
 
 
 </body>

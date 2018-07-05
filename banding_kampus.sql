@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 03, 2018 at 09:38 PM
+-- Generation Time: Jul 05, 2018 at 11:36 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.35
 
@@ -35,6 +35,13 @@ CREATE TABLE `tbl_akreditasi` (
   `akreditasi` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tbl_akreditasi`
+--
+
+INSERT INTO `tbl_akreditasi` (`id`, `nama_kampus`, `fakultas`, `akreditasi`) VALUES
+(1, 'lpkia', 'teknik informatika', 'A');
+
 -- --------------------------------------------------------
 
 --
@@ -64,10 +71,10 @@ CREATE TABLE `tbl_detail_profil` (
 
 INSERT INTO `tbl_detail_profil` (`id`, `username`, `nim`, `asal_kampus`, `nama_lengkap`, `fakultas`, `kelas`, `no_hp`, `foto_ktm`, `instagram`, `facebook`, `twitter`, `status`, `status_kerja`) VALUES
 (24, 'alsa gunadi', '123', 'lpkia', 'alsa gunadi', 'informatika', 'asd', '321798471', 'IMG_20100101_073902.jpg', 'Instagram', 'facebook', 'twitter', 'alumni', 'tidak bekerja'),
-(25, 'kiki setiawan', '3', 'lpkia', 'kiki setiawan', 'informatika', '3if-03', '2317', 'Object 1.png', 'Instagram', 'facebook', 'twitter', 'alumni', 'tidak bekerja'),
-(26, 'juheri', '768907', 'lpkia', 'juheri weh', 'informatika', '3IF1', '7689', 'Haworthia-attenuata-_2_.jpg', 'ig', 'fb', 'twitter', 'alumni', 'bekerja'),
+(26, 'juheri', '768907', 'lpkia', 'juheri weh', 'informatika', '3IF1', '7689', 'IMG_20100101_073902.jpg', 'ig', 'fb', 'twitter', 'alumni', 'bekerja'),
 (27, 'jek', '7898867', 'inaba', 'jek weh', 'informatika', '3IF1', '09878675899', 'Haworthia-attenuata-_2_.jpg', 'ig', 'fb', 'tw', 'alumni', 'bekerja'),
-(28, 'asep', '986756890', 'lpkia', 'asep kustiana', 'informatika', '3if', '0879867', 'IMG_20100101_073902.jpg', 'ig', 'fb', 'tw', 'alumni', 'tidak bekerja');
+(28, 'asep', '986756890', 'lpkia', 'asep kustiana', 'informatika', '3if', '0879867', 'IMG_20100101_073902.jpg', 'ig', 'fb', 'tw', 'alumni', 'tidak bekerja'),
+(29, 'naon', '654678997867', 'inaba', 'saha weh', 'teknik', 'kcjvh.k', '5678987875', 'database.png', 'ig', 'fb', 'tw', 'mahasiswa', 'tidak bekerja');
 
 -- --------------------------------------------------------
 
@@ -86,18 +93,19 @@ CREATE TABLE `tbl_kampus` (
   `fax` varchar(255) DEFAULT NULL,
   `instagram` varchar(255) DEFAULT NULL,
   `facebook` varchar(255) DEFAULT NULL,
-  `twitter` varchar(255) DEFAULT NULL
+  `twitter` varchar(255) DEFAULT NULL,
+  `website` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_kampus`
 --
 
-INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `alamat`, `foto`, `slogan`, `no_hp`, `email`, `fax`, `instagram`, `facebook`, `twitter`) VALUES
-(30, 'lpkia', 'jl soekarno hatta', 'Haworthia-attenuata-_2_.jpg', 'kampus bersih', '986789', 'lpkia@mail.com', 'fax', 'instagram', 'facebook', 'twitter'),
-(31, 'inaba', 'jl soekarno hatta', 'IMG_20100101_073902.jpg', 'kvhlshl', '8678', 'mail@mail.com', 'oihloj;', 'vkbl;j', 'vhkjbln;', 'vhkbjkl'),
-(41, 'itb', 'dimana weh', 'Haworthia-attenuata-_2_.jpg', 'jhkjl', '68789', 'mail@mail.com', 'hghjkl', 'jhkl', 'jhk', 'jhk'),
-(42, 'telkom', 'jl bojongsoang', 'database.png', 'kampus terbaik', '7890867', 'mail@mail.com', 'fax', 'ig', 'fb', 'tw');
+INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `alamat`, `foto`, `slogan`, `no_hp`, `email`, `fax`, `instagram`, `facebook`, `twitter`, `website`) VALUES
+(30, 'LPKIA', 'jl soekarno hatta', 'lpkia.jpeg', 'kampus bersih', '986789', 'lpkia@mail.com', 'fax', 'instagram', 'facebook', 'twitter', 'lpkia.ac.id'),
+(31, 'INABA', 'jl soekarno hatta', 'inaba.png', 'kvhlshl', '8678', 'mail@mail.com', 'oihloj;', 'vkbl;j', 'vhkjbln;', 'vhkbjkl', 'inaba.ac.id'),
+(41, 'ITB', 'dimana weh', 'itb.png', 'jhkjl', '68789', 'mail@mail.com', 'hghjkl', 'jhkl', 'jhk', 'jhk', 'www.itb.ac.id'),
+(42, 'Telkom University', 'jl bojongsoang', '3.-Logo-Telkom-University-Konfigurasi-Memusat.png', 'kampus terbaik', '7890867', 'mail@mail.com', 'fax', 'ig', 'fb', 'tw', 'telkomuniversity.ac.id');
 
 -- --------------------------------------------------------
 
@@ -122,7 +130,8 @@ CREATE TABLE `tbl_nilai` (
 --
 
 INSERT INTO `tbl_nilai` (`id`, `id_kampus`, `username`, `dosen`, `jurusan`, `lingkungan`, `prestasi`, `mata_kuliah`, `biaya`) VALUES
-(27, 30, 'alsa', '100', '80', '60', '40', '20 ', '100');
+(27, 30, 'alsa', '100', '80', '60', '40', '20 ', '100'),
+(28, 31, 'naon', '100', '80', '60', '60', '40 ', '80');
 
 -- --------------------------------------------------------
 
@@ -171,11 +180,12 @@ CREATE TABLE `tbl_register` (
 --
 
 INSERT INTO `tbl_register` (`username`, `email`, `password`, `status`, `hak_akses`) VALUES
+('admin', 'kikikiller28@yahoo.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'admin'),
 ('alsa gunadi', 'alsagunadi@gmail.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'user'),
 ('asep', 'asepkustiana7@gmail.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'user'),
 ('jek', 'jek@mail.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'user'),
 ('juheri', 'juheri842@gmail.com', 'caf1a3dfb505ffed0d024130f58c5cfa', 'Verifikasi', 'user'),
-('kiki setiawan', 'kikikiller28@yahoo.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'admin');
+('naon', 'eblog47@gmail.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'user');
 
 -- --------------------------------------------------------
 
@@ -276,13 +286,13 @@ ALTER TABLE `tbl_ulasan`
 -- AUTO_INCREMENT for table `tbl_akreditasi`
 --
 ALTER TABLE `tbl_akreditasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_detail_profil`
 --
 ALTER TABLE `tbl_detail_profil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `tbl_kampus`
@@ -294,7 +304,7 @@ ALTER TABLE `tbl_kampus`
 -- AUTO_INCREMENT for table `tbl_nilai`
 --
 ALTER TABLE `tbl_nilai`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tbl_pertanyaan`

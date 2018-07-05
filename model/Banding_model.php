@@ -1,6 +1,6 @@
 <?php
 
-    include "Database_Connection.php";
+    include_once "Database_Connection.php";
     /**
      *
      */
@@ -28,14 +28,16 @@
       //function untuk ranking Kampus
       public function rankingKampus(){
 
-        $sql = "SELECT tbl_kampus.id, tbl_kampus.alamat, tbl_kampus.alamat, tbl_kampus.foto, tbl_kampus.slogan, tbl_kampus.nama_kampus,
-		      SUM(tbl_nilai.dosen) as dosen,
-		      SUM(tbl_nilai.jurusan) as jurusan,
-		      SUM(tbl_nilai.lingkungan) as lingkungan,
-		      SUM(tbl_nilai.prestasi) as prestasi,
-		      SUM(tbl_nilai.mata_kuliah) as mata_kuliah,
-		      SUM(tbl_nilai.biaya) as biaya
-          FROM tbl_kampus join tbl_nilai on tbl_kampus.id = tbl_nilai.id_kampus GROUP BY tbl_kampus.nama_kampus DESC";
+        $sql = "SELECT tbl_kampus.id, tbl_kampus.alamat, tbl_kampus.foto, tbl_kampus.slogan, tbl_kampus.nama_kampus,
+      		      SUM(tbl_nilai.dosen) as dosen,
+      		      SUM(tbl_nilai.jurusan) as jurusan,
+      		      SUM(tbl_nilai.lingkungan) as lingkungan,
+      		      SUM(tbl_nilai.prestasi) as prestasi,
+      		      SUM(tbl_nilai.mata_kuliah) as mata_kuliah,
+      		      SUM(tbl_nilai.biaya) as biaya
+                FROM tbl_kampus join tbl_nilai on tbl_kampus.id = tbl_nilai.id_kampus GROUP BY tbl_kampus.nama_kampus DESC";
+        $query = mysql_query($sql);
+        return $query;
       }
 
 

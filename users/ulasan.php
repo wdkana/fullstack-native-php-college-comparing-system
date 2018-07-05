@@ -8,7 +8,7 @@
 
     $username = $_SESSION['username'];
     if(!$username){
-        header('location: login.php');
+        header('location:../');
     }
     if($user->detailProfil($username) == 0){
         header('location: setProfil.php');
@@ -32,9 +32,9 @@
 <body>
 	<h1><a href="index.php">Banding Kampus</a></h1>
 	<a href="process/logoutProcess.php">Logout</a>
-	<a href="../users/dashboard.php"> Dashboard	</a>	
+	<a href="../users/dashboard.php"> Dashboard	</a>
 	<a href="../users/survei.php">Survei</a>
-						
+
       <?php
 	  //koding validasi jika kampus yang dinilai tidak tersedia
           if($nama_kampus == ''){

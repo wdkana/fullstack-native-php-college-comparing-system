@@ -1,9 +1,19 @@
 <?php
+    session_start();
+
+    $username = $_SESSION['username'];
+    if(!isset($username)){
+        header('location: ../../');
+    }
+
     include "../../model/Akreditasi_model.php";
     $akr = new Akreditasi_model();
 
     $id = $_GET['i'];
-	$idk = $_GET['id'];
+	  $idk = $_GET['id'];
+    if(!$id && !$idk){
+        header('location: dashboard-admin.php');
+    }
     $result = $akr->getId($id);
     $row = mysql_fetch_array($result);
 ?>

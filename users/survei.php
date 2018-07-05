@@ -5,7 +5,9 @@
 
     session_start();
     $username = $_SESSION['username'];
-
+    if(!isset($username)){
+        header('location:../');
+    }
     $survei = new Survei_model();
     $user = new User_model();
     $kmp = new Kampus_model();

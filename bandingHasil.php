@@ -14,6 +14,11 @@
     $result2 = $akreditasi->viewAkreditasi($kampus2);
     $total1=$row1['dosen']+$row1['jurusan']+$row1['lingkungan']+$row1['prestasi']+$row1['mata_kuliah']+$row1['biaya'];
     $total2= $row2['dosen']+$row2['jurusan']+$row2['lingkungan']+$row2['prestasi']+$row2['mata_kuliah']+$row2['biaya'];
+
+    if($kampus1 == $kampus2){
+        echo "<script>window.alert('Nama Kampus tidak boleh sama!!');
+              window.location.href='index.php';</script>";
+    }
 ?>
 <html>
 <head>

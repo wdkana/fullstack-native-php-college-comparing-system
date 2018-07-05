@@ -1,10 +1,19 @@
 <?php
     include "../../model/Survei_model.php";
-    include "../../model/Kampus_model.php";
-	$id = $_GET['id'];
+
+    session_start();
+
+    $username = $_SESSION['username'];
+    if(!isset($username)){
+        header('location: ../../');
+    }
+
+	  $id = $_GET['id'];
+    if(!$id){
+        header('location:dashboard-admin.php');
+    }
     $survei = new Survei_model();
-	$row = $survei->pertanyaanId($id);
-	
+	  $row = $survei->pertanyaanId($id);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -15,7 +24,7 @@
   <body>
  <a href="kampus.php">Pertanyaan</a>
  <form action="process/ubahPertanyaanProcess.php" method="post">
-		  
+
 		  <input type="hidden" name="id" value="<?php echo $id?>">
 		  <label>Pertanyaan</label>
           <input type="text" name="pertanyaan" required placeholder="Pertanyaan" value="<?php echo $row['pertanyaan'] ;?>"><br>

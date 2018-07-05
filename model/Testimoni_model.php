@@ -38,6 +38,15 @@
         $query = mysql_query($sql);
         return $query;
       }
+
+      //function untuk menghitung jumlah user alumni yang sudah mengisi Testimoni
+      public function countTestimoni(){
+
+        $sql = "SELECT * FROM tbl_testimoni";
+        $query = mysql_query($sql);
+        $check = mysql_num_rows($query);
+        return $check;
+      }
     }
 
 ?>

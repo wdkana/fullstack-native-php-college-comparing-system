@@ -14,7 +14,7 @@
 			if($new == $newconfirm){
 				$user->update_pass($new, $email);
 				echo "<script>window.alert('Password berhasil diubah');
-              window.location.href='../login.php';</script>";
+              window.location.href='../';</script>";
 			} else {
 				echo "Password tidak sesuai";
 			}

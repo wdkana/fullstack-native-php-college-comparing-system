@@ -3,10 +3,10 @@
 
     $user = new User_model();
     session_start();
-
+    //session
     $username = $_SESSION['username'];
-    if(!$username){
-        header('location: login.php');
+    if(!isset($username)){
+        header('location:../');
     }
     if($user->detailProfil($username) == 0){
         header('location: setProfil.php');

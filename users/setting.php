@@ -3,7 +3,7 @@
 
     $username = $_SESSION['username'];
     if(!isset($username)){
-        header('location:login.php');
+        header('location:../');
     }
 ?>
 

@@ -1,6 +1,12 @@
 <?php
     include "../../model/Survei_model.php";
     $survei = new Survei_model();
+    session_start();
+
+    $username = $_SESSION['username'];
+    if(!isset($username)){
+        header('location: ../../');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -21,7 +27,9 @@
           fax<input type="text" name="fax" placeholder="fax"><br>
           instagram<input type="text" name="instagram" placeholder="instagram"><br>
           facebook<input type="text" name="facebook" placeholder="facebook"><br>
-          twitter<input type="text" name="twitter" placeholder="twitter">
+          twitter<input type="text" name="twitter" placeholder="twitter"><br>
+          website resmi
+          <input type="text" name="website" placeholder="website resmi"><br>
           <input type="submit" name="simpan" value="simpan">
       </form>
       <hr>
@@ -40,6 +48,7 @@
               <th>instgram</th>
               <th>facebook</th>
               <th>Twitter</th>
+              <th>Website</th>
               <th>Pilihan</th>
             </tr>
         </thead>
@@ -61,6 +70,7 @@
             <td><?php echo $row['instagram'];?></td>
             <td><?php echo $row['facebook'];?></td>
             <td><?php echo $row['twitter'];?></td>
+            <td><?php echo $row['website'];?></td>
             <td>
 			<a href="akreditasi.php?id=<?php echo $row['id'];?>">tambah akreditasi</a>
 			<a href="edit_kampus.php?id=<?php echo $row['id'];?>">Edit</a>
@@ -81,7 +91,7 @@
                   window.location.href="kampus.php";
               }
           }
-		  
+
       </script>
   </body>
 </html>

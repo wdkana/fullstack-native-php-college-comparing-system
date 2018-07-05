@@ -1,6 +1,12 @@
 <?php
     include "../../model/Survei_model.php";
     $survei = new Survei_model();
+    session_start();
+
+    $username = $_SESSION['username'];
+    if(!isset($username)){
+        header('location: ../../');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -76,7 +82,7 @@
                   window.location.href="kampus.php";
               }
           }
-		  
+
       </script>
   </body>
 </html>

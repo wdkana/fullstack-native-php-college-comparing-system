@@ -3,9 +3,9 @@
 	$user = new User_model();
 
 	$email = $_GET['email'];
-	
+
 	$user->verify_email($email);
-	header('location: ../login.php');
-	
+	header('location: ../../');
+
 
 ?>

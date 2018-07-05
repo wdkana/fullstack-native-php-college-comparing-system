@@ -29,7 +29,7 @@
       <p>Kelas : <?php echo $row['kelas'];?></p>
       <p>No Hp : <?php echo $row['no_hp'];?></p>
       <p>Status : <?php echo $row['status'];?></p>
-      <p>Status Kerja : <?php $row['status_kerja'];?></p>
+      <p>Status Kerja : <?php echo $row['status_kerja'];?></p>
       <hr>
       <h1>Sosial Media</h1>
       <p>Instagram : <?php echo $row['instagram'];?></p>

@@ -21,7 +21,8 @@
 			header('location: ../pesan_verify.php');
 		}
     } else {
-        header("location:../login.php?msg=error");
+        echo "<script>window.alert('Username atau password yang anda masukkan salah!');
+              window.location.href='../../?msg=error';</script>";
     }
 
 

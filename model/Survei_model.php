@@ -41,22 +41,22 @@
           $check = mysql_num_rows($query);
           return $check;
       }
-	  
+
 	  //function menampilkan data kampus berdasarkan id
 	  public function kampus($id){
-          $sql = "SELECT * FROM tbl_kampus where id=$id";
+          $sql = "SELECT * FROM tbl_kampus where id = '$id'";
           $query = mysql_query($sql);
-		  $row = mysql_fetch_array($query);
+		       $row = mysql_fetch_array($query);
           return $row;
       }
-	  
+
 	  //function menampilkan semua data kampus berdasarkan id
 	  public function ambilkampus2($id){
           $sql = "SELECT * FROM tbl_kampus where id='$id'";
           $query = mysql_query($sql);
           return $query;
 	  }
-	  
+
 	  //function menambahkan pertanyaan
       public function addPertanyaan($pertanyaan, $pil1, $pil2, $pil3, $pil4, $pil5){
 
@@ -64,8 +64,8 @@
           VALUES (NULL, '$pertanyaan', '$pil1', '$pil2', '$pil3', '$pil4', '$pil5');";
           $query = mysql_query($sql);
           return $query;
-      }	  
-	  
+      }
+
 	  //function untuk hapus pertanyaan
       public function deletePertanyaan($id){
 
@@ -73,28 +73,28 @@
         $query = mysql_query($sql);
         return $query;
       }
-	  
+
 	  //function untuk merubah pertanyaan
 	  public function editPertanyaan($id,$pertanyaan, $pil1, $pil2,$pil3,$pil4,$pil5){
-	  $sql = "UPDATE `tbl_pertanyaan` SET 
-	  `pertanyaan` = '$pertanyaan', 
-	  `pil1` = '$pil1', 
-	  `pil2` = '$pil2', 
-	  `pil3` = '$pil3', 
-	  `pil4` = '$pil4', 
+	  $sql = "UPDATE `tbl_pertanyaan` SET
+	  `pertanyaan` = '$pertanyaan',
+	  `pil1` = '$pil1',
+	  `pil2` = '$pil2',
+	  `pil3` = '$pil3',
+	  `pil4` = '$pil4',
 	  `pil5` = '$pil5'
 	   WHERE `id` = $id";
       $query = mysql_query($sql);
       return $query;
 	  }
-	  
+
       //function untuk menampilkan pertanyaan berdasarkan id
       public function pertanyaanId($id){
           $sql = "SELECT * FROM tbl_pertanyaan where id=$id";
           $query = mysql_query($sql);
- 		  $row = mysql_fetch_array($query);
+ 		      $row = mysql_fetch_array($query);
           return $row;
-      }	  
+      }
     }
 
 ?>
