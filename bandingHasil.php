@@ -122,7 +122,7 @@
     	</tr>
     	<tr>  
       		<td>Akreditasi Jurusan</td>
-      		<td class="center aligned double line">Nilai</td>
+      		<td class="center aligned double line">Nilai Nilai NilaiNilaiNilai NilaiNilaiNilai Nilai Nilai NilaiNilaiNilai</td>
     	</tr>
   	</tbody>
 
@@ -131,18 +131,41 @@
       		<th colspan="3">
          		<div class="ui label"><i class="user icon"></i> 223 Anggota Bandingkampus</div>
          		<div class="ui right floated small primary button" style="width: 280px;cursor:default;"> <i class="trophy icon"></i>Total Score 500<!-- nilai total disini --></div>
+         		<br/>
+         		<!-- komentar -->
+         		<div class="ui comments">
+				  	<div class="comment">
+				    	<a class="avatar">
+				    		<img src="/images/avatar/small/joe.jpg">
+				    	</a>
+					    <div class="content">
+					      	<a class="author">Nama Pengirim Ulasan</a>
+					      		<div class="metadata">
+					        		<div class="date">Tanggal</div>
+					      		</div>
+					      	<div class="text">
+					        	<p>ini adalah komentar ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan</p>
+					      	</div>
+					   	</div>
+				  	</div>
+				</div>
+				
+				<form class="ui reply form" method="POST" action="">
+				    <div class="field">
+				    	<textarea name=""></textarea>
+				    </div>
+				    <button class="ui primary submit labeled icon button" type="submit">
+				     	<i class="icon edit"></i> Tanyakan
+				    </button>
+				</form>
       		</th>
       	</tr>
-      	<tr>
-      		<td>
-      			test
-      		<td>
-      		<td>
-      			test 2
-      		</td>
-      	</tr>
+
   	</tfoot>
+
 </table>
+
+
 
 <!-- table kampus2 -->
 
@@ -204,6 +227,32 @@
       		<th colspan="3">
          		<div class="ui label"><i class="user icon"></i> 223 Anggota Bandingkampus</div>
          		<div class="ui right floated small primary button" style="width: 280px;cursor:default;"> <i class="trophy icon"></i>Total Score 500<!-- nilai total disini --></div>
+         		<!-- komentar -->
+         		<div class="ui comments">
+				  	<div class="comment">
+				    	<a class="avatar">
+				    		<img src="/images/avatar/small/joe.jpg">
+				    	</a>
+					    <div class="content">
+					      	<a class="author">Nama Pengirim Ulasan</a>
+					      		<div class="metadata">
+					        		<div class="date">Tanggal</div>
+					      		</div>
+					      	<div class="text">
+					        	<p>ini adalah komentar ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan</p>
+					      	</div>
+					   	</div>
+				  	</div>
+				</div>
+				
+				<form class="ui reply form" method="POST" action="">
+				    <div class="field">
+				    	<textarea name=""></textarea>
+				    </div>
+				    <button class="ui primary submit labeled icon button" type="submit">
+				     	<i class="icon edit"></i> Tanyakan
+				    </button>
+				</form>
       		</th>
       	</tr>
   	</tfoot>
