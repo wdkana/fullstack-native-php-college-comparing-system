@@ -39,6 +39,7 @@
 	<body>
 		<div class="ui top fixed menu">
 		    	<div class="ui icon input">
+		    		<a class="item" href="http://localhost/bandingkampus">Home</a>
 		    		<a class="item">Tentang</a>
 					<a class="item">Kontak</a>
 					<a class="item">Blog</a>
@@ -62,12 +63,12 @@
 			
 			<div class="ui teal progress" data-percent="<?php echo '50'?>" id="kampus1">
   				<div class="bar"></div>
-  				<div class="label">530 kampus1</div>
+  				<div class="label"><p><i class="trophy icon"></i> kampus1 <i style="color:red">530 Point</i></p></div>
 			</div>
 			
 			<div class="ui teal progress" data-percent="<?php echo '30'?>" id="kampus2" onclick="next()">
   				<div class="bar"></div>
-  				<div class="label">230 kampus2</div>
+  				<div class="label"><p>kampus2 <i style="color:red">300 Point</i></p></div>
 			</div>
 
 <!-- table kampus1 -->
@@ -129,8 +130,16 @@
     	<tr>
       		<th colspan="3">
          		<div class="ui label"><i class="user icon"></i> 223 Anggota Bandingkampus</div>
-         		<div class="ui right floated small primary button" style="width: 280px"> <i class="trophy icon"></i>Total Score 500<!-- nilai total disini --></div>
+         		<div class="ui right floated small primary button" style="width: 280px;cursor:default;"> <i class="trophy icon"></i>Total Score 500<!-- nilai total disini --></div>
       		</th>
+      	</tr>
+      	<tr>
+      		<td>
+      			test
+      		<td>
+      		<td>
+      			test 2
+      		</td>
       	</tr>
   	</tfoot>
 </table>
@@ -194,13 +203,14 @@
     	<tr>
       		<th colspan="3">
          		<div class="ui label"><i class="user icon"></i> 223 Anggota Bandingkampus</div>
-         		<div class="ui right floated small primary button" style="width: 280px"> <i class="trophy icon"></i>Total Score 500<!-- nilai total disini --></div>
+         		<div class="ui right floated small primary button" style="width: 280px;cursor:default;"> <i class="trophy icon"></i>Total Score 500<!-- nilai total disini --></div>
       		</th>
       	</tr>
   	</tfoot>
 </table>
 
 
+<!-- data lama
 <!-- data lama
 			<table class="ui five column table">
 			  	<thead>
@@ -331,3 +341,12 @@
 </script>
 </body>
 </html>
+<style>
+	p, small, b, h1, h2, h3, h4, h5, h6 {
+		color: #555666;
+	}
+	.tobot:hover{
+		color:#222;
+		transition: .6s;
+	}
+</style>

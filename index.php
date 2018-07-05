@@ -34,6 +34,7 @@
 
 		<div class="ui top fixed menu">
 		    	<div class="ui icon input">
+		    		<a class="item" href="http://localhost/bandingkampus">Home</a>
 		    		<a class="item">Tentang</a>
 					<a class="item">Kontak</a>
 					<a class="item">Blog</a>
@@ -53,12 +54,9 @@
 			<!-- 
 				<a href="space_iklan1.php"><center><div class="ui leaderboard test ad" style="background: #222; opacity: 0.9" data-text="Space Iklan 1"></div></center></a>
 			-->
-			<h2 class="ui center aligned icon header">
-				<img src="assets/img/bklogo.jpg">
-			</h2>
 
 			<h2 class="ui center aligned icon header">
-  				<span style="color:#dc5538">Banding</span>&nbsp;&nbsp;<i class="id flag"></i><span style="color:#3B5998">Kampus</span>
+  				<img src="assets/img/bandingkampuslogo.png"> <span style="color:#dc5538">Banding</span>&nbsp;&nbsp;</i><span style="color:#3B5998">Kampus</span>
 			</h2>
 
 		<div class="ui top attached tabular menu animated fadeInDownBig">
