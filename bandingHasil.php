@@ -90,7 +90,7 @@
     		</th>
 		</tr>
     	
-    	<tr>
+    	<tr id="next">
       		<th>Indikator</th>
       		<th>Score</th>
     	</tr>
@@ -124,7 +124,7 @@
     	</tr>
     	<tr>  
       		<td>Akreditasi Jurusan</td>
-      		<td class="center aligned double line">Nilai Nilai NilaiNilaiNilai NilaiNilaiNilai Nilai Nilai NilaiNilaiNilai</td>
+      		<td class="center aligned double line">Nilai</td>
     	</tr>
   	</tbody>
 
@@ -133,11 +133,10 @@
       		<th colspan="3">
          		<div class="ui label"><i class="user icon"></i> 223 Anggota Bandingkampus</div>
          		<div class="ui right floated small primary button" style="width: 280px;cursor:default;"> <i class="trophy icon"></i>Total Score 500<!-- nilai total disini --></div>
-         		<br/>
          		<!-- komentar -->
          		<div class="ui comments">
 				  	<div class="comment">
-				    	<a class="center aligned avatar">
+				    	<a class="avatar">
 				    		<i class="checkmark icon"></i>
 				    	</a>
 					    <div class="content">
@@ -162,9 +161,7 @@
 				</form>
       		</th>
       	</tr>
-
   	</tfoot>
-
 </table>
 
 <div class="ui hidden divider"></div>
