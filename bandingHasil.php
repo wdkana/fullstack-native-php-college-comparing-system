@@ -19,24 +19,33 @@
 
 	if($indikator1>$indikator2){
 		$unggulkam = $kampus1;
-		$ungguldos = $row1['dosen'] - $row2['dosen'] / $row1['dosen'] * 100;
-		$unggullingkung = $row1['lingkungan'] - $row2['lingkungan'] / $row1['lingkungan'] * 100;
-		$unggulprestasi = $row1['prestasi'] - $row2['prestasi'] / $row1['prestasi'] * 100;
-		$unggulmatkul = $row1['mata_kuliah'] - $row2['mata_kuliah'] / $row1['mata_kuliah'] * 100;
-		$unggulbiaya = $row1['biaya'] - $row2['biaya'] / $row1['biaya'] * 100;
-		$unggulfakultas = $row1['dosen'] - $row2['dosen'] / $row1['dosen'] * 100;
-		$unggulakreditasi = $row1['dosen'] - $row2['dosen'] / $row1['dosen'] * 100;
+		$ungguldos = ($row1['dosen'] - $row2['dosen']) / $row1['dosen'] * 100;
+		$unggullingkung = ($row1['lingkungan'] - $row2['lingkungan']) / $row1['lingkungan'] * 100;
+		$unggulprestasi = ($row1['prestasi'] - $row2['prestasi']) / $row1['prestasi'] * 100;
+		$unggulmatkul = ($row1['mata_kuliah'] - $row2['mata_kuliah']) / $row1['mata_kuliah'] * 100;
+		$unggulbiaya = ($row1['biaya'] - $row2['biaya']) / $row1['biaya'] * 100;
+		$unggulfakultas = ($row1['dosen'] - $row2['dosen']) / $row1['dosen'] * 100;
+		$unggulakreditasi = ($row1['dosen'] - $row2['dosen']) / $row1['dosen'] * 100;
+		echo "if ke 1 aktif";
 	}else if($indikator2>$indikator1){
 		$unggulkam = $kampus2;
-		$ungguldos = $row2['dosen'] - $row1'dosen'] / $row2['dosen'] * 100;
-		$unggullingkung = $row2['lingkungan'] - $row1['lingkungan'] / $row2['lingkungan'] * 100;
-		$unggulprestasi = $row2['prestasi'] - $row1['prestasi'] / $row2['prestasi'] * 100;
-		$unggulmatkul = $row2['mata_kuliah'] - $row1['mata_kuliah'] / $row2['mata_kuliah'] * 100;
-		$unggulbiaya = $row2['biaya'] - $row1['biaya'] / $row2['biaya'] * 100;
-		$unggulfakultas = $row2['dosen'] - $row1['dosen'] / $row2['dosen'] * 100;
-		$unggulakreditasi = $row2['dosen'] - $row1['dosen'] / $row2['dosen'] * 100;
+		$ungguldos = ($row2['dosen'] - $row1['dosen']) / $row2['dosen'] * 100;
+		$unggullingkung = ($row2['lingkungan'] - $row1['lingkungan']) / $row2['lingkungan'] * 100;
+		$unggulprestasi = ($row2['prestasi'] - $row1['prestasi']) / $row2['prestasi'] * 100;
+		$unggulmatkul = ($row2['mata_kuliah'] - $row1['mata_kuliah']) / $row2['mata_kuliah'] * 100;
+		$unggulbiaya = ($row2['biaya'] - $row1['biaya']) / $row2['biaya'] * 100;
+		$unggulfakultas = ($row2['dosen'] - $row1['dosen']) / $row2['dosen'] * 100;
+		$unggulakreditasi = ($row2['dosen'] - $row1['dosen']) / $row2['dosen'] * 100;
+	}else {
+		$unggulkam = "Nilai Kampus Seimbang";
+		$ungguldos = 0;
+		$unggullingkung = 0;
+		$unggulprestasi = 0;
+		$unggulmatkul = 0;
+		$unggulbiaya = 0;
+		$unggulfakultas = 0;
+		$unggulakreditasi = 0;
 	}
-	
 	
     if($kampus1 == $kampus2){
         echo "<script>window.alert('Nama Kampus tidak boleh sama!!');
@@ -302,7 +311,7 @@
 <table class="ui inverted blue table">
   	<thead>
   		<tr class="center aligned">
-  			<th colspan="3">Kampus 1</th>
+  			<th colspan="3"><?php echo $unggulkam;?></th>
   		</tr>
 	    <tr>
 		    <th>Indikator</th>
@@ -314,43 +323,43 @@
 		<?php if($ungguldos>0){ ?>
 	    <tr>
 	      <td>Kualitas Dosen</td>
-	      <td><?php echo $ungguldos ?><i> % Lebih Besar</i></td>
+	      <td><?php echo floor($ungguldos) ?><i> % Lebih Besar</i></td>
 	    </tr>
 		<?php }?>
 		<?php if($unggullingkung>0){ ?>
 		<tr>
 	      <td>Lingkungan</td>
-	      <td><?php echo $unggullingkung ?><i> % Lebih Besar</i></td>
+	      <td><?php echo floor($unggullingkung) ?><i> % Lebih Besar</i></td>
 	    </tr>
 		<?php }?>
 		<?php if($unggulprestasi>0){ ?>
 		<tr>
 	      <td>Prestasi</td>
-	      <td><?php echo $unggulprestasi ?><i> % Lebih Besar</i></td>
+	      <td><?php echo floor($unggulprestasi) ?><i> % Lebih Besar</i></td>
 	    </tr>		
 		<?php }?>
 		<?php if($unggulmatkul>0){ ?>
 	    <tr>
 	      <td>Kesesuaian Matakuliah</td>
-	      <td><?php echo $unggulmatkul ?><i> % Lebih Besar</i></td>
+	      <td><?php echo floor($unggulmatkul) ?><i> % Lebih Besar</i></td>
 	    </tr>
 		<?php }?>
 		<?php if($unggulbiaya>0){ ?>
 		<tr>
 	      <td>Biaya Kuliah</td>
-	      <td><?php echo $unggulbiaya ?><i> % Lebih Besar</i></td>
+	      <td><?php echo floor($unggulbiaya) ?><i> % Lebih Besar</i></td>
 	    </tr>
 		<?php }?>
 		<?php if($unggulfakultas>0){ ?>
 		<tr>
 	      <td>Fakultas</td>
-	      <td><?php echo $unggulfakultas ?><i> % Lebih Besar</i></td>
+	      <td><?php echo floor($unggulfakultas) ?><i> % Lebih Besar</i></td>
 	    </tr>
 		<?php }?>
 		<?php if($unggulfakultas>0){ ?>
 		<tr>
 	      <td>Akreditasi Jurusan</td>
-	      <td><?php echo $unggulfakultas ?><i> % Lebih Besar</i></td>
+	      <td><?php echo floor($unggulfakultas) ?><i> % Lebih Besar</i></td>
 	    </tr>
 		<?php }?>
   	</tbody>
