@@ -77,15 +77,16 @@
 			
 			<div class="ui teal progress" data-percent="<?php echo ceil($indikator1)?>" id="kampus1">
   				<div class="bar"></div>
-  				<div class="label"><p><i class="trophy icon"></i> kampus 1 <i style="color:red"><?php echo $total1?> Point</i></p></div>
+  				<div class="label"><p><i class="trophy icon"></i> <?php echo $kampus1; ?> <i style="color:red"><?php echo $total1?> Point</i></p></div>
 			</div>
 			
 
 			<span onclick="next()"><div class="ui teal progress" data-percent="<?php echo ceil($indikator2)?>" id="kampus2" style="cursor: pointer;">
   				<div class="bar"></div>
-  				<div class="label"><p>kampus 2 <i style="color:red"><?php echo $total2?> Point</i></p></div>
+  				<div class="label"><p><i class="trophy icon"></i> <?php echo $kampus2; ?> <i style="color:red"><?php echo $total2?> Point</i></p></div>
 			</div>
-		</span>
+			</span>
+			<div class="ui hidden divider"></div>
 			
 <!-- table kampus1 -->
 
