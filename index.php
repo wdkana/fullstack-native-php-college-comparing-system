@@ -127,7 +127,7 @@
 
 
 		<div class="ui buttons">
-			 <button class="ui huge facebook button" style="box-shadow: 2px 3px 3px 2px #888">Lihat Website</button>
+			 <a href="http://google.com" class="ui huge facebook button" style="box-shadow: 2px 3px 3px 2px #888">Lihat Website</a>
 			 	<div class="or animated bounceInUp"></div>
 			 <button class="ui huge google plus button" type="submit" style="box-shadow: 2px 3px 3px 2px #888"> Bandingkan</button>
 		</div>
