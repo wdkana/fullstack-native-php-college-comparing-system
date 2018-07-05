@@ -66,14 +66,16 @@
   				<div class="label"><p><i class="trophy icon"></i> kampus1 <i style="color:red">530 Point</i></p></div>
 			</div>
 			
-			<div class="ui teal progress" data-percent="<?php echo '30'?>" id="kampus2" onclick="next()">
+
+			<span onclick="next()"><div class="ui teal progress" data-percent="<?php echo '30'?>" id="kampus2" style="cursor: pointer;">
   				<div class="bar"></div>
   				<div class="label"><p>kampus2 <i style="color:red">300 Point</i></p></div>
 			</div>
-
+		</span>
+			
 <!-- table kampus1 -->
 
-<table class="ui celled stripped table">
+<table class="ui celled stripped table" style="box-shadow: 5px 7px 7px 5px #f5f5f5">
 	<thead class="center aligned">
   		<tr>
   			<th colspan="3">
@@ -135,8 +137,8 @@
          		<!-- komentar -->
          		<div class="ui comments">
 				  	<div class="comment">
-				    	<a class="avatar">
-				    		<img src="/images/avatar/small/joe.jpg">
+				    	<a class="center aligned avatar">
+				    		<i class="checkmark icon"></i>
 				    	</a>
 					    <div class="content">
 					      	<a class="author">Nama Pengirim Ulasan</a>
@@ -174,7 +176,7 @@
 
 <!-- table kampus2 -->
 
-<table class="ui celled stripped table">
+<table class="ui celled stripped table" style="box-shadow: 5px 7px 7px 5px #f5f5f5">
 	<thead class="center aligned">
   		<tr>
   			<th colspan="3">
@@ -189,7 +191,7 @@
     		</th>
 		</tr>
     	
-    	<tr>
+    	<tr id="next">
       		<th>Indikator</th>
       		<th>Score</th>
     	</tr>
@@ -236,7 +238,7 @@
          		<div class="ui comments">
 				  	<div class="comment">
 				    	<a class="avatar">
-				    		<img src="/images/avatar/small/joe.jpg">
+				    		<i class="checkmark icon"></i>
 				    	</a>
 					    <div class="content">
 					      	<a class="author">Nama Pengirim Ulasan</a>
@@ -263,128 +265,78 @@
   	</tfoot>
 </table>
 
+<div class="ui hidden divider">
+<div class="ui hidden divider">
+<div class="ui hidden divider">
+<div class="ui hidden divider">
+<h2>Persentase Kemenangan</h2>
+<table class="ui inverted blue table">
+  	<thead>
+  		<tr class="center aligned">
+  			<th colspan="3">Kampus 1</th>
+  		</tr>
+	    <tr>
+		    <th>Indikator</th>
+		    <th>Keunggulan ( % )</th>
+	  	</tr>
+	</thead>
+
+	<tbody>
+	    <tr>
+	      <td>Kualitas Dosen</td>
+	      <td>10 % <i>lebih besar</i></td>
+	    </tr>
+		
+		<tr>
+	      <td>Lingkungan</td>
+	      <td>10 % <i>lebih besar</i></td>
+	    </tr>
+
+		<tr>
+	      <td>Prestasi</td>
+	      <td>10 % <i>lebih besar</i></td>
+	    </tr>		
+
+	    <tr>
+	      <td>Kesesuaian Matakuliah</td>
+	      <td>10 % <i>lebih besar</i></td>
+	    </tr>
+
+		<tr>
+	      <td>Biaya Kuliah</td>
+	      <td>10 % <i>lebih besar</i></td>
+	    </tr>
+
+		<tr>
+	      <td>Fakultas</td>
+	      <td>10 % <i>lebih besar</i></td>
+	    </tr>
+
+		<tr>
+	      <td>Akreditasi Jurusan</td>
+	      <td>10 % <i>lebih besar</i></td>
+	    </tr>
+
+  	</tbody>
+</table>
 
 <!-- data lama
-<!-- data lama
-			<table class="ui five column table">
-			  	<thead>
-			  		<h3><?php echo $row1['nama_kampus']?></h3>
-				    <tr>
-				    	<th>Kualitas Dosen</th>
-					    <th>Lingkungan</th>
-					    <th>Prestasi</th>
-					    <th>Kesesuaian Mata Kuliah</th>
-					    <th>Biaya Kuliah</th>
-					    <th>Fakultas</th>
-					    <th>Nilai Akreditasi Jurusan</th>
-				  	</tr>
-				</thead>
-				<tbody>
-				    <tr>
-				      <td><?php echo $row1['dosen']?></td>
-				      <td><?php echo $row1['lingkungan'];?></td>
-				      <td><?php echo $row1['prestasi'];?></td>
-				      <td><?php echo $row1['mata_kuliah'];?></td>
-				      <td><?php echo $row1['biaya'];?></td>
-				    </tr>
-				</tbody>
-			  <tfoot>
-			    <tr><th>Total <?php echo $total1?></th>
-			    <th></th>
-			    <th></th>
-			    <th></th>
-			    <th></th>
-			    <th></th>
-			    <th></th>
-			  </tr></tfoot>
-			</table>
 
-			<div class="ui hidden divider"></div>
-			<div class="ui horizontal divider">
-    			<h1>VERSUS</h1>
-  			</div>
-			<div class="ui hidden divider"></div>
-			
-			<table class="ui five column table">
-			  	<thead>
-			  		<h3><?php echo $row2['nama_kampus']?></h3>
-				    <tr>
-				    	<th>Kualitas Dosen</th>
-					    <th>Lingkungan</th>
-					    <th>Prestasi</th>
-					    <th>Kesesuaian Mata Kuliah</th>
-					    <th>Biaya Kuliah</th>
-					    <th>Nilai Akreditasi Jurusan</th>
-				  	</tr>
-				</thead>
-				<tbody>
-				    <tr>
-				      <td><?php echo $row2['dosen']?></td>
-				      <td><?php echo $row2['lingkungan'];?></td>
-				      <td><?php echo $row2['prestasi'];?></td>
-				      <td><?php echo $row2['mata_kuliah'];?></td>
-				      <td><?php echo $row2['biaya'];?></td>
-				    </tr>
-				</tbody>
-			  <tfoot>
-			    <tr><th>Total <?php echo $total2?></th>
-
-			    <th></th>
-			    <th></th>
-			    <th></th>
-			    <th></th>
-			  </tr></tfoot>
-			</table>
-
-
-
-	<table border=1>
-		  <tr>
-			<th>Kampus <?php echo $row1['nama_kampus']?></th>
-			<th>Kampus <?php echo $row2['nama_kampus']?></th>
-		  </tr>
-		  <tr>
-			<td>Dosen : <?php echo $row1['dosen']?></td>
-			<td>Dosen : <?php echo $row2['dosen']?></td>
-		  </tr>
-		  <tr>
-			<td>Jurusan : <?php echo $row1['jurusan']?></td>
-			<td>Jurusan : <?php echo $row2['jurusan']?></td>
-		  </tr>
-		  <tr>
-			<td>Lingkungan : <?php echo $row1['lingkungan']?></td>
-			<td>Lingkungan : <?php echo $row2['lingkungan']?></td>
-		  </tr>
-		  <tr>
-			<td>Prestasi : <?php echo $row1['prestasi']?></td>
-			<td>Prestasi : <?php echo $row2['prestasi']?></td>
-		  </tr>
-		  <tr>
-			<td>Mata Kuliah : <?php echo $row1['mata_kuliah']?></td>
-			<td>Mata Kuliah : <?php echo $row2['mata_kuliah']?></td>
-		  </tr>
-      <tr>
-     <td>Biaya : <?php echo $row1['biaya']?></td>
-     <td>Biaya : <?php echo $row2['biaya']?></td>
-      </tr>
-      <tr>
 			<td>TOTAL NILAI : <?php echo $total1?> <br>
       <?php while($row = mysql_fetch_array($result1)){?>
         AKREDITASI JURUSAN: <?php echo $row['fakultas'];?> - <?php echo $row['akreditasi'];?><br>
 
       <?php }?>
-      </td>
-			<td>TOTAL NILAI : <?php echo $total2?><br>
-      <?php while($row = mysql_fetch_array($result2)){?>
-        AKREDITASI JURUSAN: <?php echo $row['fakultas'];?> - <?php echo $row['akreditasi'];?><br>
-      <?php }?>
-    </td>
-		  </tr>
-		</table>
-
-	</div>
 
 -->
+
+<script type="text/javascript">
+		function next(){
+		document.querySelector('#next').scrollIntoView({
+  behavior: 'smooth'
+});
+	}
+</script>
 
 <script type="text/javascript">
 	$('.ui.rating')
