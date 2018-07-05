@@ -51,27 +51,27 @@
 		  	<a class="item" data-tab="masuk">Masuk</a>
 		</div>
 
-		<div class="ui center aligned bottom attached tab segment active" data-tab="bandingkan" style="background: #777;">
+		<div class="ui center aligned bottom attached tab segment active" data-tab="bandingkan" style="box-shadow: 2px 3px 3px 2px #888">
 
 		<div class="ui hidden divider"></div>
 
 		<div class="ui center aligned container animated fadeInDownBig">
 				<div class="ui steps">
-  <div class="active step">
+  <div class="active step" style="box-shadow: 1px 2px 2px 1px #888">
     <i class="balance scale icon"></i>
     <div class="content">
       <div class="title">Bandingkan</div>
       <div class="description">cari kampus yang akan dibandingkan</div>
     </div>
   </div>
-  <div class="disabled step">
+  <div class="disabled step" style="box-shadow: 0px 1px 1px 0px #888">
     <i class="star icon"></i>
     <div class="content">
       <div class="title">Cek Score</div>
       <div class="description">lihat dan bandingkan score kampus</div>
     </div>
   </div>
-  <div class="disabled step">
+  <div class="disabled step" style="box-shadow: 0px 1px 1px 0px #888">
     <i class="question icon"></i>
     <div class="content">
       <div class="title">Tanya User</div>
@@ -113,9 +113,9 @@
 
 
 		<div class="ui buttons">
-			 <button class="ui huge facebook button">Lihat Website</button>
+			 <button class="ui huge facebook button" style="box-shadow: 2px 3px 3px 2px #888">Lihat Website</button>
 			 	<div class="or animated bounceInUp"></div>
-			 <button class="ui huge google plus button" type="submit"> Bandingkan</button>
+			 <button class="ui huge google plus button" type="submit" style="box-shadow: 2px 3px 3px 2px #888"> Bandingkan</button>
 		</div>
 		</div>
 	</form>
@@ -181,7 +181,7 @@
 		<div class="ui hidden divider"></div>
 
 		<div class="ui right aligned container animated bounce infinite">
-			<span onclick="next()" style="color:#dc5538; cursor: pointer; top:-150px; position: fixed; z-index: 99"><i class="huge arrow alternate circle down outline icon tobot"></i></span>
+			<span onclick="next()" style="color:#dc5538; cursor: pointer; top:-150px; position: fixed; z-index: 99;"><i class="huge arrow alternate circle down outline icon tobot"></i></span>
 		</div>
 
 		<div class="ui hidden divider"></div>
