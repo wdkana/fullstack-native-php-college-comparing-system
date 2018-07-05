@@ -30,7 +30,7 @@
 		<script src="../element/angular.js"></script>
     	<script src="element/date.js"></script>
 	</head>
-	<body style="background: #dc5538">
+	<body style="background: #dc4538;">
 		<div class ="ui container" style="background: #f5f5f5">
 			<br/>
 			<!-- 
@@ -144,7 +144,7 @@
 
 			<div class="ui hidden divider"></div>
 
-			<div class="ui justified aligned container">
+			<div class="ui justified aligned container animated bounceInDown">
 			<div class="ui hidden divider"></div>
 	  			<form class="ui large form" action="users/process/loginProcess.php" method="post">
 				  <div class="two fields">
