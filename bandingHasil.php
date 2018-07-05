@@ -167,6 +167,10 @@
 				</div>
 				
 				<form class="ui reply form" method="POST" action="">
+				    <div class="four wide field">
+				    	<label>email</label>
+				    	<input type="email" name="email">
+				    </div>
 				    <div class="field">
 				    	<textarea name=""></textarea>
 				    </div>
@@ -265,6 +269,10 @@
 				</div>
 				
 				<form class="ui reply form" method="POST" action="">
+					<div class="four wide field">
+				    	<label>email</label>
+				    	<input type="email" name="email">
+				    </div>
 				    <div class="field">
 				    	<textarea name=""></textarea>
 				    </div>
