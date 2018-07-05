@@ -3,10 +3,11 @@
 
 	$username = $_SESSION['username'];
 	$email = $_GET['email'];
+	//validasi jika ada username
 	if(isset($username)){
-			header('location:dashboard.php');
+		header('location:dashboard.php');
 	} else if(!$email){
-			header('location:../');
+		header('location:../');
 	}
 ?>
 <html>

@@ -2,9 +2,13 @@
     session_start();
 
     $username = $_SESSION['username'];
+    $hak_akses = $_SESSION['hak_akses'];
     if(!isset($username)){
         header('location:../');
     }
+    if($hak_akses == 'admin'){
+      header('location:admin/dashboard-admin.php');
+    } 
 ?>
 
 <html>

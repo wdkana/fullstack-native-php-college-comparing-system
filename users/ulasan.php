@@ -7,11 +7,16 @@
     $kmp = new Kampus_model();
 
     $username = $_SESSION['username'];
+    $hak_akses = $_SESSION['hak_akses'];
+
     if(!$username){
         header('location:../');
     }
     if($user->detailProfil($username) == 0){
         header('location: setProfil.php');
+    }
+    if($hak_akses == 'admin'){
+      header('location:admin/dashboard-admin.php');
     }
 
     $row = mysql_fetch_array($user->kampus($username));

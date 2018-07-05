@@ -71,22 +71,24 @@
 					    <th>Prestasi</th>
 					    <th>Kesesuaian Mata Kuliah</th>
 					    <th>Biaya Kuliah</th>
+					    <th>Fakultas</th>
+					    <th>Nilai Akreditasi Jurusan</th>
 				  	</tr>
 				</thead>
 				<tbody>
 				    <tr>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <td></td>
+				      <td><?php echo $row1['dosen']?></td>
+				      <td><?php echo $row1['lingkungan'];?></td>
+				      <td><?php echo $row1['prestasi'];?></td>
+				      <td><?php echo $row1['mata_kuliah'];?></td>
+				      <td><?php echo $row1['biaya'];?></td>
 				    </tr>
 				</tbody>
 			  <tfoot>
-			    <tr><th>3 People</th>
-			    <th>2 Approved</th>
+			    <tr><th>Total <?php echo $total1?></th>
+			    <th></th>
+			    <th></th>
+			    <th></th>
 			    <th></th>
 			    <th></th>
 			    <th></th>
@@ -112,18 +114,17 @@
 				</thead>
 				<tbody>
 				    <tr>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <td></td>
+				      <td><?php echo $row2['dosen']?></td>
+				      <td><?php echo $row2['lingkungan'];?></td>
+				      <td><?php echo $row2['prestasi'];?></td>
+				      <td><?php echo $row2['mata_kuliah'];?></td>
+				      <td><?php echo $row2['biaya'];?></td>
 				    </tr>
 				</tbody>
 			  <tfoot>
-			    <tr><th>3 People</th>
-			    <th>2 Approved</th>
+			    <tr><th>Total <?php echo $total2?></th>
+
+			    <th></th>
 			    <th></th>
 			    <th></th>
 			    <th></th>

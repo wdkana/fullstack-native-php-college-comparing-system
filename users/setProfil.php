@@ -3,13 +3,17 @@
     $user = new User_model();
     session_start();
     $username = $_SESSION['username'];
-
+    $hak_akses = $_SESSION['hak_akses'];
+    
     if(!$username){
         header('location: ../');
     }
     if($user->detailProfil($username) > 0){
         header('location: dashboard.php');
-    }
+    } 
+    if($hak_akses == 'admin'){
+        header('location:admin/dashboard-admin.php');
+    } 
 ?>
 <!DOCTYPE html>
 <html>

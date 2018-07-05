@@ -47,6 +47,14 @@
         $check = mysql_num_rows($query);
         return $check;
       }
+
+      //function untuk menampilkan testimoni berdasarkan username
+      public function getTestimoni($username){
+
+          $sql = "SELECT * FROM tbl_testimoni WHERE username = '$username'";
+          $query = mysql_query($sql);
+          return $query;
+      }
     }
 
 ?>

@@ -5,12 +5,19 @@
     session_start();
     //session
     $username = $_SESSION['username'];
+    $hak_akses = $_SESSION['hak_akses'];
+
     if(!isset($username)){
         header('location:../');
     }
     if($user->detailProfil($username) == 0){
         header('location: setProfil.php');
     }
+    if($hak_akses == 'admin'){
+    	header('location:admin/dashboard-admin.php');
+    } 
+
+
 ?>
 <!DOCTYPE html>
 <html>

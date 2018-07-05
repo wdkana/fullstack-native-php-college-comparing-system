@@ -5,9 +5,15 @@
     session_start();
 
     $username = $_SESSION['username'];
+    $hak_akses = $_SESSION['hak_akses'];
+
     if(!isset($username)){
         header('location: ../../');
-    }
+    } 
+    if($hak_akses == 'user'){
+        header('location:../dashboard.php');
+    } 
+    
     $survei = new Survei_model();
     $akr = new Akreditasi_model();
 	  $id = $_GET['id'];

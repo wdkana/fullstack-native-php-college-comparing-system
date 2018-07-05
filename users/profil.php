@@ -4,9 +4,13 @@
 
     $user = new User_model();
     $username = $_SESSION['username'];
-
+    $hak_akses = $_SESSION['hak_akses'];
+    
     if(!isset($username)){
         header('location:../login.php');
+    }
+    if($hak_akses == 'admin'){
+      header('location:admin/dashboard-admin.php');
     }
     $row = mysql_fetch_array($user->kampus($username));
 ?>
