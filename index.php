@@ -37,6 +37,10 @@
 				<a href="space_iklan1.php"><center><div class="ui leaderboard test ad" style="background: #222; opacity: 0.9" data-text="Space Iklan 1"></div></center></a>
 			-->
 			<h2 class="ui center aligned icon header">
+				<img src="assets/img/bklogo.jpg">
+			</h2>
+
+			<h2 class="ui center aligned icon header">
   				<span style="color:#dc5538">Banding</span>&nbsp;&nbsp;<i class="id flag"></i><span style="color:#3B5998">Kampus</span>
 			</h2>
 
