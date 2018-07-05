@@ -30,8 +30,8 @@
 		<script src="../element/angular.js"></script>
     	<script src="element/date.js"></script>
 	</head>
-	<body style="background: #dc4538;">
-		<div class ="ui container" style="background: #f5f5f5">
+	<body style="background: #f9f9f9;">
+		<div class ="ui container" style="background: #f9f9f9">
 			<br/>
 			<!-- 
 				<a href="space_iklan1.php"><center><div class="ui leaderboard test ad" style="background: #222; opacity: 0.9" data-text="Space Iklan 1"></div></center></a>
@@ -181,7 +181,7 @@
 		<div class="ui hidden divider"></div>
 
 		<div class="ui right aligned container animated bounce infinite">
-			<span onclick="next()" style="color:#f5f5f5; cursor: pointer; top:20; position: fixed; z-index: 99"><i class="huge arrow alternate circle down outline icon tobot"></i></span>
+			<span onclick="next()" style="color:#dc5538; cursor: pointer; top:20; position: fixed; z-index: 99"><i class="huge arrow alternate circle down outline icon tobot"></i></span>
 		</div>
 
 		<div class="ui hidden divider"></div>
