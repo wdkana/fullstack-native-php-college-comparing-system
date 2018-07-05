@@ -31,7 +31,24 @@
     	<script src="element/date.js"></script>
 	</head>
 	<body style="background: #f9f9f9;">
+
+		<div class="ui top fixed menu">
+		    	<div class="ui icon input">
+		    		<a class="item">Tentang</a>
+					<a class="item">Kontak</a>
+					<a class="item">Blog</a>
+		    	</div>
+
+			<div class="right item">
+			    <div class="ui action input">
+			    	<input type="text" placeholder="Navigate to...">
+			      	<div class="ui button">Go</div>
+			    </div>
+			</div>
+		</div>
+
 		<div class ="ui container" style="background: #f9f9f9">
+			<br/>
 			<br/>
 			<!-- 
 				<a href="space_iklan1.php"><center><div class="ui leaderboard test ad" style="background: #222; opacity: 0.9" data-text="Space Iklan 1"></div></center></a>
