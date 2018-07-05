@@ -21,6 +21,7 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
       	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    	<link rel="stylesheet" type="text/css" href="element/animate.css">
     	<script src="element/jquery-3.1.1.min.js"></script>
 	    <script src="semantic/dist/semantic.min.js"></script>
 	    <script src="semantic/dist/components/accordion.js"></script>
@@ -39,7 +40,7 @@
   				<span style="color:#dc5538">Banding</span>&nbsp;&nbsp;<i class="id flag"></i><span style="color:#3B5998">Kampus</span>
 			</h2>
 
-		<div class="ui top attached tabular menu">
+		<div class="ui top attached tabular menu animated fadeInDownBig">
 		  	<a class="item active" data-tab="bandingkan">Bandingkan</a>
 		  	<a class="item" data-tab="peringkat">Peringkat</a>
 		  	<a class="item" data-tab="semuakampus">Semua Kampus</a>
@@ -50,7 +51,7 @@
 
 		<div class="ui hidden divider"></div>
 
-		<div class="ui center aligned container">
+		<div class="ui center aligned container animated fadeInDownBig">
 				<div class="ui steps">
   <div class="active step">
     <i class="balance scale icon"></i>
@@ -78,7 +79,7 @@
 
 		<div class="ui hidden divider"></div>
 
-		<form action="bandingHasil.php" method="POST">
+		<form action="bandingHasil.php" method="POST" class="animated bounceInRight">
 		<div class="ui center aligned stackable grid container">
 		  	<div class="column">
 		    	<select class="ui huge search dropdown" name="kampus1" required>
@@ -109,7 +110,7 @@
 
 		<div class="ui buttons">
 			 <button class="ui huge facebook button">Lihat Website</button>
-			 	<div class="or"></div>
+			 	<div class="or animated bounceInUp"></div>
 			 <button class="ui huge google plus button" type="submit"> Bandingkan</button>
 		</div>
 		</div>
@@ -175,7 +176,7 @@
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
 
-		<div class="ui right aligned container">
+		<div class="ui right aligned container animated bounce infinite">
 			<span onclick="next()" style="color:#f5f5f5; cursor: pointer; top:20; position: fixed; z-index: 99"><i class="huge arrow alternate circle down outline icon tobot"></i></span>
 		</div>
 
@@ -222,7 +223,7 @@
   		<?php } ?>
 	</div>
 </div>
-		<div class="ui hidden divider" id="next"></div>
+		<div class="ui hidden divider"></div>
 		<!-- random beres -->
 
 	<div class="ui hidden divider"></div>
@@ -251,6 +252,7 @@
 						<div class="item">
 						   	<i class="question circle large icon"></i>
 						    <div class="content">
+	    		<div class="ui hidden" id="next"></div>
 						     	<a class="ui medium header" onclick="pertanyaan1()">Bagaimana cara membandingkan kampus?</a>
 						    </div>
 						</div>
