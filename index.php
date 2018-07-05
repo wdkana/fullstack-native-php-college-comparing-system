@@ -51,7 +51,7 @@
 		  	<a class="item" data-tab="masuk">Masuk</a>
 		</div>
 
-		<div class="ui center aligned bottom attached tab segment active" data-tab="bandingkan"">
+		<div class="ui center aligned bottom attached tab segment active" data-tab="bandingkan" style="background: #777;">
 
 		<div class="ui hidden divider"></div>
 
@@ -181,7 +181,7 @@
 		<div class="ui hidden divider"></div>
 
 		<div class="ui right aligned container animated bounce infinite">
-			<span onclick="next()" style="color:#dc5538; cursor: pointer; top:20; position: fixed; z-index: 99"><i class="huge arrow alternate circle down outline icon tobot"></i></span>
+			<span onclick="next()" style="color:#dc5538; cursor: pointer; top:-150px; position: fixed; z-index: 99"><i class="huge arrow alternate circle down outline icon tobot"></i></span>
 		</div>
 
 		<div class="ui hidden divider"></div>
