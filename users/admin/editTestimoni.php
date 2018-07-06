@@ -1,24 +1,26 @@
 <?php
-    include "../../model/Profil_model.php";
-    $profil = new Profil_model();
-	
+	include "../../model/Testimoni_model.php";
+
+	$test = new Testimoni_model();
+
+
     session_start();
 
     $username = $_SESSION['username'];
     $hak_akses = $_SESSION['hak_akses'];
-
     if(!isset($username)){
         header('location: ../../');
     }
-     if($hak_akses == 'user'){
+    if($hak_akses == 'user'){
         header('location:../dashboard.php');
     }
+    $id = $_GET['id'];
+   	$row = mysql_fetch_array($test->getId($id));
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Banding Kampus Admin</title>
+    <title>Edit Testimoni</title>
         <!-- Bootstrap 3.3.7 -->
       <link rel="stylesheet" href="../../assets/admin_bootstrap/bower_components/bootstrap/dist/css/bootstrap.min.css">
       <!-- Font Awesome -->
@@ -194,16 +196,15 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        
+
       </h1>
     </section>
 
     <!-- Main content -->
     <section class="content">
-
        <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Data User</h3>
+          <h3 class="box-title">Data ulasan Kampus dari user</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           </div>
@@ -212,70 +213,20 @@
         <div class="box-body">
           <div class="row">
             <div class="col-md-12">
-              <a href="addUser.php" class="btn btn-flat btn-sm btn-primary">Tambah User</a>
-                <table class="table table-stripped" id="example1">
-                  <thead>
-                      <tr>
-                        <th>No</th>
-                        <th>NIM</th>
-                        <th>Nama Lengkap</th>
-                        <th>Asal Kampus</th>
-                        <th>Fakultas</th>
-                        <th>No Telp</th>
-                        <th>Instagram</th>
-                        <th>Facebook</th>
-                        <th>Twitter</th>
-                        <th>Status</th>
-                        <th>Status Kerja</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                    <?php
-                        $no = 1;
-                        $result = $profil->viewAll();
-                        while($row = mysql_fetch_array($result)){
-                    ?>
-                    <tr>
-                      <td><?php echo $no;?></td>
-                      <td><?php echo $row['nim'];?></td>
-                      <td><?php echo $row['nama_lengkap'];?></td>
-                      <td><?php echo $row['asal_kampus'];?></td>
-                      <td><?php echo $row['fakultas'];?></td>
-                      <td><?php echo $row['no_hp'];?></td>
-                      <td><?php echo $row['instagram'];?></td>
-                      <td><?php echo $row['facebook'];?></td>
-                      <td><?php echo $row['twitter'];?></td>
-                      <td><?php echo $row['status'];?></td>
-                      <td><?php echo $row['status_kerja'];?></td>
-                      <td>
-                  <a href="edit_user.php?id=<?php echo $row['id'];?>" class="btn btn-flat btn-sm btn-success">Edit</a>
-                  <button onclick="hapus('<?php echo $row['username'];?>')" class="btn btn-flat btn-sm btn-danger">Hapus</button></td>
-                    </tr>
-                    <?php
-                        $no++;
-                        }
-                    ?>
-                  </tbody>
-              </table>
-              <script>
-                  function hapus(username) {
-                      var r = confirm("Apakah anda akan menghapus data ini?");
-                      if (r == true) {
-                          window.location.href="process/deleteUserProcess.php?i="+username;
-                      } else {
-                          window.location.href="allUser.php";
-                      }
-                  }
-
-              </script>                    
+            	<form action="process/editTestimoniProcess.php" method="post">
+            	<input type="hidden" name="id" value="<?php echo $row['id'];?>">
+            	<div class="form-group">
+            		<label>Testimoni</label>
+            		<textarea name="testimoni" id="editor1"><?php echo $row['testimoni'];?></textarea>
+            	</div>
+            	<div class="form-group">
+            		<input type="submit" value="Ubah" class="btn btn-sm btn-flat btn-success">
+            	</div>
+            	</form>
             </div>
-            <!-- /.col -->
           </div>
-          <!-- /.row -->
         </div>
-        
     </section>
-    <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -325,8 +276,6 @@
 <script src="../../assets/admin_bootstrap/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../assets/admin_bootstrap/dist/js/demo.js"></script>
-
-<script type="text/javascript" src="../../assets/ckeditor/ckeditor.js"></script>
 <!-- DataTables -->
 <script src="../../assets/admin_bootstrap/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="../../assets/admin_bootstrap/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -334,5 +283,11 @@
   $(function () {
     $('#example1').DataTable()
   })
+</script>
+<script type="text/javascript" src="../../assets/ckeditor/ckeditor.js"></script>
+<script>
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+            CKEDITOR.replace( 'editor1' );
 </script>
 </html>
