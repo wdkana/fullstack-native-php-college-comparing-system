@@ -2,15 +2,18 @@
 		include "model/Survei_model.php";
 		include "model/Testimoni_model.php";
 		include "model/Kampus_model.php";
+		include "model/Banding_model.php";
 
 		$testimoni = new Testimoni_model();
 		$survei = new Survei_model();
 		$kmp = new Kampus_model();
+		$banding = new Banding_model();
 
 		$result = $survei->ambilkampus();
 		$result1 = $survei->ambilkampus();
 		$result2 = $testimoni->viewTestimoni();
 		$result3 = $kmp->daftarKampus();
+		$result4 = $banding->rankingKampus();
 
 ?>
 <!DOCTYPE HTML>
@@ -153,14 +156,18 @@
 					</thead>
   					
   					<tbody>
-    					<tr>
-      						<td>
-        						<div class="ui ribbon label">1</div>
-      						</td>
-      						<td class="center aligned"></td>
-      						<td class="center aligned"></td>
-      						<td class="center aligned"></td>
-    					</tr>
+						<?php $no=1;
+						while($row = mysql_fetch_array($result4)){?>
+							<tr>
+								<td>
+									<div class="ui ribbon label"><?php echo $no?></div>
+								</td>
+								<td class="center aligned"><?php echo $row['nama_kampus']; ?></td>
+								<td class="center aligned"><?php echo $row['alamat']; ?></td>
+								<td class="center aligned"><?php echo $row['score']; ?></td>
+							</tr>
+						<?php $no++;
+						}?>
   					</tbody>
   					
   					<tfoot>

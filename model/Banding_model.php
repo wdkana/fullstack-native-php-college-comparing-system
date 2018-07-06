@@ -36,8 +36,9 @@
       		      SUM(tbl_nilai.lingkungan) as lingkungan,
       		      SUM(tbl_nilai.prestasi) as prestasi,
       		      SUM(tbl_nilai.mata_kuliah) as mata_kuliah,
-      		      SUM(tbl_nilai.biaya) as biaya
-                FROM tbl_kampus join tbl_nilai on tbl_kampus.id = tbl_nilai.id_kampus GROUP BY tbl_kampus.nama_kampus DESC";
+      		      SUM(tbl_nilai.biaya) as biaya,
+                  (SUM(tbl_nilai.dosen) + SUM(tbl_nilai.jurusan) + SUM(tbl_nilai.lingkungan) + SUM(tbl_nilai.prestasi) + SUM(tbl_nilai.mata_kuliah) + SUM(tbl_nilai.biaya)) AS score
+                FROM tbl_kampus join tbl_nilai on tbl_kampus.id = tbl_nilai.id_kampus GROUP BY tbl_kampus.nama_kampus ORDER BY score DESC";
         $query = mysql_query($sql);
         return $query;
       }
