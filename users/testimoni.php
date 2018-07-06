@@ -180,6 +180,7 @@
         <li><a href="ulasan.php"><i class="fa fa-dashboard"></i> <span>Ulasan</span></a></li>
         <li><a href="survei.php"><i class="fa fa-dashboard"></i> <span>Survei</span></a></li>
         <li><a href="testimoni.php"><i class="fa fa-dashboard"></i> <span>Testimoni</span></a></li>
+        <li><a href="tanya-jawab.php"><i class="fa fa-dashboard"></i> <span>Tanya-Jawab</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

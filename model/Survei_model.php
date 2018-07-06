@@ -18,7 +18,7 @@
       }
 
 	  //function menampilkan semua data kampus
-	  public function ambilkampus(){
+	   public function ambilkampus(){
           $sql = "SELECT * FROM tbl_kampus";
           $query = mysql_query($sql);
           return $query;
