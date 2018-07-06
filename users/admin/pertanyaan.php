@@ -38,6 +38,8 @@
       <link rel="stylesheet" href="../../assets/admin_bootstrap/bower_components/bootstrap-daterangepicker/daterangepicker.css">
       <!-- bootstrap wysihtml5 - text editor -->
       <link rel="stylesheet" href="../../assets/admin_bootstrap/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+      <!-- DataTables -->
+      <link rel="stylesheet" href="../../assets/admin_bootstrap/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -231,7 +233,7 @@
                 </form>
                 <hr>
                 <h1>Daftar Pertanyaan</h1>
-                <table class="table table-stripped">
+                <table class="table table-stripped" id="example1">
                   <thead>
                       <tr>
                         <th>No</th>
@@ -269,6 +271,11 @@
                     ?>
                   </tbody>
                 </table>
+                <script>
+                    $(function () {
+                    $('#example1').DataTable()
+                     })
+                </script>
                 <script>
                     function hapus(id) {
                         var r = confirm("Apakah anda akan menghapus data ini?");
@@ -337,4 +344,7 @@
 <script src="../../assets/admin_bootstrap/dist/js/demo.js"></script>
 
 <script type="text/javascript" src="../../assets/ckeditor/ckeditor.js"></script>
+<!-- DataTables -->
+<script src="../../assets/admin_bootstrap/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../assets/admin_bootstrap/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 </html>

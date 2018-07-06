@@ -1,6 +1,4 @@
 <?php
-    include "../../model/Survei_model.php";
-    $survei = new Survei_model();
     session_start();
 
     $username = $_SESSION['username'];
@@ -9,7 +7,7 @@
     if(!isset($username)){
         header('location: ../../');
     }
-    if($hak_akses == 'user'){
+     if($hak_akses == 'user'){
         header('location:../dashboard.php');
     }
 ?>
@@ -38,11 +36,10 @@
       <link rel="stylesheet" href="../../assets/admin_bootstrap/bower_components/bootstrap-daterangepicker/daterangepicker.css">
       <!-- bootstrap wysihtml5 - text editor -->
       <link rel="stylesheet" href="../../assets/admin_bootstrap/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-      <!-- DataTables -->
-      <link rel="stylesheet" href="../../assets/admin_bootstrap/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
+
   <header class="main-header">
     <!-- Logo -->
     <a href="dashboard-admin.php" class="logo">
@@ -191,91 +188,91 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-     
+        
       </h1>
     </section>
 
     <!-- Main content -->
-    <section class="content">     
-        <div class="box box-primary">
+    <section class="content">
+
+       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Data Kampus</h3>
+          <h3 class="box-title">Data User</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           </div>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-          <div class="form-group">
-            <a href="addKampus.php" class="btn btn-flat btn-sm btn-primary">Tambah Kampus</a>
-          </div>
           <div class="row">
             <div class="col-md-12">
-                  <table class="table table-stripped" id="example1">
-                    <thead>
-                        <tr>
-                          <th>No</th>
-                          <th>Nama Kampus</th>
-                          <th>Alamat</th>
-                          <th>Foto</th>
-                          <th>Slogan</th>
-                          <th>No Hp</th>
-                          <th>Email</th>
-                          <th>Fax</th>
-                          <th>instgram</th>
-                          <th>facebook</th>
-                          <th>Twitter</th>
-                          <th>Website</th>
-                          <th>Pilihan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                      <?php
-                          $no = 1;
-                          $result = $survei->ambilkampus();
-                          while($row = mysql_fetch_array($result)){
-                      ?>
-                      <tr>
-                        <td><?php echo $no;?></td>
-                        <td><?php echo $row['nama_kampus'];?></td>
-                        <td><?php echo $row['alamat'];?></td>
-                        <td><img src="../../assets/images/<?php echo $row['foto'];?>" width="20" height="20"></td>
-                        <td><?php echo $row['slogan'];?></td>
-                        <td><?php echo $row['no_hp'];?></td>
-                        <td><?php echo $row['email'];?></td>
-                        <td><?php echo $row['fax'];?></td>
-                        <td><?php echo $row['instagram'];?></td>
-                        <td><?php echo $row['facebook'];?></td>
-                        <td><?php echo $row['twitter'];?></td>
-                        <td><?php echo $row['website'];?></td>
-                        <td>
-                  <a href="akreditasi.php?id=<?php echo $row['id'];?>">Akreditasi</a>
-                  <a href="fakultas.php?id=<?php echo $row['id'];?>">Fakultas</a>
-                  <a href="edit_kampus.php?id=<?php echo $row['id'];?>">Edit</a>
-                        <button onclick="hapus(<?php echo $row['id'];?>)">Hapus</button></td>
-                      </tr>
-                      <?php
-                          $no++;
-                          }
-                      ?>
-                    </tbody>
-                  </table>
-                    <script>
-                        function hapus(id) {
-                            var r = confirm("Apakah anda akan menghapus data ini?");
-                            if (r == true) {
-                                window.location.href="process/deleteKampusProcess.php?i="+id;
-                            } else {
-                                window.location.href="kampus.php";
-                            }
-                        }
-
-                    </script>
+              <form action="process/userProcess.php" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label>Username</label>
+                  <input type="text" name="username" required placeholder="username" class="form-control">
                 </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" name="password" required placeholder="password" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Email</label>      
+                  <input type="email" name="email" required placeholder="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Asal Kampus</label>
+                    <input type="text" name="asal_kampus" required placeholder="asal kampus" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Nama Lengkap</label>
+                  <input type="text" name="nama_lengkap" required placeholder="nama lengkap" class="form-control">
+                </div>     
+                <div class="form-group">
+                  <label>Kelas</label>
+                <input type="text" name="kelas" required placeholder="kelas" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Fakultas</label>
+                <input type="text" name="fakultas" required placeholder="fakultas" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>No HP</label>
+                <input type="number" name="no_hp" required placeholder="no hp" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Foto KTM</label>
+                  <input type="file" name="foto_ktm" required="true" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Instagram</label>
+                <input type="text" name="instagram" required placeholder="instagram" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Facebook</label>
+                <input type="text" name="facebook" required placeholder="facebook" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Twitter</label>
+                <input type="text" name="twitter" required placeholder="twitter" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Status</label>
+                  <input type="text" name="status" required placeholder="status" class="form-control">  
+                </div>
+                <div class="form-group">
+                  <label>Status Kerja</label>
+                <input type="text" name="status_kerja" required placeholder="status kerja" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="submit" name="simpan" value="simpan">
+                </div>
+              </form>   
+            </div>
             <!-- /.col -->
           </div>
           <!-- /.row -->
-        </div>     
+        </div>
+        
     </section>
     <!-- /.content -->
   </div>
@@ -329,12 +326,4 @@
 <script src="../../assets/admin_bootstrap/dist/js/demo.js"></script>
 
 <script type="text/javascript" src="../../assets/ckeditor/ckeditor.js"></script>
-<!-- DataTables -->
-<script src="../../assets/admin_bootstrap/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="../../assets/admin_bootstrap/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script>
-  $(function () {
-    $('#example1').DataTable()
-  })
-</script>
 </html>
