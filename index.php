@@ -38,7 +38,7 @@
 		<div class="ui top fixed menu">
 		    	<div class="ui icon input">
 		    		<a class="item" href="http://localhost/bandingkampus">Home</a>
-		    		<a class="item">Tentang</a>
+		    		<a class="item" href="tentang.php">Tentang</a>
 					<a class="item">Kontak</a>
 					<a class="item">Blog</a>
 		    	</div>
@@ -58,9 +58,9 @@
 				<a href="space_iklan1.php"><center><div class="ui leaderboard test ad" style="background: #222; opacity: 0.9" data-text="Space Iklan 1"></div></center></a>
 			-->
 
-			<h1 class="ui center aligned icon header" style="font-size: 44px">
-  				<span style="color:#dc5538">Banding</span><img src="assets/img/bandingkampuslogo.png"></i><span style="color:#3B5998">Kampus</span>
-			</h1>
+		<h1 class="ui center aligned icon header" style="font-size: 44px">
+			<img src="assets/img/bandingkampuslogo.png"><small>a n d i n g  k a m p u s</small>
+		</h1>
 
 		<div class="ui top attached tabular menu animated fadeInDownBig">
 		  	<a class="item active" data-tab="bandingkan">Bandingkan</a>
@@ -418,9 +418,9 @@
   <i class="building outline icon"></i>
   <div class="content">
     <div class="header">
-      Satu Satu Nya Di Indonesia 
+      <h1>Satu Satu Nya Di Indonesia</h1>
     </div>
-    <p>Yang menyajikan informasi nyata seputar kampus, melalui kerjasama dengan mahasiswa internal</p>
+    <p>Yang menyajikan informasi kampus secara <span style="color:#dc5538">transparan</span>, melalui kerjasama dengan <span style="color:#3B5998">mahasiswa internal</span></p>
   </div>
 </div>
 
