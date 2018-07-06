@@ -58,7 +58,7 @@
 				<a href="space_iklan1.php"><center><div class="ui leaderboard test ad" style="background: #222; opacity: 0.9" data-text="Space Iklan 1"></div></center></a>
 			-->
 
-			<h1 class="ui center aligned icon header" style="font-size: 64px">
+			<h1 class="ui center aligned icon header" style="font-size: 44px">
   				<span style="color:#dc5538">Banding</span><img src="assets/img/bandingkampuslogo.png"></i><span style="color:#3B5998">Kampus</span>
 			</h1>
 
@@ -334,7 +334,7 @@
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
 			
-<center><span style="font-size: 84px;color: #555;font-weight: 600;line-height: 94px; text-transform: lowercase">APA KATA MEREKA?</span></center>
+<center><span style="font-size: 64px;color: #555;font-weight: 600;line-height: 94px; text-transform: lowercase">KENAPA HARUS PAKE BANDINGKAMPUS?</span></center>
 
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
@@ -360,8 +360,45 @@
 
 	    	<!-- mid content -->
 <div class="ten wide column">
-	<h2>Testimoni Alumni Untuk Kampusnya</h2>
+<div class="ui statistics">
+  <div class="statistic">
+    <div class="value">
+      22
+    </div>
+    <div class="label">
+      Ulasan Kampus
+    </div>
+  </div>
+  <div class="statistic">
+    <div class="value">
+      30
+    </div>
+    <div class="label">
+      Kampus Terdaftar
+    </div>
+  </div>
+  <div class="statistic">
+    <div class="value">
+      190
+    </div>
+    <div class="label">
+      Pengguna
+    </div>
+  </div>
+    <div class="statistic">
+    <div class="value">
+      80%
+    </div>
+    <div class="label">
+      Menghemat Waktu Anda
+    </div>
+  </div>
+</div>
+
+
 	<div class="ui hidden divider"></div>
+	<div class="ui hidden divider"></div>
+	<h2>Testimoni Alumni Untuk Kampusnya</h2>
 	<div class="ui hidden divider"></div>
 	<div class="ui center aligned container top attached">
 			<!-- random looping mulai dari sini -->
