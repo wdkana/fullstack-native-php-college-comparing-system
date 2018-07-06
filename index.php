@@ -235,7 +235,7 @@
 		</div>
 	
 		<!-- konten 3 kolom -->
-		<center><span style="font-size: 84px;color: #555;font-weight: 600;line-height: 94px; text-transform: lowercase">APA YANG KAMI SAJIKAN?</span></center>
+		<center><span style="font-size: 64px;color: #555;font-weight: 600;line-height: 94px; text-transform: lowercase">APA YANG KAMI SAJIKAN?</span></center>
 
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
@@ -334,7 +334,7 @@
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
 			
-<center><span style="font-size: 64px;color: #555;font-weight: 600;line-height: 94px; text-transform: lowercase">KENAPA HARUS PAKE BANDINGKAMPUS?</span></center>
+<center><span style="font-size: 44px;color: #555;font-weight: 600;line-height: 94px; text-transform: lowercase">KENAPA HARUS PAKE BANDINGKAMPUS?</span></center>
 
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
@@ -359,7 +359,8 @@
 	    	</div>
 
 	    	<!-- mid content -->
-<div class="ten wide column">
+<div class="center aligned thirteen wide column">
+
 <div class="ui statistics">
   <div class="statistic">
     <div class="value">
@@ -385,12 +386,28 @@
       Pengguna
     </div>
   </div>
-    <div class="statistic">
+  <div class="statistic">
     <div class="value">
-      80%
+      190
     </div>
     <div class="label">
-      Menghemat Waktu Anda
+      Pengguna
+    </div>
+  </div>
+  <div class="statistic">
+    <div class="value">
+      190
+    </div>
+    <div class="label">
+      Pengguna
+    </div>
+  </div>
+    <div class="statistic">
+    <div class="value">
+      190
+    </div>
+    <div class="label">
+      Pengguna
     </div>
   </div>
 </div>
@@ -400,76 +417,37 @@
 	<div class="ui hidden divider"></div>
 	<h2>Testimoni Alumni Untuk Kampusnya</h2>
 	<div class="ui hidden divider"></div>
-	<div class="ui center aligned container top attached">
-			<!-- random looping mulai dari sini -->
-			<div class="ui cards" style="position: relative;left:120px">
-				<?php while($row = mysql_fetch_array($result2)){?>
-					<div class="card">
-			 			<div class="content">
-			    			<div class="header"><?php echo $row['nama_lengkap'];?></div>
-			    			<div class="description">
-			      				<p><?php echo $row['testimoni']?></p>
-			    			</div>
-			  			</div>
-				  		<div class="extra content">
-				    		<div class="author">
-					 			<?php echo $row['nama_kampus'];?>
-				    		</div>
-				  		</div>
-					</div>
-	  		<?php } ?>
+		<div class="ui feed">
+		<?php while($row = mysql_fetch_array($result2)){?>
+				  <div class="event">
+				    <div class="label">
+				      <img src="assets/img/logouser.png">
+				    </div>
+				    <div class="content">
+				      <div class="summary">
+				        <a class="user">
+				          @<?php echo $row['nama_lengkap'];?>
+				        </a><br/>
+				        <?php echo $row['testimoni']?>
+				        <div class="date">
+				          <?php echo $row['nama_kampus'];?>
+				        </div>
+				      </div>
+				      <div class="meta">
+				        <a class="like">
+				          <i class="checkmark icon"></i> Verified Akun
+				        </a>
+				    </div>
+				</div>
+			</div>
+		<?php } ?>
 		</div>
-</div>
 
 	<div class="ui hidden divider"></div>
 	<div class="ui hidden divider"></div>
-
-<div class="ui hidden divider"></div>
 	<h2>Testimoni Pengguna Bandingkampus</h2>
 	<div class="ui hidden divider"></div>
-	<div class="ui hidden divider"></div>
-		<div class="ui feed">
-		  <div class="event">
-		    <div class="label">
-		      <img src="assets/img/logouser.png">
-		    </div>
-		    <div class="content">
-		      <div class="summary">
-		        <a class="user">
-		          Imas Pratiwi
-		        </a> Geloooo euy, hade pisan!!!
-		        <div class="date">
-		          1 Hour Ago
-		        </div>
-		      </div>
-		      <div class="meta">
-		        <a class="like">
-		          <i class="like icon"></i> 77 Likes
-		        </a>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="event">
-		    <div class="label">
-		    	<img src="assets/img/logouser.png">
-		    </div>
-		    <div class="content">
-		      <div class="summary">
-		        <a class="user">
-		          Lasella Citra
-		        </a> Bagus juga aplikasinya, supaya adik saya tidak salah kampus.
-		        <div class="date">
-		          2 Hour Ago
-		        </div>
-		      </div>
-		      <div class="meta">
-		        <a class="like">
-		          <i class="like icon"></i> 83 Likes
-		        </a>
-		      </div>
-		    </div>
-		  </div>
-		</div>
+
 	</div>
 	    	<!-- end of mid content -->
 	    </div>
