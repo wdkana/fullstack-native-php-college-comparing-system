@@ -34,10 +34,6 @@
 	<div class="ui container">
 		<br/>
 		<br/>
-		<h1 class="ui center aligned icon header" style="font-size: 44px">
-			<img src="assets/img/bandingkampuslogo.png"><small>a n d i n g  k a m p u s</small>
-		</h1>
-		<br/>
 		<br/>
 		<br/>
 		<br/>
@@ -51,6 +47,16 @@
 		<br/>
 		<div class="ui center aligned container">
 			<span align="center" style="font-size: 94px; font-weight: 900;color:#222;">Dengan Banding Kampus.</span>
+		</div>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<div class="ui center aligned container">
+		<div class="ui small images">
+	  		<center><img src="assets/images/tujuan.png"></center>
+		</div>
+			<span onclick="next()" style="color:#dc5538; cursor: pointer;"><i class="huge arrow alternate circle down outline icon tobot animated bounce infinite"></i></span>
 		</div>
 	</div>
 

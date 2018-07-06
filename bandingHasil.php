@@ -10,17 +10,20 @@
 	$row1 = $banding->Kampus($kampus1);
     $result1 = $akreditasi->viewAkreditasi($kampus1);
 	
-	//melihat fakultas pada kampus 1
+	//melihat fakultas, jurusan dan ulasan pada kampus 1
 	$fakultas1 = $banding->fakultas($kampus1);
 	$jurusan1 = $banding->jurusan($kampus1);
+	$ulasan1 = $banding->ulasan($kampus1);
+	
 	
     $kampus2 = $_POST['kampus2'];
 	$row2 = $banding->Kampus($kampus2);
     $result2 = $akreditasi->viewAkreditasi($kampus2);
 	
-	//melihat fakultas pada kampus 2
+	//melihat fakultas, jurusan dan ulasan pada kampus 2
 	$fakultas2 = $banding->fakultas($kampus2);
 	$jurusan2 = $banding->jurusan($kampus2);
+	$ulasan2 = $banding->ulasan($kampus2);
 	
     $total1=$row1['dosen']+$row1['jurusan']+$row1['lingkungan']+$row1['prestasi']+$row1['mata_kuliah']+$row1['biaya'];
     $total2= $row2['dosen']+$row2['jurusan']+$row2['lingkungan']+$row2['prestasi']+$row2['mata_kuliah']+$row2['biaya'];
@@ -231,29 +234,37 @@
          		<div class="ui right floated small primary button" style="width: 280px;cursor:default;"> <i class="trophy icon"></i>Total Score <?php echo $total1 ?><!-- nilai total disini --></div>
          		<!-- komentar -->
          		<div class="ui comments">
+						<?php
+						//mencari list jurusan kampus 2
+						while($list = mysql_fetch_array($ulasan1)){
+						?>
 				  	<div class="comment">
 				    	<a class="avatar">
 				    		<i class="checkmark icon"></i>
 				    	</a>
 					    <div class="content">
-					      	<a class="author">Nama Pengirim Ulasan</a>
+					      	<a class="author"><?php echo $list['username'] ?></a>
 					      		<div class="metadata">
-					        		<div class="date">Tanggal</div>
+					        		<div class="date"><?php echo $list['tanggal']?></div>
 					      		</div>
 					      	<div class="text">
-					        	<p>ini adalah komentar ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan</p>
+					        	<p><?php echo $list['ulasan'] ?></p>
 					      	</div>
 					   	</div>
 				  	</div>
+						<?php
+							}
+						?>					
 				</div>
 				
-				<form class="ui reply form" method="POST" action="">
+				<form class="ui reply form" method="POST" action="users/process/tanyaProcess.php">
+					<input type="hidden" name="kampus" value="<?php echo $kampus1?>">
 				    <div class="four wide field">
 				    	<label>email</label>
 				    	<input type="email" name="email">
 				    </div>
 				    <div class="field">
-				    	<textarea name=""></textarea>
+				    	<textarea name="pertanyaan"></textarea>
 				    </div>
 				    <button class="ui primary submit labeled icon button" type="submit">
 				     	<i class="icon edit"></i> Tanyakan
@@ -359,29 +370,37 @@
          		<div class="ui right floated small primary button" style="width: 280px;cursor:default;"> <i class="trophy icon"></i>Total Score <?php echo $total2 ?><!-- nilai total disini --></div>
          		<!-- komentar -->
          		<div class="ui comments">
-				  	<div class="comment">
-				    	<a class="avatar">
-				    		<i class="checkmark icon"></i>
-				    	</a>
+						<?php
+						//mencari list jurusan kampus 2
+						while($list = mysql_fetch_array($ulasan2)){
+						?>
+				<div class="comment">
+				    <a class="avatar">
+				    	<i class="checkmark icon"></i>
+				    </a>
 					    <div class="content">
-					      	<a class="author">Nama Pengirim Ulasan</a>
+					      	<a class="author"><?php echo $list['username'] ?></a>
 					      		<div class="metadata">
-					        		<div class="date">Tanggal</div>
+					        		<div class="date"><?php echo $list['tanggal']?></div>
 					      		</div>
 					      	<div class="text">
-					        	<p>ini adalah komentar ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan ulasan dari sang pengirim ulasan</p>
+					        	<p><?php echo $list['ulasan'] ?></p>
 					      	</div>
 					   	</div>
 				  	</div>
+					<?php
+						}
+					?>
 				</div>
 				
-				<form class="ui reply form" method="POST" action="">
+				<form class="ui reply form" method="POST" action="users/process/tanyaProcess.php">
+					<input type="hidden" name="kampus" value="<?php echo $kampus1?>">
 					<div class="four wide field">
 				    	<label>email</label>
 				    	<input type="email" name="email">
 				    </div>
 				    <div class="field">
-				    	<textarea name=""></textarea>
+				    	<textarea name="pertanyaan"></textarea>
 				    </div>
 				    <button class="ui primary submit labeled icon button" type="submit">
 				     	<i class="icon edit"></i> Tanyakan
