@@ -68,13 +68,13 @@
 		  	<a class="item" data-tab="masuk">Masuk</a>
 		</div>
 
-		<div class="ui center aligned bottom attached tab segment active" data-tab="bandingkan" style="box-shadow: 2px 3px 3px 2px #888">
+		<div class="ui center aligned bottom attached tab segment active" data-tab="bandingkan" style="box-shadow: 1px 2px 2px 1px #888">
 
 		<div class="ui hidden divider"></div>
 
 		<div class="ui center aligned container animated fadeInDownBig">
 				<div class="ui steps">
-  <div class="active step" style="box-shadow: 1px 2px 2px 1px #888">
+  <div class="active step" style="box-shadow: 0px 2px 2px 0px #888">
     <i class="balance scale icon"></i>
     <div class="content">
       <div class="title">Bandingkan</div>
@@ -230,7 +230,7 @@
 		</div>
 
 		<!-- konten 3 kolom -->
-					<h2 class="ui header">
+			<h2 class="ui center aligned header">
   				<img class="ui image" src="assets/images/itb.png">
   				<div class="content">
     				Apa Yang Kami Sajikan?
@@ -244,31 +244,39 @@
 			<div class="ui items">
 				<div class="item">
 					<div class="ui tiny image">
-						<img src="/images/wireframe/image.png">
+						<img src="assets/icon/biaya.png">
 					</div>
 					<div class="middle aligned content">
-						<a class="header">Informasi Biaya Kuliah</a>
+						<span class="header">Informasi Biaya Kuliah</span>
 					</div>
 				</div>
 
 				<div class="item">
 					<div class="ui tiny image">
-						<img src="/images/wireframe/image.png">
+						<img src="assets/icon/akreditasi.png">
 					</div>
 					<div class="middle aligned content">
-						<a class="header">Review dari Mahasiswa Internal</a>
+						<span class="header">Informasi Akreditasi Jurusan</span>
 					</div>
 				</div>
 
 				<div class="item">
 					<div class="ui tiny image">
-						<img src="/images/wireframe/image.png">
+						<img src="assets/icon/tanya.png">
 					</div>
 					<div class="middle aligned content">
-						<a class="header">Score Perbandingan</a>
+						<span class="header">Tanya Mahasiswa</span>
 					</div>
 				</div>
-
+				
+				<div class="item">
+				    <div class="ui tiny image">
+				      <img src="assets/icon/review.png">
+				    </div>
+				    <div class="middle aligned content">
+				      <span class="header">Ulasan Dari Mahasiswa</span>
+				    </div>
+				</div>
 			</div>
 			</p>
 		 </div>
@@ -279,38 +287,63 @@
 		    	<div class="ui items">
 				  <div class="item">
 				    <div class="ui tiny image">
-				      <img src="/images/wireframe/image.png">
+				      <img src="assets/icon/kualitas.png">
 				    </div>
 				    <div class="middle aligned content">
-				      <a class="header">Bertanya Kepada Mahasiswa Internal</a>
+				      <span class="header">Kualitas Dosen</span>
 				    </div>
 				  </div>
+
 				  <div class="item">
 				    <div class="ui tiny image">
-				      <img src="/images/wireframe/image.png">
+				      <img src="assets/icon/list.png">
 				    </div>
 				    <div class="middle aligned content">
-				      <a class="header">Akreditasi Jurusan</a>
+				      <span class="header">List Fakultas</span>
 				    </div>
 				  </div>
-				  <div class="item">
-				    <div class="ui tiny image">
-				      <img src="/images/wireframe/image.png">
-				    </div>
-				    <div class="middle aligned content">
-				      <a class="header">Kualitas Dosen</a>
-				    </div>
+
+					<div class="item" id="next">
+					    <div class="ui tiny image">
+					      <img src="assets/icon/banding.png">
+					    </div>
+					    <div class="middle aligned content">
+					      <span class="header">Score Perbandingan</span>
+					    </div>
 				  </div>
+
+					<div class="item">
+					    <div class="ui tiny image">
+					      <img src="assets/icon/win.png">
+					    </div>
+					    <div class="middle aligned content">
+					      <span class="header">Persentase Data Pemenang</span>
+					    </div>
+				  	</div>
 				</div>
 			</p>
 		</div>
 
-		<!-- kolom 3 -->
+		<!-- kolom 3
 		<div class="ui segment">
 		    <p>
-		    	
+		    	<h2 class="ui header">
+					<img src="assets/img/logouser.png">
+				  	<div class="content">
+				    	Bandingkampus
+				    	<div class="sub header"><small>Selalu Tahu Info Kampus Dengan Banding Kampus</small></div>
+				    	<hr/>
+				    	<i class="whatsapp icon"></i><small>0838329329</small>
+				    	<i class="twitter icon"></i><small>bkid</small>
+				  	</div>
+
+
+
+				</h2>
 			</p>
 		</div>
+	-->
+
 	</div>
 
 		<div class="ui hidden divider"></div>
@@ -370,7 +403,7 @@
 						<div class="item">
 						   	<i class="question circle large icon"></i>
 						    <div class="content">
-	    		<div class="ui hidden" id="next"></div>
+	    		<div class="ui hidden"></div>
 						     	<a class="ui medium header" onclick="pertanyaan1()">Bagaimana cara membandingkan kampus?</a>
 						    </div>
 						</div>
@@ -609,8 +642,15 @@
 </html>
 
 <style>
-	p, small, b, h1, h2, h3, h4, h5, h6 {
+	@font-face{
+		font-family: geomanist;
+		src: url('assets/geomanist-regular-webfont.woff');
+	}
+
+	button, div, ul, li, span, a, p, small, b, h1, h2, h3, h4, h5, h6 {
 		color: #555666;
+		font-family: geomanist;
+		font-variant: inherit;
 	}
 	.tobot:hover{
 		color:#222;
