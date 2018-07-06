@@ -380,7 +380,7 @@
   </div>
   <div class="statistic">
     <div class="value">
-      190
+      33
     </div>
     <div class="label">
       Pengguna
@@ -388,30 +388,41 @@
   </div>
   <div class="statistic">
     <div class="value">
-      190
+      8
     </div>
     <div class="label">
-      Pengguna
+      Testimoni Alumni
     </div>
   </div>
   <div class="statistic">
     <div class="value">
-      190
+      34
     </div>
     <div class="label">
-      Pengguna
+      Bertanya
     </div>
   </div>
     <div class="statistic">
     <div class="value">
-      190
+      13
     </div>
     <div class="label">
-      Pengguna
+      Orang Puas
     </div>
   </div>
 </div>
 
+	<div class="ui hidden divider"></div>
+
+<div class="ui icon message">
+  <i class="building outline icon"></i>
+  <div class="content">
+    <div class="header">
+      Satu Satu Nya Di Indonesia 
+    </div>
+    <p>Yang menyajikan informasi nyata seputar kampus, melalui kerjasama dengan mahasiswa internal</p>
+  </div>
+</div>
 
 	<div class="ui hidden divider"></div>
 	<div class="ui hidden divider"></div>
@@ -447,6 +458,29 @@
 	<div class="ui hidden divider"></div>
 	<h2>Testimoni Pengguna Bandingkampus</h2>
 	<div class="ui hidden divider"></div>
+			<div class="ui feed">
+				  <div class="event">
+				    <div class="label">
+				      <img src="assets/img/logouser.png">
+				    </div>
+				    <div class="content">
+				      <div class="summary">
+				        <a class="user">
+				        	@Gege
+				        </a><br/>
+				        	Blabalbalbalbl balbalbal
+				        <div class="date">
+				        	lpkia
+				        </div>
+				      </div>
+				      <div class="meta">
+				        <a class="like">
+				          <i class="checkmark icon"></i> Verified Akun
+				        </a>
+				    </div>
+				</div>
+			</div>
+		</div>
 
 	</div>
 	    	<!-- end of mid content -->
