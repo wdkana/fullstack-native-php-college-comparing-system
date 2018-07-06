@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2018 at 01:27 AM
+-- Generation Time: Jul 07, 2018 at 01:54 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -40,7 +40,7 @@ CREATE TABLE `tbl_akreditasi` (
 --
 
 INSERT INTO `tbl_akreditasi` (`id`, `nama_kampus`, `fakultas`, `akreditasi`) VALUES
-(1, 'lpkia', 'teknik informatika', 'A'),
+(1, 'lpkia', 'Teknik Informatika', 'A'),
 (2, 'lpkia', 'Sistem Informatika', 'A'),
 (3, 'Politeknik Komputer LPKIA', 'Teknik Informatika', 'B'),
 (4, 'STIE Inaba', 'Manajemen S1', 'B');
