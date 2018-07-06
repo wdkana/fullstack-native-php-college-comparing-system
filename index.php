@@ -58,9 +58,9 @@
 				<a href="space_iklan1.php"><center><div class="ui leaderboard test ad" style="background: #222; opacity: 0.9" data-text="Space Iklan 1"></div></center></a>
 			-->
 
-			<h2 class="ui center aligned icon header">
+			<h1 class="ui center aligned icon header" style="font-size: 64px">
   				<span style="color:#dc5538">Banding</span><img src="assets/img/bandingkampuslogo.png"></i><span style="color:#3B5998">Kampus</span>
-			</h2>
+			</h1>
 
 		<div class="ui top attached tabular menu animated fadeInDownBig">
 		  	<a class="item active" data-tab="bandingkan">Bandingkan</a>
@@ -134,8 +134,13 @@
 			 	<div class="or animated bounceInUp"></div>
 			 <button class="ui huge google plus button" type="submit" style="box-shadow: 2px 3px 3px 2px #888"> Bandingkan</button>
 		</div>
+		<br/>
+		<br/>
+		<br/>
+
 		</div>
 	</form>
+
 		<!-- tab2 -->
 		<div class="ui bottom attached tab segment" data-tab="peringkat"">
 
@@ -228,15 +233,14 @@
 		<div class="ui right aligned container animated bounce infinite">
 			<span onclick="next()" style="color:#dc5538; cursor: pointer; top:-150px; position: fixed; z-index: 99;"><i class="huge arrow alternate circle down outline icon tobot"></i></span>
 		</div>
-
+	
 		<!-- konten 3 kolom -->
-			<h2 class="ui center aligned header">
-  				<img class="ui image" src="assets/images/itb.png">
-  				<div class="content">
-    				Apa Yang Kami Sajikan?
-  				</div>
-			</h2>
+		<center><span style="font-size: 84px;color: #555;font-weight: 600;line-height: 94px; text-transform: lowercase">APA YANG KAMI SAJIKAN?</span></center>
 
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
 		<div class="ui horizontal segments">
 		<!-- kolom 1 -->
 		<div class="ui segment">
@@ -251,7 +255,7 @@
 					</div>
 				</div>
 
-				<div class="item">
+				<div class="item" id="next">
 					<div class="ui tiny image">
 						<img src="assets/icon/akreditasi.png">
 					</div>
@@ -303,7 +307,7 @@
 				    </div>
 				  </div>
 
-					<div class="item" id="next">
+					<div class="item">
 					    <div class="ui tiny image">
 					      <img src="assets/icon/banding.png">
 					    </div>
@@ -323,67 +327,25 @@
 				</div>
 			</p>
 		</div>
-
-		<!-- kolom 3
-		<div class="ui segment">
-		    <p>
-		    	<h2 class="ui header">
-					<img src="assets/img/logouser.png">
-				  	<div class="content">
-				    	Bandingkampus
-				    	<div class="sub header"><small>Selalu Tahu Info Kampus Dengan Banding Kampus</small></div>
-				    	<hr/>
-				    	<i class="whatsapp icon"></i><small>0838329329</small>
-				    	<i class="twitter icon"></i><small>bkid</small>
-				  	</div>
-
-
-
-				</h2>
-			</p>
-		</div>
-	-->
-
 	</div>
 
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
+			
+<center><span style="font-size: 84px;color: #555;font-weight: 600;line-height: 94px; text-transform: lowercase">APA KATA MEREKA?</span></center>
 
-		<div class="ui center aligned container top attached">
-  			<h1>Testimonial Alumni</h1>
-
-
-		<!-- random looping mulai dari sini -->
-		<div class="ui cards" style="position: relative;left:120px">
-		<?php while($row = mysql_fetch_array($result2)){?>
-			<div class="card">
-		 	<div class="content">
-		    	<div class="header"><?php echo $row['nama_lengkap'];?></div>
-		    	<div class="description">
-		      		<p><?php echo $row['testimoni']?></p>
-		    	</div>
-		  	</div>
-		  	<div class="extra content">
-		    	<div class="author">
-			 		<?php echo $row['nama_kampus'];?>
-		    	</div>
-		  	</div>
-		</div>
-  		<?php } ?>
-	</div>
-</div>
 		<div class="ui hidden divider"></div>
-		<!-- random beres -->
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
+		<div class="ui hidden divider"></div>
 
-	<div class="ui hidden divider"></div>
-	<div class="ui hidden divider"></div>
-
+	<!-- random beres -->
 	<div class="ui internally celled grid" style="background: #fff">
 	  	<div class="row">
 	    	<div class="three wide column">
-	      		<h3 align="center">Kampus Terdaftar</h3>
+	      		<h2 class="ui center aligned header">Kampus Terdaftar</h2>
 	      		<hr/>
 	      		<br/>
 	    		<!-- looping list kampus -->
@@ -397,38 +359,77 @@
 	    	</div>
 
 	    	<!-- mid content -->
-	    	<div class="ten wide column">
-	    		<h1 class="ui header">Panduan Pengguna</h1>
-					<div class="ui list">
-						<div class="item">
-						   	<i class="question circle large icon"></i>
-						    <div class="content">
-	    		<div class="ui hidden"></div>
-						     	<a class="ui medium header" onclick="pertanyaan1()">Bagaimana cara membandingkan kampus?</a>
-						    </div>
-						</div>
-						<div class="item">
-						    <i class="question circle large icon"></i>
-						    <div class="content">
-						    	<a class="ui medium header" onclick="pertanyaan2()">Bagaimana cara melihat peringkat kampus?</a>
-						    </div>
-						</div>
-						<div class="item">
-						    <i class="question circle large icon"></i>
-						    <div class="content">
-						    	<a class="ui medium header" onclick="pertanyaan3()">Bagaimana cara mendaftar sebagai anggota?</a>
-						    </div>
-						</div>
-						<div class="item">
-						   	<i class="question circle large icon"></i>
-						    <div class="content">
-						    	<a class="ui medium header" onclick="pertanyaan4()">Bagaimana cara bertanya kepada mahasiswa internal?</a>
-						    </div>
-						</div>
+<div class="ten wide column">
+	<h2>Testimoni Alumni Untuk Kampusnya</h2>
+	<div class="ui hidden divider"></div>
+	<div class="ui hidden divider"></div>
+	<div class="ui center aligned container top attached">
+			<!-- random looping mulai dari sini -->
+			<div class="ui cards" style="position: relative;left:120px">
+				<?php while($row = mysql_fetch_array($result2)){?>
+					<div class="card">
+			 			<div class="content">
+			    			<div class="header"><?php echo $row['nama_lengkap'];?></div>
+			    			<div class="description">
+			      				<p><?php echo $row['testimoni']?></p>
+			    			</div>
+			  			</div>
+				  		<div class="extra content">
+				    		<div class="author">
+					 			<?php echo $row['nama_kampus'];?>
+				    		</div>
+				  		</div>
 					</div>
-				<div class="ui hidden divider"></div>
-				<h3 class="ui header">Section Two</h3>
-				</div>
+	  		<?php } ?>
+		</div>
+	</div>
+
+<div class="ui hidden divider"></div>
+
+	<h2>Testimoni Pengguna Bandingkampus</h2>
+		<div class="ui feed">
+		  <div class="event">
+		    <div class="label">
+		      <img src="assets/img/logouser.png">
+		    </div>
+		    <div class="content">
+		      <div class="summary">
+		        <a class="user">
+		          Imas Pratiwi
+		        </a> Geloooo euy, hade pisan!!!
+		        <div class="date">
+		          1 Hour Ago
+		        </div>
+		      </div>
+		      <div class="meta">
+		        <a class="like">
+		          <i class="like icon"></i> 77 Likes
+		        </a>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="event">
+		    <div class="label">
+		    	<img src="assets/img/logouser.png">
+		    </div>
+		    <div class="content">
+		      <div class="summary">
+		        <a class="user">
+		          Lasella Citra
+		        </a> Bagus juga aplikasinya, supaya adik saya tidak salah kampus.
+		        <div class="date">
+		          2 Hour Ago
+		        </div>
+		      </div>
+		      <div class="meta">
+		        <a class="like">
+		          <i class="like icon"></i> 83 Likes
+		        </a>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
 	    	<!-- end of mid content -->
 	    </div>
 	</div>
