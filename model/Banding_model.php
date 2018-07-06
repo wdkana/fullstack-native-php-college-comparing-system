@@ -43,16 +43,25 @@
         return $query;
       }
 	  
-	  public function fakultas($nama_kampus){
+		//mencari fakultas berdasarkan nama kampus
+		public function fakultas($nama_kampus){
           $sql = "SELECT * FROM `tbl_fakultas` WHERE nama_kampus = '$nama_kampus'";
           $query = mysql_query($sql);
           return $query;
 		}
 		
+		//mencari jurusan berdasarkan nama kampus
 		public function jurusan($nama_kampus){
 		  $sql = "SELECT * FROM `tbl_akreditasi` WHERE nama_kampus = '$nama_kampus'";
           $query = mysql_query($sql);
           return $query;
+		}
+		
+		//mencari ulasan berdasarkan nama kampus
+		public function ulasan($nama_kampus){
+			$sql = "SELECT * FROM `tbl_ulasan` WHERE `nama_kampus` = '$nama_kampus' limit 5";
+			$query = mysql_query($sql);
+			return $query;
 		}
 	}
 ?>
