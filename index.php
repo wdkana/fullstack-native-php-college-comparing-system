@@ -382,11 +382,15 @@
 					</div>
 	  		<?php } ?>
 		</div>
-	</div>
+</div>
+
+	<div class="ui hidden divider"></div>
+	<div class="ui hidden divider"></div>
 
 <div class="ui hidden divider"></div>
-
 	<h2>Testimoni Pengguna Bandingkampus</h2>
+	<div class="ui hidden divider"></div>
+	<div class="ui hidden divider"></div>
 		<div class="ui feed">
 		  <div class="event">
 		    <div class="label">
