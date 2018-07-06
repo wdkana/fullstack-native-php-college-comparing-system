@@ -1,30 +1,24 @@
 <?php
-    include "../../model/User_model.php";
-    include "../../model/Kampus_model.php";
-    include "../../model/Banding_model.php";
-    include "../../model/Testimoni_model.php";
+	include "../../model/Ulasan_model.php";
+	$ul = new Ulasan_model();
 
-    $banding = new Banding_model();
-    $user = new User_model();
-    $kmp = new Kampus_model();
-    $testimoni = new Testimoni_model();
+	session_start();
 
-    session_start();
+	$username = $_SESSION['username'];
+	$hak_akses = $_SESSION['hak_akses'];
+	if(!$username){
+		header('location:../users/dashboard.php');
+	}
+	if($hak_akses == 'user'){
+		header('location:../users/dashboard.php');
+	}
 
-    $username = $_SESSION['username'];
-    $hak_akses = $_SESSION['hak_akses'];
-
-    if(!isset($username)){
-        header('location: ../../');
-    }
-    if($hak_akses == 'user'){
-        header('location:../dashboard.php');
-    }
+	$result = $ul->viewUlasan();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Banding Kampus Admin</title>
+    <title>Ulasan</title>
         <!-- Bootstrap 3.3.7 -->
       <link rel="stylesheet" href="../../assets/admin_bootstrap/bower_components/bootstrap/dist/css/bootstrap.min.css">
       <!-- Font Awesome -->
@@ -46,6 +40,8 @@
       <link rel="stylesheet" href="../../assets/admin_bootstrap/bower_components/bootstrap-daterangepicker/daterangepicker.css">
       <!-- bootstrap wysihtml5 - text editor -->
       <link rel="stylesheet" href="../../assets/admin_bootstrap/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+      <!-- DataTables -->
+      <link rel="stylesheet" href="../../assets/admin_bootstrap/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -198,136 +194,15 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
+
       </h1>
     </section>
 
     <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-lg-3 col-xs-6">
-            <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3><?php echo $kmp->Kampus();?></h3>
-              <p>Kampus yang terdaftar</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3><?php echo $user->Student();?><sup style="font-size: 20px">%</sup></h3>
-
-              <p>User yang berstatus mahasiswa</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3><?php echo $user->User();?></h3>
-
-              <p>User yang teregistrasi</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3><?php echo $user->Alumni();?></h3>
-
-              <p>User yang berstatus alumni</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
-         <div class="row">
-        <div class="col-lg-3 col-xs-6">
-            <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3><?php echo $user->Work();?></h3>
-              <p>User alumni yang sudah bekerja</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3><?php echo $user->notWork();?><sup style="font-size: 20px">%</sup></h3>
-
-              <p>user alumni yang belum bekerja</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3><?php echo $testimoni->countTestimoni();?></h3>
-
-              <p>User yang mengisi testimoni</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>65</h3>
-
-              <p>Unique Visitors</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
        <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Peringkat Kampus terbaik menurut penilaian user</h3>
+          <h3 class="box-title">Data ulasan Kampus dari user</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           </div>
@@ -336,29 +211,41 @@
         <div class="box-body">
           <div class="row">
             <div class="col-md-12">
-                    <table class="table table-stripped">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nama Kampus</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                $no=1;
-                                $result = $banding->rankingKampus();
-                                while($row = mysql_fetch_array($result)){
-                            ?>
-                            <tr>
-                                <td><?php echo $no;?></td>
-                                <td><?php echo $row['nama_kampus'];?></td>
-                            </tr>
-                            <?php
-                                $no++;
-                                }
-                            ?>
-                        </tbody>
-                    </table>
+            	<table class="table table-stripped" id="example1">
+            		<thead>
+            			<tr>
+            				<th>No</th>
+            				<th>Username</th>
+            				<th>Nama Kampus</th>
+            				<th>Tanggal</th>
+            				<th>Judul</th>
+            				<th>Ulasan</th>
+            				<th>Tag</th>
+            				<th>Pilihan</th>
+            			</tr>
+            		</thead>
+            		<tbody>
+            			<tr>
+            				<?php
+            					$no=1;
+            					while($row = mysql_fetch_array($result)){
+            				?>
+            				<td><?php echo $no;?></td>
+            				<td><?php echo $row['username'];?></td>
+            				<td><?php echo $row['nama_kampus'];?></td>
+            				<td><?php echo $row['tanggal'];?></td>
+            				<td><?php echo $row['judul'];?></td>
+            				<td><?php echo $row['ulasan'];?></td>
+            				<td><?php echo $row['tag']?></td>
+            				<td><a href="editUlasan.php?i=<?php echo $row['id']?>" class="btn btn-flat btn-sm btn-success">Ubah</a> 
+            				<button onclick="hapus('<?php echo $row['id'];?>')" class="btn btn-flat btn-sm btn-danger">Hapus</button></td>
+            				<?php
+            					$no++;
+            					}
+            				?>
+            			</tr>
+            		</tbody>
+            	</table>
             </div>
             <!-- /.col -->
           </div>
@@ -416,6 +303,23 @@
 <script src="../../assets/admin_bootstrap/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../assets/admin_bootstrap/dist/js/demo.js"></script>
-
+<!-- DataTables -->
+<script src="../../assets/admin_bootstrap/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../assets/admin_bootstrap/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script>
+  $(function () {
+    $('#example1').DataTable()
+  })
+</script>
 <script type="text/javascript" src="../../assets/ckeditor/ckeditor.js"></script>
+<script>
+   function hapus(id) {
+       var r = confirm("Apakah anda akan menghapus data ini?");
+       if (r == true) {
+          window.location.href="process/deleteUlasanProcess.php?i="+id;
+       } else {
+          window.location.href="ulasan.php";
+       }
+   }
+</script> 
 </html>

@@ -178,9 +178,9 @@
         <li><a href="pertanyaan.php"><i class="fa fa-dashboard"></i> <span>Pertanyaan</span></a></li>
         <li><a href="kampus.php"><i class="fa fa-dashboard"></i> <span>Kampus</span></a></li>
         <li><a href="allUser.php"><i class="fa fa-dashboard"></i> <span>User</span></a></li>
-        <li><a href="#"><i class="fa fa-dashboard"></i> <span>Ulasan</span></a></li>
-        <li><a href="#"><i class="fa fa-dashboard"></i> <span>Survei</span></a></li>
-        <li><a href="#"><i class="fa fa-dashboard"></i> <span>Testimoni</span></a></li>
+        <li><a href="ulasan.php"><i class="fa fa-dashboard"></i> <span>Ulasan</span></a></li>
+        <li><a href="survei.php"><i class="fa fa-dashboard"></i> <span>Survei</span></a></li>
+        <li><a href="testimoni.php"><i class="fa fa-dashboard"></i> <span>Testimoni</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -249,10 +249,11 @@
                         <td><?php echo $row['twitter'];?></td>
                         <td><?php echo $row['website'];?></td>
                         <td>
-                  <a href="akreditasi.php?id=<?php echo $row['id'];?>">Akreditasi</a>
-                  <a href="fakultas.php?id=<?php echo $row['id'];?>">Fakultas</a>
-                  <a href="edit_kampus.php?id=<?php echo $row['id'];?>">Edit</a>
-                        <button onclick="hapus(<?php echo $row['id'];?>)">Hapus</button></td>
+                            <a href="akreditasi.php?id=<?php echo $row['id'];?>" class="btn btn-flat btn-sm btn-default">Akreditasi</a>
+                            <a href="fakultas.php?id=<?php echo $row['id'];?>" class="btn btn-flat btn-sm btn-default">Fakultas</a>
+                            <a href="edit_kampus.php?id=<?php echo $row['id'];?>" class="btn btn-flat btn-sm btn-default">Edit</a>
+                            <button onclick="hapus(<?php echo $row['id'];?>)" class="btn btn-flat btn-sm btn-default">Hapus</button>
+                        </td>
                       </tr>
                       <?php
                           $no++;

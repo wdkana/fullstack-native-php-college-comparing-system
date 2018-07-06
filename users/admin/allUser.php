@@ -181,9 +181,9 @@
         <li><a href="pertanyaan.php"><i class="fa fa-dashboard"></i> <span>Pertanyaan</span></a></li>
         <li><a href="kampus.php"><i class="fa fa-dashboard"></i> <span>Kampus</span></a></li>
         <li><a href="allUser.php"><i class="fa fa-dashboard"></i> <span>User</span></a></li>
-        <li><a href="#"><i class="fa fa-dashboard"></i> <span>Ulasan</span></a></li>
-        <li><a href="#"><i class="fa fa-dashboard"></i> <span>Survei</span></a></li>
-        <li><a href="#"><i class="fa fa-dashboard"></i> <span>Testimoni</span></a></li>
+        <li><a href="ulasan.php"><i class="fa fa-dashboard"></i> <span>Ulasan</span></a></li>
+        <li><a href="survei.php"><i class="fa fa-dashboard"></i> <span>Survei</span></a></li>
+        <li><a href="testimoni.php"><i class="fa fa-dashboard"></i> <span>Testimoni</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -257,6 +257,11 @@
                     ?>
                   </tbody>
               </table>
+              <script>
+  $(function () {
+    $('#example1').DataTable()
+  })
+</script> 
               <script>
                   function hapus(username) {
                       var r = confirm("Apakah anda akan menghapus data ini?");
