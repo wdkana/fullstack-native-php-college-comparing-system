@@ -35,20 +35,20 @@
 	</head>
 	<body style="background: #f9f9f9;">
 
-		<div class="ui top fixed menu">
+		<div class="ui top fixed menu" style="height: 60px">
 		    	<div class="ui icon input">
 		    		<a class="item" href="http://localhost/bandingkampus">Home</a>
 		    		<a class="item" href="tentang.php">Tentang</a>
-					<a class="item">Kontak</a>
-					<a class="item">Blog</a>
+					<a class="item" href="kontak.php">Kontak</a>
 		    	</div>
-
+		    <!--	
 			<div class="right item">
 			    <div class="ui action input">
 			    	<input type="text" placeholder="nama kampus...">
 			      	<div class="ui button">Cari</div>
 			    </div>
 			</div>
+			-->
 		</div>
 
 		<div class ="ui container" style="background: #f9f9f9">
@@ -468,7 +468,51 @@
 				        <a class="user">
 				        	@Gege
 				        </a><br/>
-				        	Blabalbalbalbl balbalbal
+				        	Website ini sangat membantu saya
+				        <div class="date">
+				        	lpkia
+				        </div>
+				      </div>
+				      <div class="meta">
+				        <a class="like">
+				          <i class="checkmark icon"></i> Verified Akun
+				        </a>
+				    </div>
+				</div>
+			</div>
+			<div class="ui feed">
+				  <div class="event">
+				    <div class="label">
+				      <img src="assets/img/logouser.png">
+				    </div>
+				    <div class="content">
+				      <div class="summary">
+				        <a class="user">
+				        	@ImasPrat
+				        </a><br/>
+				        	Sangat Informatif!
+				        <div class="date">
+				        	lpkia
+				        </div>
+				      </div>
+				      <div class="meta">
+				        <a class="like">
+				          <i class="checkmark icon"></i> Verified Akun
+				        </a>
+				    </div>
+				</div>
+			</div>
+			<div class="ui feed">
+				  <div class="event">
+				    <div class="label">
+				      <img src="assets/img/logouser.png">
+				    </div>
+				    <div class="content">
+				      <div class="summary">
+				        <a class="user">
+				        	@Gege
+				        </a><br/>
+				        	Bener-bener berguna, karena infonya langsung dari mahasiswa Internal
 				        <div class="date">
 				        	lpkia
 				        </div>
@@ -493,79 +537,7 @@
 
 
 
-	<!-- pertanyaan 1: bagaimana cara membandingkan kampus -->
-	<div class="ui modal pertanyaan1">
-  		<i class="close icon"></i>
-	  	<div class="content">
-		    <div class="description">
-		     	<div class="ui large header">Cara membandingkan kampus</div>
-		      	<p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-		      	<p>Is it okay to use this photo?</p>
-		    </div>
-	  	</div>
-	  	<div class="actions">
-		    <div class="ui positive right labeled icon button">
-		      Ya, Saya Mengerti
-		      <i class="checkmark icon"></i>
-		    </div>
-	  	</div>
-	</div>
-
-		<!-- pertanyaan 2: bagaimana cara melihat peringkat kampus -->
-	<div class="ui modal pertanyaan2">
-  		<i class="close icon"></i>
-	  	<div class="content">
-		    <div class="description">
-		     	<div class="ui large header">Cara melihat peringkat kampus</div>
-		      	<p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-		      	<p>Is it okay to use this photo?</p>
-		    </div>
-	  	</div>
-	  	<div class="actions">
-		    <div class="ui positive right labeled icon button">
-		      Ya, Saya Mengerti
-		      <i class="checkmark icon"></i>
-		    </div>
-	  	</div>
-	</div>
-
-			<!-- pertanyaan 3: bagaimana cara mendaftar sebagai anggota -->
-	<div class="ui modal pertanyaan3">
-  		<i class="close icon"></i>
-	  	<div class="content">
-		    <div class="description">
-		     	<div class="ui large header">Cara mendaftar sebagai anggota</div>
-		      	<p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-		      	<p>Is it okay to use this photo?</p>
-		    </div>
-	  	</div>
-	  	<div class="actions">
-		    <div class="ui positive right labeled icon button">
-		      Ya, Saya Mengerti
-		      <i class="checkmark icon"></i>
-		    </div>
-	  	</div>
-	</div>
-
-			<!-- pertanyaan 4: bagaimana cara bertanya -->
-	<div class="ui modal pertanyaan4">
-  		<i class="close icon"></i>
-	  	<div class="content">
-		    <div class="description">
-		     	<div class="ui large header">Cara bertanya kepada mahasiswa internal</div>
-		      	<p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-		      	<p>Is it okay to use this photo?</p>
-		    </div>
-	  	</div>
-	  	<div class="actions">
-		    <div class="ui positive right labeled icon button">
-		      Ya, Saya Mengerti
-		      <i class="checkmark icon"></i>
-		    </div>
-	  	</div>
-	</div>
-
-	<!-- pertanyaan berakhir -->
+	
 
 	<!-- modal daftar user -->
 		<div class="ui modal daftar">

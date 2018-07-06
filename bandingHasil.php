@@ -133,20 +133,20 @@
 	<script src="element/date.js"></script>
 </head>
 	<body>
-		<div class="ui top fixed menu">
+		<div class="ui top fixed menu" style="height: 60px">
 		    	<div class="ui icon input">
 		    		<a class="item" href="http://localhost/bandingkampus">Home</a>
-		    		<a class="item">Tentang</a>
-					<a class="item">Kontak</a>
-					<a class="item">Blog</a>
+		    		<a class="item" href="tentang.php">Tentang</a>
+					<a class="item" href="kontak.php">Kontak</a>
 		    	</div>
-
+		    <!--
 			<div class="right item">
 			    <div class="ui action input">
 			    	<input type="text" placeholder="nama kampus...">
 			      	<div class="ui button">Cari</div>
 			    </div>
 			</div>
+		-->
 		</div>
 		<div class="ui container">
 			<br/>
