@@ -136,5 +136,50 @@
 					return false;
 				}
 		  }
+		  
+		public function jawab($email, $username, $pertanyaan, $jawaban){
+			$mail = new PHPMailer;
+			$mail->isSMTP();
+			$mail->SMTPDebug = 0;
+			$mail->SMTPOptions = array(
+				'ssl' => array(
+				'verify_peer' => false,
+				'verify_peer_name' => false,
+				'allow_self_signed' => true
+				)
+			);
+			$mail->Host = 'tls://smtp.gmail.com:587';
+			$mail->Port = 587;
+			$mail->SMTPSecure = 'tls';
+			$mail->SMTPAuth = true;
+			$mail->Username = "bandingkampusid@gmail.com";
+			$mail->Password = "BandingKampus2018";
+			$mail->setFrom('bandingkampusid@gmail.com', $username);
+			$mail->addAddress($email, 'Banding Kampus');
+			$mail->isHTML(true);
+			// Set email format to HTML
+			$mail->Subject = trim("Jawaban | Pertanyaan");
+			$blank = ' ';
+			$message = '
+			<html>
+			<head>
+			</head>
+				<body">
+					<p> '.  $pertanyaan . '</p> <br>
+					<p> '. $username . ' menjawab : '. $jawaban .'
+					</body>
+				</html>';
+				$mail->MsgHTML($message);
+				
+				if(!$mail->send()) 
+				{
+				   return true;
+
+				}
+				else
+				{
+					return false;
+				}
+		  }		  
 	  
 	}
