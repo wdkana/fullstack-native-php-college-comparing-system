@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2018 at 12:20 AM
+-- Generation Time: Jul 07, 2018 at 12:32 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -99,6 +99,20 @@ CREATE TABLE `tbl_fakultas` (
 INSERT INTO `tbl_fakultas` (`id`, `fakultas`, `nama_kampus`) VALUES
 (1, 'Manajemen Informatika', 'lpkia'),
 (2, 'Administrasi Bisnis', 'lpkia');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_jawab_kampus`
+--
+
+CREATE TABLE `tbl_jawab_kampus` (
+  `id` int(11) NOT NULL,
+  `id_pertanyaan` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `jawaban` varchar(255) NOT NULL,
+  `tanggal` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -234,6 +248,20 @@ INSERT INTO `tbl_register` (`username`, `email`, `password`, `status`, `hak_akse
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_tanya_kampus`
+--
+
+CREATE TABLE `tbl_tanya_kampus` (
+  `id` int(11) NOT NULL,
+  `email_penanya` varchar(255) NOT NULL,
+  `pertanyaan` varchar(255) NOT NULL,
+  `nama_kampus` varchar(255) NOT NULL,
+  `tanggal` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_testimoni`
 --
 
@@ -292,6 +320,12 @@ ALTER TABLE `tbl_fakultas`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_jawab_kampus`
+--
+ALTER TABLE `tbl_jawab_kampus`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_kampus`
 --
 ALTER TABLE `tbl_kampus`
@@ -315,6 +349,12 @@ ALTER TABLE `tbl_pertanyaan`
 ALTER TABLE `tbl_register`
   ADD PRIMARY KEY (`username`),
   ADD UNIQUE KEY `username` (`username`);
+
+--
+-- Indexes for table `tbl_tanya_kampus`
+--
+ALTER TABLE `tbl_tanya_kampus`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_testimoni`
@@ -351,6 +391,12 @@ ALTER TABLE `tbl_fakultas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `tbl_jawab_kampus`
+--
+ALTER TABLE `tbl_jawab_kampus`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tbl_kampus`
 --
 ALTER TABLE `tbl_kampus`
@@ -367,6 +413,12 @@ ALTER TABLE `tbl_nilai`
 --
 ALTER TABLE `tbl_pertanyaan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `tbl_tanya_kampus`
+--
+ALTER TABLE `tbl_tanya_kampus`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_testimoni`
