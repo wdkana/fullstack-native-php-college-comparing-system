@@ -59,7 +59,7 @@
 			-->
 
 			<h2 class="ui center aligned icon header">
-  				<img src="assets/img/bandingkampuslogo.png"> <span style="color:#dc5538">Banding</span>&nbsp;&nbsp;</i><span style="color:#3B5998">Kampus</span>
+  				<span style="color:#dc5538">Banding</span><img src="assets/img/bandingkampuslogo.png"></i><span style="color:#3B5998">Kampus</span>
 			</h2>
 
 		<div class="ui top attached tabular menu animated fadeInDownBig">
@@ -229,21 +229,90 @@
 			<span onclick="next()" style="color:#dc5538; cursor: pointer; top:-150px; position: fixed; z-index: 99;"><i class="huge arrow alternate circle down outline icon tobot"></i></span>
 		</div>
 
-		<div class="ui hidden divider"></div>
-		<div class="ui hidden divider"></div>
-		<div class="ui hidden divider"></div>
-		<div class="ui hidden divider"></div>
-		<div class="ui hidden divider"></div>
-		<div class="ui hidden divider"></div>
-		<div class="ui hidden divider"></div>
-		<div class="ui hidden divider"></div>
-		<div class="ui hidden divider"></div>
-		<div class="ui hidden divider"></div>
-		<div class="ui hidden divider"></div>
-		<div class="ui hidden divider"></div>
-		<div class="ui hidden divider"></div>
-		<div class="ui hidden divider"></div>
-		<div class="ui hidden divider"></div>
+		<!-- konten 3 kolom -->
+					<h2 class="ui header">
+  				<img class="ui image" src="assets/images/itb.png">
+  				<div class="content">
+    				Apa Yang Kami Sajikan?
+  				</div>
+			</h2>
+
+		<div class="ui horizontal segments">
+		<!-- kolom 1 -->
+		<div class="ui segment">
+		    <p>
+			<div class="ui items">
+				<div class="item">
+					<div class="ui tiny image">
+						<img src="/images/wireframe/image.png">
+					</div>
+					<div class="middle aligned content">
+						<a class="header">Informasi Biaya Kuliah</a>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="ui tiny image">
+						<img src="/images/wireframe/image.png">
+					</div>
+					<div class="middle aligned content">
+						<a class="header">Review dari Mahasiswa Internal</a>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="ui tiny image">
+						<img src="/images/wireframe/image.png">
+					</div>
+					<div class="middle aligned content">
+						<a class="header">Score Perbandingan</a>
+					</div>
+				</div>
+
+			</div>
+			</p>
+		 </div>
+
+		 <!-- kolom 2 -->
+		<div class="ui segment">
+		    <p>
+		    	<div class="ui items">
+				  <div class="item">
+				    <div class="ui tiny image">
+				      <img src="/images/wireframe/image.png">
+				    </div>
+				    <div class="middle aligned content">
+				      <a class="header">Bertanya Kepada Mahasiswa Internal</a>
+				    </div>
+				  </div>
+				  <div class="item">
+				    <div class="ui tiny image">
+				      <img src="/images/wireframe/image.png">
+				    </div>
+				    <div class="middle aligned content">
+				      <a class="header">Akreditasi Jurusan</a>
+				    </div>
+				  </div>
+				  <div class="item">
+				    <div class="ui tiny image">
+				      <img src="/images/wireframe/image.png">
+				    </div>
+				    <div class="middle aligned content">
+				      <a class="header">Kualitas Dosen</a>
+				    </div>
+				  </div>
+				</div>
+			</p>
+		</div>
+
+		<!-- kolom 3 -->
+		<div class="ui segment">
+		    <p>
+		    	
+			</p>
+		</div>
+	</div>
+
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
 		<div class="ui hidden divider"></div>
