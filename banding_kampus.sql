@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 07, 2018 at 01:54 AM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 5.6.36
+-- Host: localhost
+-- Generation Time: Jul 07, 2018 at 06:59 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,10 +40,11 @@ CREATE TABLE `tbl_akreditasi` (
 --
 
 INSERT INTO `tbl_akreditasi` (`id`, `nama_kampus`, `fakultas`, `akreditasi`) VALUES
-(1, 'lpkia', 'Teknik Informatika', 'A'),
-(2, 'lpkia', 'Sistem Informatika', 'A'),
 (3, 'Politeknik Komputer LPKIA', 'Teknik Informatika', 'B'),
-(4, 'STIE Inaba', 'Manajemen S1', 'B');
+(4, 'STIE Inaba', 'akuntansi', 'B'),
+(5, 'Institut Teknologi Bandung', 'teknik metalurgi', 'A'),
+(6, 'Universitas Padjadjaran', 'psikologi', 'A'),
+(7, 'Universitas Pasundan', 'hukum', 'A');
 
 -- --------------------------------------------------------
 
@@ -76,7 +77,9 @@ INSERT INTO `tbl_detail_profil` (`id`, `username`, `nim`, `asal_kampus`, `nama_l
 (33, 'yuzakki', '150613044', 'Politeknik Komputer LPKIA', 'Muhammad Yuzakki Trisgianto', 'Teknik Informatika', '3IF-01', '081910780267', '0fe311eba0c1ac03b94b2b7ff08d202f.jpg', '@muhammadyuzakki', 'Muhammad Yuzakki Trisgianto', '', 'mahasiswa', 'tidak bekerja'),
 (34, 'alsa', '150613009', 'STIE Inaba', 'Alsa Gunadi', 'Manajemen', '3MNJ-01', '081927364517', 'Android.png', '', '', '', 'alumni', 'bekerja'),
 (35, 'fahmi', '150613021', 'Politeknik Komputer LPKIA', 'Fahmi Muhammad Sofyan', 'Manajemen Informatika', '3IF-02', '08976416537', 'Android.png', '', '', '', 'alumni', 'bekerja'),
-(36, 'Asep', '150613013', 'Institut Teknologi Bandung', 'Asep Kustiana', 'Teknik Metalurgi', '3IF-05', '081425267337', 'M50_Black_1.png', '  ', '  ', '  ', 'mahasiswa', 'tidak bekerja');
+(36, 'Asep', '150613013', 'Institut Teknologi Bandung', 'Asep Kustiana', 'Teknik Metalurgi', '3IF-05', '081425267337', 'M50_Black_1.png', '  ', '  ', '  ', 'mahasiswa', 'tidak bekerja'),
+(37, 'budi', '150101387', 'Universitas Pasundan', 'budi gunawan', 'hukum', '3', '0813687976787', '888px-Logo_Unpad_Transparent.png', '-', '-', '-', 'mahasiswa', 'tidak bekerja'),
+(38, 'soetomo', '150613049', 'Universitas Padjadjaran', 'Indra Soetomo', 'psikologi', 'P03-03', '081927485674', 'Android.png', ' ', ' ', ' ', 'mahasiswa', 'tidak bekerja');
 
 -- --------------------------------------------------------
 
@@ -95,10 +98,11 @@ CREATE TABLE `tbl_fakultas` (
 --
 
 INSERT INTO `tbl_fakultas` (`id`, `fakultas`, `nama_kampus`) VALUES
-(1, 'Manajemen Informatika', 'lpkia'),
-(2, 'Administrasi Bisnis', 'lpkia'),
-(3, 'Manajemen Informatika', '<br /><b>Notice</b>:  Undefined variable: result in <b>C:xampphtdocsandingkampususersadminfakultas.php</b> on line <b>226</b><br />'),
-(4, 'Manajemen', '<br /><b>Notice</b>:  Undefined variable: result in <b>C:xampphtdocsandingkampususersadminfakultas.php</b> on line <b>226</b><br />');
+(15, 'manajemen informatika', 'Politeknik Komputer LPKIA'),
+(16, 'teknik pertambangan dan perminyakan', 'Institut Teknologi Bandung'),
+(17, 'psikologi', 'Universitas Padjadjaran'),
+(18, 'manajeman akuntansi', 'STIE Inaba'),
+(19, 'ilmu hukum', 'Universitas Pasundan');
 
 -- --------------------------------------------------------
 
@@ -113,6 +117,13 @@ CREATE TABLE `tbl_jawab_kampus` (
   `jawaban` varchar(255) NOT NULL,
   `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_jawab_kampus`
+--
+
+INSERT INTO `tbl_jawab_kampus` (`id`, `id_pertanyaan`, `username`, `jawaban`, `tanggal`) VALUES
+(1, 1, 'soetomo', 'apa saja weh kepo!', '2018-07-07');
 
 -- --------------------------------------------------------
 
@@ -144,22 +155,7 @@ INSERT INTO `tbl_kampus` (`id`, `nama_kampus`, `alamat`, `foto`, `slogan`, `no_h
 (44, 'STIE Inaba', 'Jl. Soekarno-Hatta No. 448 40266', 'Logo-Inaba.png', 'Menjadi Sekolah Tinggi Ilmu Ekonomi yang unggul pada bidang Akuntansi dan Manajemen serta Kewirausahaan.', '02227563919', 'humasinaba448@gmail.com', '', '@humas_inaba', 'Humasinaba', '@humasINABA', 'inaba.ac.id'),
 (45, 'Institut Teknologi Bandung', 'Jl. Ganesha No. 10 40132', 'Logo_Institut_Teknologi_Bandung.png', 'Kemajuan dalam keselarasan', '0222530689', 'info@sbm-itb.ac.id', '0222508519', '@itb1920', 'institutteknologibandung', '@itbofficial', 'itb.ac.id'),
 (46, 'Universitas Padjadjaran', 'Jln. Raya Bandung-Sumedang Km. 21 Jatinangor, Kab. Sumedang, 45363', '888px-Logo_Unpad_Transparent.png', 'Universitas Padjadjaran RESPECT (Responsibility, Excellence, Scientific rigor, Professionalism, Encouragement, Creativity, Trust)', '02284288888', 'humas@unpad.ac.id', '022 842 88898', '@universitaspadjadjaran', 'unpad', '@unpad', 'unpad.ac.id'),
-(47, 'Universitas Pasundan', 'Jl. Lengkong Besar No. 68 40251', 'LOGO UNPAS.png', 'Pengkuh Agamana, Luhung Elmuna, Jembar Budayana', '0224205945', 'humas@unpas.ac.id', '4262226', '@infounpas', 'universitaspasundan', '@unpas_bandung', 'unpas.ac.id'),
-(48, 'Universitas Katolik Parahyangan', 'Jl. Ciumbuleuit No.94, Bandung, Jawa Barat, Indonesia 40141 ', 'Univ Katholik Parahlayang.png', '', '0222032655', 'humas@unpar.ac.id', '0222031110 ', '@unparofficial', 'unparofficial', '@unparofficial', 'unpar.ac.id'),
-(49, 'Politeknik Negeri Bandung', 'Jl. Gegerkalong Hilir, Ds. Ciwaruga Kotak Pos 1234 Bandung 40012', '250117060345-polban.png', 'Assuring Your Future', '0222013789', 'polban@polban.ac.id', '0222013889', '@politekniknegeribandung', 'polban', '@polban_news', 'www.polban.ac.id'),
-(50, 'Universitas Pendidikan Indonesia', 'Jl. Dr. Setiabudhi No. 229 Bandung 40154 Jawa Barat', 'Logo Universitas Pendidikan Indonesia (UPI).png', 'A Leading and Outstanding University (Universitas Pelopor dan Unggul)', '0222013163', 'layanan-tik@upi.edu', '0222013651', '@infoupibandung', 'https://web.facebook.com/Universitas-Pendidikan-Indonesia-319224464854897/?ref=br_rs', '@infoupibandung', 'www.upi.edu'),
-(51, 'Institut Teknologi Nasional', 'Jl. PKH. Mustopha No. 23, Neglasari, Cibeunying Kaler, Kota Bandung, Jawa Barat 40124', 'institut teknologi nasional bandung.png', 'Menggali Potensi, Membina Prestasi', '0227272215', 'humas@itenas.ac.id', '0227202892', '@itenas.official', 'Itenas.bandung', '@itenascom', 'itenas.ac.id'),
-(52, 'Politeknik Piksi Ganesha', 'Jl. Jendral Gatot Subroto 301, Maleer, Batununggal, Kota Bandung, Jawa Barat 40274', 'logo politeknik piksi ganesha bandung.png', 'Menciptakan SDM yang unggul, terampil, dan mudah bekerja.', '02287340030', 'piksionline@yahoo.com', '02287340086', '@piksi_ganesha', 'ppgresmi', '@piksi_indonesia', 'piksi-ganesha-online.ac.id'),
-(53, 'Telkom University', 'Jl. Telekomunikasi No. 01, Terusan Buah Batu, Sukapura, Dayeuhkolot, Bandung, Jawa Barat 40257', 'Logo_Tel-U.svg.png', 'Creating the Future', '0227564108', 'info@telkomuniversity.ac.id', '', '@telkomuniversity', 'telkomuniversity', '@teluniversity', 'telkomuniversity.ac.id'),
-(54, 'Universitas Langlangbuana', 'Jl. Karapitan No.116, Cikawao, Lengkong, Cikawao, Lengkong, Kota Bandung, Jawa Barat 40261', 'Logo Universitas Langlangbuana Bandung png 300 dpi.png', '', '0224218084', 'info@unla.ac.id', '0224237144', '', '', '', 'http://www.unla.ac.id/'),
-(55, 'STMIK LIKMI', 'Jl. Ir. H.Djuanda No.96, Lebakgede, Coblong, Kota Bandung, Jawa Barat 40132', 'login.jpg', '', '0222502121', '', '', '', '', '', 'http://www.likmi.ac.id'),
-(56, 'Institut Seni Budaya Indonesia Bandung', 'Jl. Buah Batu No.212, Cijagra, Lengkong, Kota Bandung, Jawa Barat 40265', 'LOGO-ISBI-VECTOR-v1.png', '', '', '', '', '', '', '', 'http://www.isbi.ac.id/'),
-(57, 'Universitas Islam Bandung', 'Jl. Tamansari No. 20, 40116 Bandung', 'Logo_UNISBA_2018.png', '', '', '', '', '', '', '', 'www.unisba.ac.id'),
-(58, 'Universitas Islam Negeri Sunan Gunung Djati Bandung', 'Jl. A.H. Nasution No. 105, Cipadung, Cibiru, Kota Bandung, Jawa Barat 40614', 'UIN BANDUNG LOGO 1.png', '', '', '', '', '', '', '', 'www.uinsgd.ac.id'),
-(59, 'Universitas Kebangsaan', 'Jl. Terusan Halimun No.37, Lkr. Sel., Lengkong, Kota Bandung, Jawa Barat 40263', 'Logo_universitas_kebangsaan_(universitaskebangsaan.ac.id).png', '', '', '', '', '', '', '', 'www.universitaskebangsaan.ac.id'),
-(60, 'Universitas Informatika dan Bisnis Indonesia (UNIBI)', 'Jl Soekarno-Hatta No. 643, Sukapura, Kiaracondong, Kota Bandung, Jawa Barat 40614', '041046.png', '', '0227320841', '', '', '', '', '', 'www.unibi.ac.id/'),
-(61, 'Universitas Jendral Achmad Yani', 'Kamus 1   : Jl. Terusan Jenderal Sudirman Cimahi    Kampus 2 : Jl. Terusan Jenderal Gatot Subroto Bandung', 'LOGO_UNJANI.png', '', '226610223', '', '022-6610223', '', '', '', 'pmb.unjani.ac.id'),
-(62, 'Universitas Sangga Buana', 'Jl. PHH Mustofa (Suci) No.68', 'universitas sangga buana.png', '', '087823328506', '', '', '', '', '', 'sanggabuana.ac.id');
+(47, 'Universitas Pasundan', 'Jl. Lengkong Besar No. 68 40251', 'LOGO UNPAS.png', 'Pengkuh Agamana, Luhung Elmuna, Jembar Budayana', '0224205945', 'humas@unpas.ac.id', '4262226', '@infounpas', 'universitaspasundan', '@unpas_bandung', 'unpas.ac.id');
 
 -- --------------------------------------------------------
 
@@ -186,7 +182,9 @@ CREATE TABLE `tbl_nilai` (
 INSERT INTO `tbl_nilai` (`id`, `id_kampus`, `username`, `dosen`, `jurusan`, `lingkungan`, `prestasi`, `mata_kuliah`, `biaya`) VALUES
 (30, 43, 'yuzakki', '80', '80', '80', '100', '60 ', '100'),
 (31, 44, 'alsa', '60', '80', '100', '80', '80 ', '80'),
-(32, 43, 'fahmi', '60', '80', '80', '100', '80 ', '80');
+(33, 47, 'budi', '80', '80', '80', '100', '60 ', '40'),
+(34, 46, 'soetomo', '60', '100', '80', '80', '60 ', '40'),
+(35, 45, 'Asep', '60', '80', '80', '80', '80 ', '40');
 
 -- --------------------------------------------------------
 
@@ -238,7 +236,9 @@ INSERT INTO `tbl_register` (`username`, `email`, `password`, `status`, `hak_akse
 ('admin', 'kikikiller28@yahoo.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'admin'),
 ('alsa', 'alsagunadi@gmail.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'user'),
 ('Asep', 'AsepKustiana@gmail.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'user'),
+('budi', 'budi@gmail.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'user'),
 ('fahmi', '150613021fahmi@gmail.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'user'),
+('soetomo', 'soetomo@gmail.com', '202cb962ac59075b964b07152d234b70', 'Verifikasi', 'user'),
 ('yuzakki', 'muhammadyuzakki@gmail.com', '7604668480b7a804d8c42387045a5cf3', 'Verifikasi', 'user');
 
 -- --------------------------------------------------------
@@ -381,37 +381,37 @@ ALTER TABLE `tbl_ulasan`
 -- AUTO_INCREMENT for table `tbl_akreditasi`
 --
 ALTER TABLE `tbl_akreditasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_detail_profil`
 --
 ALTER TABLE `tbl_detail_profil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `tbl_fakultas`
 --
 ALTER TABLE `tbl_fakultas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tbl_jawab_kampus`
 --
 ALTER TABLE `tbl_jawab_kampus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_kampus`
 --
 ALTER TABLE `tbl_kampus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilai`
 --
 ALTER TABLE `tbl_nilai`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `tbl_pertanyaan`
