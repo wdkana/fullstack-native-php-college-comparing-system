@@ -3,17 +3,28 @@
 		include "model/Testimoni_model.php";
 		include "model/Kampus_model.php";
 		include "model/Banding_model.php";
-
+		include "model/Statistik_model.php";
+		
 		$testimoni = new Testimoni_model();
 		$survei = new Survei_model();
 		$kmp = new Kampus_model();
 		$banding = new Banding_model();
-
+		$statistik = new Statistik_model();
+		
 		$result = $survei->ambilkampus();
 		$result1 = $survei->ambilkampus();
 		$result2 = $testimoni->viewTestimoni();
 		$result3 = $kmp->daftarKampus();
 		$result4 = $banding->rankingKampus();
+		
+		$totalKampus = $statistik->totalKampus();
+		$totalDaftar = $statistik->totalDaftar();
+		$totalPengguna = $statistik->totalPengguna();
+		$totalTestimoni = $statistik->totalTestimoni();
+		$totalTanya = $statistik->totalTanya();
+		$totalUlasan = $statistik->totalUlasan();
+		
+		
 
 ?>
 <!DOCTYPE HTML>
@@ -364,7 +375,7 @@
 <div class="ui statistics">
   <div class="statistic">
     <div class="value">
-      22
+      <?php echo $totalKampus ?>
     </div>
     <div class="label">
       Ulasan Kampus
@@ -372,7 +383,7 @@
   </div>
   <div class="statistic">
     <div class="value">
-      30
+      <?php echo $totalDaftar ?>
     </div>
     <div class="label">
       Kampus Terdaftar
@@ -380,7 +391,7 @@
   </div>
   <div class="statistic">
     <div class="value">
-      33
+      <?php echo $totalPengguna ?>
     </div>
     <div class="label">
       Pengguna
@@ -388,7 +399,7 @@
   </div>
   <div class="statistic">
     <div class="value">
-      8
+      <?php echo $totalTestimoni ?>
     </div>
     <div class="label">
       Testimoni Alumni
@@ -396,7 +407,7 @@
   </div>
   <div class="statistic">
     <div class="value">
-      34
+      <?php echo $totalTanya ?>
     </div>
     <div class="label">
       Bertanya
@@ -404,7 +415,7 @@
   </div>
     <div class="statistic">
     <div class="value">
-      13
+      <?php echo $totalUlasan ?>
     </div>
     <div class="label">
       Orang Puas
