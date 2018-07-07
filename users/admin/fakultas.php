@@ -22,7 +22,7 @@
         header('location:dashboard-admin.php');
     }
     $row = $survei->kampus($id);
-	$nama_kampus = $row['nama_kampus'];
+	   $nama_kampus = $row['nama_kampus'];
 
     $resultFakultas = $fakultas->getFakultas($nama_kampus);
 ?>
@@ -223,7 +223,7 @@
           <div class="row">
             <div class="col-md-12">
                <form action="process/fakultasProcess.php" method="post">
-                  <input type="text" name="nama_kampus" value="<?php echo $result['nama_kampus'];?>" hidden>
+                  <input type="text" name="nama_kampus" value="<?php echo $row['nama_kampus'];?>" hidden>
                   <div class="form-group">
                   	<label>Fakultas</label>
                   	<input type="text" name="fakultas" class="form-control" placeholder="fakultas">

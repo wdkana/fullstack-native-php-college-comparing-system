@@ -225,11 +225,11 @@
             			</tr>
             		</thead>
             		<tbody>
+                  <?php
+                      $no=1;
+                      while($row = mysql_fetch_array($result)){
+                    ?>
             			<tr>
-            				<?php
-            					$no=1;
-            					while($row = mysql_fetch_array($result)){
-            				?>
             				<td><?php echo $no;?></td>
             				<td><?php echo $row['username'];?></td>
             				<td><?php echo $row['nama_kampus'];?></td>
@@ -239,11 +239,12 @@
             				<td><?php echo $row['tag']?></td>
             				<td><a href="editUlasan.php?i=<?php echo $row['id']?>" class="btn btn-flat btn-sm btn-success">Ubah</a> 
             				<button onclick="hapus('<?php echo $row['id'];?>')" class="btn btn-flat btn-sm btn-danger">Hapus</button></td>
-            				<?php
-            					$no++;
-            					}
-            				?>
+            				
             			</tr>
+                  <?php
+                      $no++;
+                      }
+                    ?>
             		</tbody>
             	</table>
             </div>

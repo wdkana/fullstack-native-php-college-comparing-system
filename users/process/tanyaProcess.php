@@ -9,7 +9,8 @@
 
     $tanya->addPertanyaan($email,$kampus,$pertanyaan);
     if($tanya == TRUE){
-      header('location: ../../index.php');
+        echo "<script>window.alert('silahkan tunggu beberapa saat, jawaban akan dikirim melalui email');
+                window.location.href='../../';</script>";
     } else {
         echo "data gagal disimpan";
     }
