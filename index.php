@@ -375,7 +375,7 @@
 <div class="ui statistics">
   <div class="statistic">
     <div class="value">
-      <?php echo $totalKampus ?>
+      <?php echo $totalUlasan ?>
     </div>
     <div class="label">
       Ulasan Kampus
@@ -383,7 +383,7 @@
   </div>
   <div class="statistic">
     <div class="value">
-      <?php echo $totalDaftar ?>
+      <?php echo $totalKampus ?>
     </div>
     <div class="label">
       Kampus Terdaftar
